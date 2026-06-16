@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STONEVIA CONSTRUCTION — Building Trust. Shaping Skylines.</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --white:#FFFFFF;
+  --off:#F8F6F2;
+  --light:#EDE9E2;
+  --border:#E2DDD7;
+  --mid:#9A9488;
+  --ink:#1A1714;
+  --dark:#0D0C0A;
+  --gold:#B8962E;
+  --gold2:#D4AE52;
+  --gold-light:#F0D98A;
+  --gold-bg:rgba(184,150,46,.07);
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--white);color:var(--ink);font-family:'Inter',sans-serif;overflow-x:hidden;cursor:none}
+
+/* ── CURSOR ── */
+#cur{position:fixed;z-index:99999;pointer-events:none;
+  width:8px;height:8px;background:var(--gold);border-radius:50%;
+  transform:translate(-50%,-50%);transition:width .3s,height .3s,background .3s;mix-blend-mode:multiply}
+#cur2{position:fixed;z-index:99998;pointer-events:none;
+  width:36px;height:36px;border:1px solid rgba(184,150,46,.5);border-radius:50%;
+  transform:translate(-50%,-50%);transition:left .08s,top .08s,width .3s,height .3s}
+body.hov #cur{width:48px;height:48px;opacity:.12;background:var(--gold)}
+body.hov #cur2{width:64px;height:64px;border-color:var(--gold)}
+
+/* ── LOADER ── */
+#loader{
+  position:fixed;inset:0;z-index:9999;background:var(--dark);overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+.ld-bg{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=2000&q=95&fm=jpg&fit=crop') center/cover no-repeat;
+  transform:scale(1.08);
+  animation:ldZoom 3s ease forwards;
+}
+@keyframes ldZoom{to{transform:scale(1)}}
+.ld-veil{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(13,12,10,.72) 0%,rgba(13,12,10,.55) 50%,rgba(13,12,10,.85) 100%)}
+.ld-content{position:relative;z-index:2;text-align:center}
+.ld-word{overflow:hidden;margin-bottom:4px}
+.ld-word span{
+  display:inline-block;font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(56px,10vw,120px);color:#fff;letter-spacing:14px;
+  transform:translateY(110%);
+  animation:ldUp .9s cubic-bezier(.16,1,.3,1) forwards;
+}
+.ld-word:nth-child(2) span{animation-delay:.15s;color:var(--gold2)}
+.ld-tagline{
+  font-family:'Cormorant Garamond',serif;font-size:15px;
+  letter-spacing:5px;color:rgba(255,255,255,.5);
+  opacity:0;animation:fadeIn .8s .7s forwards;margin-top:12px;
+}
+.ld-bar{width:240px;height:1px;background:rgba(255,255,255,.12);margin:32px auto 0;overflow:hidden}
+.ld-fill{height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold2));transition:width .04s linear}
+@keyframes ldUp{to{transform:translateY(0)}}
+@keyframes fadeIn{to{opacity:1}}
+.ld-pct{
+  font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:4px;
+  color:rgba(255,255,255,.3);margin-top:10px;
+  opacity:0;animation:fadeIn .5s .5s forwards;
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  padding:30px 80px;display:flex;align-items:center;justify-content:space-between;
+  transition:all .5s cubic-bezier(.16,1,.3,1);
+}
+nav.on-white{
+  background:rgba(255,255,255,.94);backdrop-filter:blur(20px);
+  padding:18px 80px;border-bottom:1px solid var(--border);
+}
+nav.on-dark{
+  background:transparent;
+}
+.nav-logo{
+  font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:5px;
+  text-decoration:none;display:flex;align-items:center;gap:11px;
+  transition:color .3s;
+}
+nav.on-white .nav-logo{color:var(--ink)}
+nav.on-dark .nav-logo{color:#fff}
+.nav-mark{
+  width:32px;height:32px;border:1.5px solid var(--gold);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.nav-mark svg{width:16px;height:16px}
+.nav-links{list-style:none;display:flex;gap:40px}
+.nav-links a{
+  font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;
+  text-decoration:none;position:relative;transition:color .3s;
+}
+nav.on-white .nav-links a{color:var(--mid)}
+nav.on-dark .nav-links a{color:rgba(255,255,255,.6)}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width .4s}
+.nav-links a:hover::after{width:100%}
+nav.on-white .nav-links a:hover{color:var(--ink)}
+nav.on-dark .nav-links a:hover{color:#fff}
+.nav-cta{
+  font-size:10px;letter-spacing:2.5px;font-weight:600;text-transform:uppercase;
+  padding:11px 26px;cursor:pointer;font-family:'Inter',sans-serif;
+  transition:all .35s;border:1.5px solid var(--gold);background:transparent;color:var(--gold);
+}
+.nav-cta:hover{background:var(--gold);color:#fff}
+
+/* ── HERO — CINEMATIC SLIDESHOW ── */
+#hero{
+  position:relative;height:100vh;overflow:hidden;
+}
+
+/* Slides */
+.hero-slides{position:absolute;inset:0}
+.hslide{
+  position:absolute;inset:0;opacity:0;
+  transition:opacity 1.4s cubic-bezier(.4,0,.2,1);
+}
+.hslide.active{opacity:1}
+.hslide-bg{
+  position:absolute;inset:-8%;
+  background-size:cover;background-position:center;
+  transition:transform 8s cubic-bezier(.25,.46,.45,.94);
+  filter:brightness(.6) saturate(.85);
+}
+.hslide.active .hslide-bg{transform:scale(1.06)}
+.hslide:not(.active) .hslide-bg{transform:scale(1.0)}
+
+/* Overlay layers */
+.hero-veil{
+  position:absolute;inset:0;z-index:2;
+  background:linear-gradient(
+    108deg,
+    rgba(13,12,10,.78) 0%,
+    rgba(13,12,10,.4) 55%,
+    rgba(13,12,10,.25) 100%
+  );
+}
+.hero-bottom{
+  position:absolute;bottom:0;left:0;right:0;height:30%;z-index:2;
+  background:linear-gradient(to top,rgba(248,246,242,1) 0%,transparent 100%);
+}
+
+/* Slide content */
+.hero-content{
+  position:absolute;inset:0;z-index:4;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:0 80px 100px;
+}
+.slide-counter{
+  display:flex;align-items:center;gap:16px;margin-bottom:36px;
+  font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:3px;color:rgba(255,255,255,.5);
+}
+.slide-counter .current{color:var(--gold2);font-size:20px}
+.slide-counter-line{flex:0 0 80px;height:1px;background:rgba(255,255,255,.2);position:relative;overflow:hidden}
+.slide-counter-fill{position:absolute;top:0;left:0;height:100%;background:var(--gold2);width:0;transition:width 6s linear}
+.hero-eyebrow{
+  font-size:10px;letter-spacing:5px;text-transform:uppercase;
+  color:var(--gold2);margin-bottom:20px;
+  display:flex;align-items:center;gap:12px;
+  opacity:0;transform:translateY(16px);
+  transition:opacity .7s,transform .7s;
+}
+.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold2)}
+.hslide.active .hero-eyebrow{opacity:1;transform:translateY(0);transition-delay:.3s}
+.hero-h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(64px,9vw,128px);
+  line-height:.88;letter-spacing:2px;color:#fff;
+  overflow:hidden;margin-bottom:24px;
+}
+.hero-h1 .line{
+  display:block;overflow:hidden;
+}
+.hero-h1 .line span{
+  display:block;transform:translateY(105%);
+  transition:transform .9s cubic-bezier(.16,1,.3,1);
+}
+.hslide.active .hero-h1 .line span{transform:translateY(0)}
+.hslide.active .hero-h1 .line:nth-child(2) span{transition-delay:.1s}
+.hslide.active .hero-h1 .line:nth-child(3) span{transition-delay:.2s;color:var(--gold2)}
+.hero-sub{
+  font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;
+  color:rgba(255,255,255,.65);max-width:480px;line-height:1.6;
+  opacity:0;transform:translateY(12px);
+  transition:opacity .8s .4s,transform .8s .4s;
+}
+.hslide.active .hero-sub{opacity:1;transform:translateY(0)}
+.hero-actions{
+  display:flex;align-items:center;gap:18px;margin-top:36px;
+  opacity:0;transform:translateY(12px);
+  transition:opacity .8s .55s,transform .8s .55s;
+}
+.hslide.active .hero-actions{opacity:1;transform:translateY(0)}
+
+/* Hero buttons */
+.btn-white{
+  display:inline-flex;align-items:center;gap:11px;
+  background:#fff;color:var(--ink);
+  padding:16px 36px;font-size:10.5px;letter-spacing:2.5px;font-weight:700;
+  text-transform:uppercase;border:none;cursor:pointer;font-family:'Inter',sans-serif;
+  transition:all .4s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden;
+}
+.btn-white::before{content:'';position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .4s}
+.btn-white:hover::before{transform:scaleX(1);transform-origin:left}
+.btn-white span,.btn-white svg{position:relative;z-index:1;transition:color .4s}
+.btn-white:hover{box-shadow:0 16px 48px rgba(0,0,0,.22)}
+.btn-white:hover span,.btn-white:hover svg{color:#fff}
+.btn-stroke{
+  display:inline-flex;align-items:center;gap:10px;
+  background:transparent;color:rgba(255,255,255,.8);
+  padding:15px 28px;font-size:10.5px;letter-spacing:2px;
+  text-transform:uppercase;border:1px solid rgba(255,255,255,.25);
+  cursor:pointer;font-family:'Inter',sans-serif;
+  transition:all .35s;
+}
+.btn-stroke:hover{border-color:rgba(255,255,255,.7);color:#fff}
+
+/* Slide thumbnails / nav */
+.hero-nav{
+  position:absolute;right:60px;top:50%;transform:translateY(-50%);
+  z-index:5;display:flex;flex-direction:column;gap:10px;
+}
+.hnav-item{
+  display:flex;align-items:center;gap:12px;cursor:pointer;
+  transition:opacity .3s;opacity:.35;
+}
+.hnav-item.active{opacity:1}
+.hnav-thumb{
+  width:54px;height:36px;overflow:hidden;position:relative;
+  border:1.5px solid transparent;transition:border-color .3s;
+}
+.hnav-item.active .hnav-thumb{border-color:var(--gold2)}
+.hnav-thumb img{width:100%;height:100%;object-fit:cover;filter:brightness(.7)}
+.hnav-label{
+  font-size:9px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,.5);white-space:nowrap;
+  transition:color .3s;
+}
+.hnav-item.active .hnav-label{color:rgba(255,255,255,.9)}
+.hnav-dot{
+  width:4px;height:4px;background:rgba(255,255,255,.3);
+  border-radius:50%;flex-shrink:0;transition:background .3s;
+}
+.hnav-item.active .hnav-dot{background:var(--gold2)}
+
+/* Scroll indicator */
+.scroll-hint{
+  position:absolute;bottom:110px;right:80px;z-index:5;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  font-size:8.5px;letter-spacing:3.5px;text-transform:uppercase;
+  color:rgba(255,255,255,.35);
+}
+.scroll-line{width:1px;height:44px;background:linear-gradient(to bottom,rgba(255,255,255,.4),transparent);animation:scrl 2s ease-in-out infinite}
+@keyframes scrl{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ── TICKER ── */
+.ticker{
+  background:var(--ink);padding:14px 0;overflow:hidden;white-space:nowrap;
+}
+.ticker-track{display:inline-flex;animation:tick 28s linear infinite}
+.ticker-item{
+  font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:3px;
+  color:rgba(255,255,255,.6);padding:0 36px;display:inline-flex;align-items:center;gap:16px;
+}
+.ticker-gold{color:var(--gold2)}
+.ticker-dot{width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── SECTION SHARED ── */
+.wrap{max-width:1400px;margin:0 auto;padding:0 80px}
+.eyebrow{
+  font-size:10px;letter-spacing:5px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:14px;
+}
+.eyebrow::before{content:'';width:28px;height:1px;background:var(--gold)}
+.sh{font-family:'Bebas Neue',sans-serif;font-size:clamp(46px,5.5vw,84px);line-height:.9;color:var(--ink)}
+
+/* ── ABOUT ── */
+#about{background:var(--white);padding:140px 0;overflow:hidden}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch}
+.about-img-col{position:relative;overflow:hidden;min-height:680px}
+.about-img{
+  position:absolute;inset:-20%;
+  background:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=95&fm=jpg&fit=crop') center/cover no-repeat;
+  will-change:transform;filter:brightness(.88) saturate(.9);
+}
+.about-img-frame{
+  position:absolute;bottom:32px;left:32px;
+  background:rgba(255,255,255,.95);backdrop-filter:blur(10px);
+  padding:20px 26px;border-left:3px solid var(--gold);
+  box-shadow:0 8px 40px rgba(0,0,0,.12);
+}
+.about-img-frame h4{font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:2px;color:var(--ink)}
+.about-img-frame p{font-size:10px;letter-spacing:2px;color:var(--gold);margin-top:4px;text-transform:uppercase}
+.about-text-col{
+  padding:100px 80px;background:var(--off);
+  display:flex;flex-direction:column;justify-content:center;
+}
+.about-body{
+  font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.8;
+  color:#4A4540;margin-bottom:18px;font-weight:300;
+}
+.about-body strong{color:var(--ink);font-weight:600}
+.about-sig{
+  font-family:'Cormorant Garamond',serif;font-size:24px;font-style:italic;
+  color:var(--gold);margin-top:32px;
+}
+.about-stats{
+  display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  background:var(--border);margin-top:48px;
+}
+.astat{background:var(--off);padding:28px 24px;border-bottom:2px solid transparent;transition:border-color .4s;cursor:default}
+.astat:hover{border-color:var(--gold)}
+.astat-n{font-family:'Bebas Neue',sans-serif;font-size:46px;color:var(--ink);line-height:1;display:flex;align-items:baseline;gap:4px}
+.astat-n sup{font-size:22px;color:var(--gold)}
+.astat-l{font-size:9px;letter-spacing:2.5px;color:var(--mid);text-transform:uppercase;margin-top:6px}
+
+/* ── QUOTE PARALLAX STRIP ── */
+.qstrip{position:relative;height:55vh;overflow:hidden}
+.qstrip-bg{
+  position:absolute;inset:-30%;
+  background:url('https://images.unsplash.com/photo-1590664863685-a99ef05e9f61?w=2000&q=95&fm=jpg&fit=crop') center 35%/cover no-repeat;
+  will-change:transform;filter:brightness(.45) saturate(.7);
+}
+.qstrip-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(rgba(13,12,10,.5),rgba(13,12,10,.3),rgba(13,12,10,.6));
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;
+}
+.qtext{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(22px,3.2vw,46px);font-style:italic;
+  color:#fff;text-align:center;max-width:760px;
+  line-height:1.45;padding:0 48px;
+  text-shadow:0 2px 20px rgba(0,0,0,.4);
+}
+.qattr{font-size:10px;letter-spacing:5px;color:var(--gold2);text-transform:uppercase}
+
+/* ── SERVICES ── */
+#services{background:var(--white);padding:120px 0;overflow:hidden}
+.svc-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--border);margin-top:72px;
+}
+.scard{
+  background:var(--white);padding:54px 44px;
+  position:relative;overflow:hidden;
+  transition:background .5s;cursor:default;
+  border-bottom:3px solid transparent;
+  transition:border-color .4s,background .5s;
+}
+.scard::before{
+  content:'';position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  opacity:0;transition:opacity .6s;
+  filter:brightness(.08) saturate(0);
+}
+.scard.s1::before{background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=90&fm=jpg')}
+.scard.s2::before{background-image:url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=90&fm=jpg')}
+.scard.s3::before{background-image:url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&q=90&fm=jpg')}
+.scard.s4::before{background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=90&fm=jpg')}
+.scard.s5::before{background-image:url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&q=90&fm=jpg')}
+.scard.s6::before{background-image:url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=90&fm=jpg')}
+.scard:hover{background:var(--ink);border-color:var(--gold)}
+.scard:hover::before{opacity:1;filter:brightness(.12) saturate(.3)}
+.scard-inner{position:relative;z-index:2}
+.scard-n{
+  font-family:'Bebas Neue',sans-serif;font-size:56px;
+  color:var(--border);line-height:1;margin-bottom:18px;
+  transition:color .4s;
+}
+.scard:hover .scard-n{color:rgba(184,150,46,.2)}
+.scard-ico{
+  width:50px;height:50px;border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;margin-bottom:22px;
+  transition:border-color .4s,background .4s;
+}
+.scard:hover .scard-ico{border-color:var(--gold);background:rgba(184,150,46,.08)}
+.scard-ico svg{width:22px;height:22px;stroke:var(--gold);transition:stroke .4s}
+.scard-name{
+  font-family:'Bebas Neue',sans-serif;font-size:27px;letter-spacing:1px;
+  color:var(--ink);margin-bottom:14px;transition:color .4s;
+}
+.scard:hover .scard-name{color:#fff}
+.scard-desc{font-size:13.5px;line-height:1.75;color:var(--mid);font-weight:300;transition:color .4s}
+.scard:hover .scard-desc{color:rgba(255,255,255,.5)}
+.scard-link{
+  display:inline-flex;align-items:center;gap:9px;margin-top:26px;
+  font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;
+  transition:gap .3s;
+}
+.scard:hover .scard-link{gap:16px}
+
+/* ── PROJECTS FULLSCREEN ── */
+#projects{background:var(--off);padding:120px 0 0;overflow:hidden}
+.proj-header{padding:0 80px 64px;display:flex;justify-content:space-between;align-items:flex-end}
+.proj-h{font-family:'Bebas Neue',sans-serif;font-size:clamp(46px,6vw,90px);line-height:.9;color:var(--ink)}
+.proj-cta{
+  font-size:10px;letter-spacing:3px;color:var(--mid);text-transform:uppercase;
+  display:flex;align-items:center;gap:10px;cursor:pointer;
+  transition:color .3s;border:none;background:none;font-family:'Inter',sans-serif;
+}
+.proj-cta:hover{color:var(--gold)}
+.proj-cta::after{content:'→';font-size:16px;transition:transform .3s}
+.proj-cta:hover::after{transform:translateX(6px)}
+
+/* Grid layout */
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:var(--off)}
+.pcard{
+  position:relative;overflow:hidden;cursor:pointer;
+  background:var(--ink);
+}
+.pcard.tall{grid-row:span 2;min-height:90vh}
+.pcard:not(.tall){min-height:45vh}
+.pcard-bg{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  filter:brightness(.65) saturate(.8);
+  transition:transform 1s cubic-bezier(.16,1,.3,1),filter .7s;
+  will-change:transform;
+}
+.pcard:hover .pcard-bg{transform:scale(1.06);filter:brightness(.8) saturate(1)}
+.pcard-grad{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(13,12,10,.96) 0%,rgba(13,12,10,.35) 55%,transparent 100%);
+  transition:background .5s;
+}
+.pcard-body{
+  position:absolute;bottom:0;left:0;right:0;padding:44px 48px;
+  transform:translateY(0);
+}
+.pcard-cat{
+  font-size:9px;letter-spacing:4px;color:var(--gold2);text-transform:uppercase;
+  margin-bottom:12px;display:flex;align-items:center;gap:10px;
+}
+.pcard-cat::before{content:'';width:18px;height:1px;background:var(--gold2)}
+.pcard-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(30px,3.5vw,50px);letter-spacing:1px;color:#fff;
+  margin-bottom:8px;line-height:1.05;
+}
+.pcard-meta{font-size:12px;color:rgba(255,255,255,.45);margin-bottom:18px;font-weight:300}
+.ptags{display:flex;gap:8px;flex-wrap:wrap}
+.ptag{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
+  font-size:8px;letter-spacing:1.5px;color:rgba(255,255,255,.6);padding:5px 12px;
+  transition:background .3s,border-color .3s,color .3s;
+}
+.pcard:hover .ptag{background:rgba(184,150,46,.12);border-color:rgba(184,150,46,.35);color:var(--gold2)}
+.pcard-line{
+  position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--gold);transform:scaleX(0);transform-origin:left;
+  transition:transform .6s cubic-bezier(.16,1,.3,1);
+}
+.pcard:hover .pcard-line{transform:scaleX(1)}
+.pcard-corner{
+  position:absolute;top:24px;right:24px;width:32px;height:32px;
+  border-top:2px solid rgba(184,150,46,0);border-right:2px solid rgba(184,150,46,0);
+  transition:border-color .4s .15s;
+}
+.pcard:hover .pcard-corner{border-color:var(--gold2)}
+
+/* ── COUNTER STRIP ── */
+.cstrip{
+  background:var(--ink);
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid rgba(255,255,255,.04);
+}
+.csi{
+  padding:64px 52px;border-right:1px solid rgba(255,255,255,.06);
+  position:relative;overflow:hidden;cursor:default;
+  transition:background .4s;
+}
+.csi:last-child{border-right:none}
+.csi:hover{background:rgba(255,255,255,.02)}
+.csi::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--gold);transition:width .5s cubic-bezier(.16,1,.3,1)}
+.csi:hover::after{width:100%}
+.csi-n{font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,6vw,88px);color:#fff;line-height:1;display:flex;align-items:baseline;gap:5px}
+.csi-u{font-size:clamp(28px,3vw,44px);color:var(--gold)}
+.csi-l{font-size:10px;letter-spacing:3px;color:rgba(255,255,255,.3);text-transform:uppercase;margin-top:12px}
+.csi-ico{position:absolute;top:40px;right:40px;opacity:.05}
+.csi-ico svg{width:54px;height:54px;stroke:#fff;fill:none;stroke-width:1}
+
+/* ── CRAFT / MATERIALS ── */
+.craft{display:grid;grid-template-columns:repeat(3,1fr);min-height:75vh}
+.cpanel{position:relative;overflow:hidden;cursor:pointer}
+.cpanel-bg{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  filter:brightness(.5) saturate(.65);
+  transition:transform .9s cubic-bezier(.16,1,.3,1),filter .6s;
+}
+.cpanel:hover .cpanel-bg{transform:scale(1.06);filter:brightness(.65) saturate(.85)}
+.cpanel-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,12,10,.95),rgba(13,12,10,.2));transition:background .4s}
+.cpanel-body{
+  position:absolute;bottom:0;left:0;right:0;padding:44px 40px;
+  opacity:0;transform:translateY(18px);
+  transition:opacity .5s,transform .5s;
+}
+.cpanel.vis .cpanel-body{opacity:1;transform:translateY(0)}
+.cpanel-line{position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.cpanel:hover .cpanel-line{transform:scaleX(1)}
+.cp-ico{font-size:28px;margin-bottom:14px;display:block}
+.cp-name{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1px;color:#fff;margin-bottom:6px}
+.cp-sub{font-size:10px;letter-spacing:2.5px;color:var(--gold2);text-transform:uppercase;margin-bottom:12px}
+.cp-desc{font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;font-weight:300}
+
+/* ── PROCESS ── */
+#process{background:var(--off);padding:140px 0;overflow:hidden}
+.proc-grid{display:grid;grid-template-columns:1fr 1fr;gap:120px;align-items:center}
+.proc-steps{margin-top:56px;display:flex;flex-direction:column;gap:0}
+.pstep{
+  display:flex;gap:28px;padding:30px 0;
+  border-bottom:1px solid var(--border);
+  position:relative;padding-left:4px;
+  transition:padding-left .4s;
+}
+.pstep::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:transparent;transition:background .4s}
+.pstep:hover{padding-left:12px}
+.pstep:hover::before{background:var(--gold)}
+.pstep-n{
+  font-family:'Bebas Neue',sans-serif;font-size:32px;
+  color:var(--border);flex-shrink:0;width:44px;line-height:1.15;
+  transition:color .4s;
+}
+.pstep:hover .pstep-n{color:var(--gold)}
+.pstep-name{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1px;color:var(--ink);margin-bottom:8px}
+.pstep-desc{font-size:13px;line-height:1.7;color:var(--mid);font-weight:300}
+.proc-img-wrap{position:relative;aspect-ratio:.78;overflow:hidden}
+.proc-img{
+  width:100%;height:100%;
+  background:url('https://images.unsplash.com/photo-1590247813693-5541d1c609fd?w=1200&q=95&fm=jpg&fit=crop') center/cover no-repeat;
+  transition:transform .9s cubic-bezier(.16,1,.3,1);
+  filter:brightness(.88) saturate(.9);
+}
+.proc-img-wrap:hover .proc-img{transform:scale(1.04)}
+.proc-frame{
+  position:absolute;bottom:-16px;right:-16px;left:16px;top:16px;
+  border:1px solid rgba(184,150,46,.25);pointer-events:none;z-index:-1;
+}
+.proc-badge{
+  position:absolute;bottom:-18px;left:-18px;
+  background:var(--gold);padding:24px 22px;z-index:2;
+}
+.proc-badge .bn{font-family:'Bebas Neue',sans-serif;font-size:40px;color:#fff;line-height:1}
+.proc-badge .bs{font-size:8px;letter-spacing:2px;color:rgba(255,255,255,.7);text-transform:uppercase}
+
+/* ── TESTIMONIALS ── */
+#testi{background:var(--white);padding:120px 0;overflow:hidden}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:72px}
+.tcard{
+  background:var(--off);padding:0;overflow:hidden;
+  transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s;
+  border-top:3px solid transparent;transition:border-color .4s,transform .4s,box-shadow .4s;
+}
+.tcard:hover{transform:translateY(-8px);box-shadow:0 24px 60px rgba(0,0,0,.1);border-color:var(--gold)}
+.tcard-img{
+  width:100%;height:180px;
+  background-size:cover;background-position:center top;
+  filter:saturate(.7) brightness(.85);
+  transition:filter .5s,transform .6s;
+}
+.tcard:hover .tcard-img{filter:saturate(.95) brightness(.95);transform:scale(1.02)}
+.tcard-body{padding:36px 32px}
+.tstars{color:var(--gold);font-size:11px;letter-spacing:5px;margin-bottom:16px}
+.tquote{
+  font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;
+  color:var(--ink);line-height:1.75;margin-bottom:26px;
+}
+.tauthor{display:flex;align-items:center;gap:14px;padding-top:18px;border-top:1px solid var(--border)}
+.tav{
+  width:44px;height:44px;border-radius:50%;background:var(--light);
+  border:1.5px solid rgba(184,150,46,.3);display:flex;align-items:center;
+  justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--gold);flex-shrink:0;
+}
+.tname{font-size:13px;font-weight:600;color:var(--ink)}
+.trole{font-size:10.5px;color:var(--mid);margin-top:3px}
+
+/* ── CONTACT ── */
+#contact{overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
+.contact-left{
+  position:relative;overflow:hidden;min-height:800px;
+}
+.contact-bg{
+  position:absolute;inset:-15%;
+  background:url('https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?w=1400&q=95&fm=jpg&fit=crop') center/cover no-repeat;
+  will-change:transform;filter:brightness(.55) saturate(.75);
+}
+.contact-left-overlay{position:absolute;inset:0;background:rgba(13,12,10,.55)}
+.contact-left-content{position:absolute;bottom:0;left:0;right:0;padding:64px 60px;z-index:2}
+.contact-left-content h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(36px,4vw,66px);line-height:.92;color:#fff;margin-bottom:16px;
+}
+.contact-left-content p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;font-weight:300;max-width:380px;margin-bottom:32px}
+.cinfo{display:flex;flex-direction:column;gap:0}
+.ci{display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.ci-ico{width:34px;height:34px;border:1px solid rgba(184,150,46,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ci-ico svg{width:14px;height:14px;stroke:var(--gold2)}
+.ci-k{font-size:8px;letter-spacing:2.5px;color:rgba(255,255,255,.35);text-transform:uppercase;margin-bottom:3px}
+.ci-v{font-size:13.5px;color:rgba(255,255,255,.8)}
+.contact-right{background:var(--off);padding:100px 72px;display:flex;flex-direction:column;justify-content:center}
+.cform{display:flex;flex-direction:column;gap:16px}
+.crow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cfield{display:flex;flex-direction:column;gap:8px}
+.cfield label{font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase}
+.cfield input,.cfield select,.cfield textarea{
+  background:var(--white);border:1px solid var(--border);color:var(--ink);
+  padding:14px 18px;font-size:13.5px;font-family:'Inter',sans-serif;
+  outline:none;transition:border-color .35s,box-shadow .35s;resize:none;
+  -webkit-appearance:none;border-radius:0;
+}
+.cfield input:focus,.cfield select:focus,.cfield textarea:focus{
+  border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,150,46,.08);
+}
+.cfield input::placeholder,.cfield textarea::placeholder{color:var(--border)}
+.cfield select{color:var(--mid)}
+.cfield select option{color:var(--ink)}
+.csub{
+  background:var(--ink);color:#fff;border:none;
+  padding:17px 40px;font-size:10.5px;letter-spacing:2.5px;font-weight:700;
+  font-family:'Inter',sans-serif;text-transform:uppercase;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:12px;width:100%;
+  transition:all .4s;margin-top:8px;position:relative;overflow:hidden;
+}
+.csub::before{content:'';position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.csub:hover::before{transform:scaleX(1)}
+.csub:hover{box-shadow:0 12px 40px rgba(184,150,46,.25)}
+.csub span,.csub svg{position:relative;z-index:1}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);padding:80px 80px 40px;border-top:1px solid rgba(255,255,255,.04)}
+.ftop{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:60px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.06)}
+.flogo{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:5px;color:#fff;display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.fbrand p{font-size:13px;color:rgba(255,255,255,.3);line-height:1.85;max-width:290px;font-weight:300;margin-bottom:28px}
+.fsocs{display:flex;gap:10px}
+.fsoc{width:36px;height:36px;border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s}
+.fsoc:hover{border-color:var(--gold);background:rgba(184,150,46,.08)}
+.fsoc svg{width:14px;height:14px;stroke:rgba(255,255,255,.3);transition:stroke .3s}
+.fsoc:hover svg{stroke:var(--gold)}
+.fcol h5{font-size:9px;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:13px}
+.fcol ul a{font-size:13px;color:rgba(255,255,255,.28);text-decoration:none;transition:color .3s;display:flex;align-items:center;gap:8px}
+.fcol ul a::before{content:'';width:0;height:1px;background:var(--gold);transition:width .3s;flex-shrink:0}
+.fcol ul a:hover{color:rgba(255,255,255,.8)}
+.fcol ul a:hover::before{width:10px}
+.fbot{display:flex;justify-content:space-between;align-items:center;padding-top:34px;flex-wrap:wrap;gap:16px}
+.fcopy{font-size:10.5px;color:rgba(255,255,255,.18);letter-spacing:1.5px}
+.flegal{display:flex;gap:22px}
+.flegal a{font-size:10.5px;color:rgba(255,255,255,.18);text-decoration:none;transition:color .3s;letter-spacing:1px}
+.flegal a:hover{color:var(--gold)}
+
+/* ── REVEAL ── */
+.rv{opacity:0;transform:translateY(44px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.rl{opacity:0;transform:translateX(-50px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.rr{opacity:0;transform:translateX(50px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.rv.on,.rl.on,.rr.on{opacity:1;transform:translate(0)}
+[data-d='1']{transition-delay:.08s}[data-d='2']{transition-delay:.18s}[data-d='3']{transition-delay:.28s}[data-d='4']{transition-delay:.38s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1100px){
+  nav,footer{padding-left:40px;padding-right:40px}
+  nav.on-white,nav.on-dark{padding-left:40px;padding-right:40px}
+  .wrap{padding:0 40px}
+  #about .about-grid,#contact{grid-template-columns:1fr}
+  .about-img-col{min-height:50vh}
+  .proc-grid{grid-template-columns:1fr;gap:60px}
+  .proc-img-wrap{aspect-ratio:1.4}
+  .svc-grid,.tgrid,.craft{grid-template-columns:1fr 1fr}
+  .proj-header,.proj-grid{padding:0 40px}
+  .cstrip{grid-template-columns:1fr 1fr}
+  .ftop{grid-template-columns:1fr 1fr;gap:40px}
+  .contact-right{padding:60px 40px}
+  .hero-nav{display:none}
+  .hero-content{padding:0 40px 80px}
+}
+@media(max-width:700px){
+  .svc-grid,.tgrid,.craft,.cstrip,.ftop,.proj-grid{grid-template-columns:1fr}
+  .crow{grid-template-columns:1fr}
+  .proj-header{flex-direction:column;align-items:flex-start;gap:20px;padding:0 24px 40px}
+  .hero-content{padding:0 24px 70px}
+  .about-stats{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+  footer{padding:60px 24px 30px}
+  .contact-left-content{padding:40px 30px}
+  .pcard.tall{min-height:60vh}
+  .pcard:not(.tall){min-height:40vh}
+  .proc-frame,.proc-badge{display:none}
+}
+</style>
+</head>
+<body>
+<div id="cur"></div>
+<div id="cur2"></div>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="ld-bg"></div>
+  <div class="ld-veil"></div>
+  <div class="ld-content">
+    <div class="ld-word"><span style="animation-delay:.1s">STONEVIA</span></div>
+    <div class="ld-word"><span style="animation-delay:.28s">CONSTRUCTION</span></div>
+    <div class="ld-tagline">Building Trust · Shaping Skylines · Est. 2010</div>
+    <div class="ld-bar"><div class="ld-fill" id="ldfill"></div></div>
+    <div class="ld-pct" id="ldpct">0%</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav" class="on-dark">
+  <a class="nav-logo" href="#">
+    <div class="nav-mark">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M15 4H9Q5 4 5 8Q5 12 9.5 12.5L13 13Q17.5 13.5 17.5 18Q17.5 22 13 22H7" stroke="#B8962E" stroke-width="2.5" stroke-linecap="square"/>
+        <line x1="5" y1="4" x2="15" y2="4" stroke="#B8962E" stroke-width="2.5" stroke-linecap="square"/>
+        <line x1="7" y1="22" x2="17.5" y2="22" stroke="#B8962E" stroke-width="2.5" stroke-linecap="square"/>
+      </svg>
+    </div>
+    STONEVIA
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#testi">Clients</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Start a Project</button>
+</nav>
+
+<!-- HERO — CINEMATIC SLIDESHOW -->
+<section id="hero">
+  <div class="hero-slides" id="heroSlides">
+
+    <div class="hslide active" id="s0">
+      <div class="hslide-bg" style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=2400&q=95&fm=jpg&fit=crop')"></div>
+      <div class="hero-veil"></div>
+      <div class="hero-content">
+        <div class="slide-counter">
+          <span class="current">01</span>
+          <div class="slide-counter-line"><div class="slide-counter-fill" id="sfill0"></div></div>
+          <span>04</span>
+        </div>
+        <p class="hero-eyebrow">Commercial Excellence — Erbil, Kurdistan</p>
+        <h1 class="hero-h1">
+          <div class="line"><span>WE BUILD</span></div>
+          <div class="line"><span>WHAT OTHERS</span></div>
+          <div class="line"><span>DREAM.</span></div>
+        </h1>
+        <p class="hero-sub">Premium construction and engineering solutions delivering landmark buildings across the Kurdistan Region and beyond.</p>
+        <div class="hero-actions">
+          <button class="btn-white" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+            <span>View Projects</span>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <button class="btn-stroke" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="hslide" id="s1">
+      <div class="hslide-bg" style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=2400&q=95&fm=jpg&fit=crop')"></div>
+      <div class="hero-veil"></div>
+      <div class="hero-content">
+        <div class="slide-counter">
+          <span class="current">02</span>
+          <div class="slide-counter-line"><div class="slide-counter-fill" id="sfill1"></div></div>
+          <span>04</span>
+        </div>
+        <p class="hero-eyebrow">Engineering Precision — 15+ Years Experience</p>
+        <h1 class="hero-h1">
+          <div class="line"><span>PRECISION</span></div>
+          <div class="line"><span>IN EVERY</span></div>
+          <div class="line"><span>DETAIL.</span></div>
+        </h1>
+        <p class="hero-sub">From foundation to facade, every element is engineered to international standards with zero compromise on quality.</p>
+        <div class="hero-actions">
+          <button class="btn-white" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
+            <span>Our Services</span>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <button class="btn-stroke" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">Our Story</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="hslide" id="s2">
+      <div class="hslide-bg" style="background-image:url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=2400&q=95&fm=jpg&fit=crop')"></div>
+      <div class="hero-veil"></div>
+      <div class="hero-content">
+        <div class="slide-counter">
+          <span class="current">03</span>
+          <div class="slide-counter-line"><div class="slide-counter-fill" id="sfill2"></div></div>
+          <span>04</span>
+        </div>
+        <p class="hero-eyebrow">Infrastructure Development — Landmark Projects</p>
+        <h1 class="hero-h1">
+          <div class="line"><span>SHAPING</span></div>
+          <div class="line"><span>THE CITIES</span></div>
+          <div class="line"><span>OF TOMORROW.</span></div>
+        </h1>
+        <p class="hero-sub">Roads, bridges, and civic infrastructure that connect communities and define the landscape of a nation in progress.</p>
+        <div class="hero-actions">
+          <button class="btn-white" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+            <span>See Portfolio</span>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <button class="btn-stroke" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact Us</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="hslide" id="s3">
+      <div class="hslide-bg" style="background-image:url('https://images.unsplash.com/photo-1590664863685-a99ef05e9f61?w=2400&q=95&fm=jpg&fit=crop')"></div>
+      <div class="hero-veil"></div>
+      <div class="hero-content">
+        <div class="slide-counter">
+          <span class="current">04</span>
+          <div class="slide-counter-line"><div class="slide-counter-fill" id="sfill3"></div></div>
+          <span>04</span>
+        </div>
+        <p class="hero-eyebrow">Residential Towers — Luxury Living Redefined</p>
+        <h1 class="hero-h1">
+          <div class="line"><span>BUILDING</span></div>
+          <div class="line"><span>TRUST,</span></div>
+          <div class="line"><span>FLOOR BY FLOOR.</span></div>
+        </h1>
+        <p class="hero-sub">Luxury residential complexes where architecture and lifestyle converge — every apartment a statement of quality and comfort.</p>
+        <div class="hero-actions">
+          <button class="btn-white" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+            <span>Explore Work</span>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <button class="btn-stroke" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Start a Project</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Side thumbnails -->
+  <div class="hero-nav" id="heroNav">
+    <div class="hnav-item active" data-slide="0">
+      <div class="hnav-dot"></div>
+      <div class="hnav-thumb"><img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=200&q=80" alt=""></div>
+      <span class="hnav-label">Commercial</span>
+    </div>
+    <div class="hnav-item" data-slide="1">
+      <div class="hnav-dot"></div>
+      <div class="hnav-thumb"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=200&q=80" alt=""></div>
+      <span class="hnav-label">Engineering</span>
+    </div>
+    <div class="hnav-item" data-slide="2">
+      <div class="hnav-dot"></div>
+      <div class="hnav-thumb"><img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=200&q=80" alt=""></div>
+      <span class="hnav-label">Infrastructure</span>
+    </div>
+    <div class="hnav-item" data-slide="3">
+      <div class="hnav-dot"></div>
+      <div class="hnav-thumb"><img src="https://images.unsplash.com/photo-1590664863685-a99ef05e9f61?w=200&q=80" alt=""></div>
+      <span class="hnav-label">Residential</span>
+    </div>
+  </div>
+
+  <div class="hero-bottom"></div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="ticker-dot"></span>Commercial Construction</span>
+    <span class="ticker-item ticker-gold"><span class="ticker-dot"></span>STONEVIA — EST. 2010</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Luxury Residential</span>
+    <span class="ticker-item ticker-gold"><span class="ticker-dot"></span>Erbil · Baghdad · Dubai</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Infrastructure Development</span>
+    <span class="ticker-item ticker-gold"><span class="ticker-dot"></span>200+ Projects Delivered</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Structural Engineering</span>
+    <span class="ticker-item ticker-gold"><span class="ticker-dot"></span>ISO 9001 : 2015 Certified</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Interior Fit-Out</span>
+    <span class="ticker-item ticker-gold"><span class="ticker-dot"></span>Building Trust. Shaping Skylines.</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Commercial Construction</span>
+    <span class="ticker-item ticker-gold"><span class="ticker-dot"></span>STONEVIA — EST. 2010</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Luxury Residential</span>
+    <span class="ticker-item ticker-gold"><span class="ticker-dot"></span>Erbil · Baghdad · Dubai</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Infrastructure Development</span>
+    <span class="ticker-item ticker-gold"><span class="ticker-dot"></span>200+ Projects Delivered</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Structural Engineering</span>
+    <span class="ticker-item ticker-gold"><span class="ticker-dot"></span>ISO 9001 : 2015 Certified</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Interior Fit-Out</span>
+    <span class="ticker-item ticker-gold"><span class="ticker-dot"></span>Building Trust. Shaping Skylines.</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-img-col">
+      <div class="about-img" id="aboutImg"></div>
+      <div class="about-img-frame">
+        <h4>Zanko Heights — Erbil</h4>
+        <p>Completed 2022 · 520 Units · 3 Towers</p>
+      </div>
+    </div>
+    <div class="about-text-col">
+      <p class="eyebrow rv">Our Story</p>
+      <h2 class="sh rv" data-d="1" style="margin-bottom:28px">Built on<br>Precision.<br>Driven by<br>Vision.</h2>
+      <p class="about-body rv" data-d="2">Founded in <strong>Erbil in 2010</strong>, STONEVIA has grown from a regional contractor into one of Kurdistan's most respected construction companies — with a portfolio spanning <strong>commercial towers, residential complexes, bridges, and hospitals</strong>.</p>
+      <p class="about-body rv" data-d="3">We operate where <strong>engineering meets artistry</strong>. Every project is a permanent statement about what's possible when quality, precision, and ambition meet no compromise.</p>
+      <p class="about-sig rv" data-d="4">— Building Trust. Shaping Skylines.</p>
+      <div class="about-stats rv" data-d="4">
+        <div class="astat"><div class="astat-n"><span class="cnt" data-t="200">0</span><sup>+</sup></div><div class="astat-l">Projects Done</div></div>
+        <div class="astat"><div class="astat-n"><span class="cnt" data-t="15">0</span><sup>+</sup></div><div class="astat-l">Years Active</div></div>
+        <div class="astat"><div class="astat-n"><span class="cnt" data-t="500">0</span><sup>+</sup></div><div class="astat-l">Expert Team</div></div>
+        <div class="astat"><div class="astat-n"><span class="cnt" data-t="98">0</span><sup>%</sup></div><div class="astat-l">On-Time Rate</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE STRIP -->
+<div class="qstrip">
+  <div class="qstrip-bg" id="qbg"></div>
+  <div class="qstrip-overlay">
+    <p class="qtext rv">"Great construction is not the art of building structures — it is the art of building trust, floor by floor, generation by generation."</p>
+    <span class="qattr rv" data-d="1">— Ahmed Al-Rashid, Founder & CEO, STONEVIA Construction</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:72px">
+      <div class="rl">
+        <p class="eyebrow" style="margin-bottom:14px">What We Build</p>
+        <h2 class="sh">Our Core<br>Services</h2>
+      </div>
+      <p class="rr" style="font-size:13px;color:var(--mid);max-width:260px;line-height:1.75;font-weight:300">Six specialisms. One standard. No compromise on quality across every project we deliver.</p>
+    </div>
+  </div>
+  <div class="svc-grid" style="margin:0">
+    <div class="scard s1 rv" data-d="1"><div class="scard-inner">
+      <div class="scard-n">01</div>
+      <div class="scard-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><rect x="2" y="7" width="20" height="15"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div>
+      <h3 class="scard-name">Commercial Buildings</h3>
+      <p class="scard-desc">Office towers, mixed-use complexes, retail centers — engineered for performance and designed for legacy.</p>
+      <div class="scard-link">Learn More <svg width="22" height="10" viewBox="0 0 22 10" fill="none"><path d="M0 5h20M16 1l4 4-4 4" stroke="currentColor" stroke-width="1.3"/></svg></div>
+    </div></div>
+    <div class="scard s2 rv" data-d="2"><div class="scard-inner">
+      <div class="scard-n">02</div>
+      <div class="scard-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <h3 class="scard-name">Residential Towers</h3>
+      <p class="scard-desc">Luxury apartment complexes and high-rises redefining urban living standards across Kurdistan and beyond.</p>
+      <div class="scard-link">Learn More <svg width="22" height="10" viewBox="0 0 22 10" fill="none"><path d="M0 5h20M16 1l4 4-4 4" stroke="currentColor" stroke-width="1.3"/></svg></div>
+    </div></div>
+    <div class="scard s3 rv" data-d="3"><div class="scard-inner">
+      <div class="scard-n">03</div>
+      <div class="scard-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><path d="M2 12h20M12 2L2 12M22 12l-10-10M5 12v8M19 12v8M2 20h20"/></svg></div>
+      <h3 class="scard-name">Infrastructure</h3>
+      <p class="scard-desc">Roads, bridges, and public utilities delivering lasting value to communities and cities across the region.</p>
+      <div class="scard-link">Learn More <svg width="22" height="10" viewBox="0 0 22 10" fill="none"><path d="M0 5h20M16 1l4 4-4 4" stroke="currentColor" stroke-width="1.3"/></svg></div>
+    </div></div>
+    <div class="scard s4 rv" data-d="1"><div class="scard-inner">
+      <div class="scard-n">04</div>
+      <div class="scard-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93A10 10 0 1119.07 19"/></svg></div>
+      <h3 class="scard-name">Project Management</h3>
+      <p class="scard-desc">End-to-end oversight from planning through to final handover. Real-time reporting and zero-tolerance scheduling.</p>
+      <div class="scard-link">Learn More <svg width="22" height="10" viewBox="0 0 22 10" fill="none"><path d="M0 5h20M16 1l4 4-4 4" stroke="currentColor" stroke-width="1.3"/></svg></div>
+    </div></div>
+    <div class="scard s5 rv" data-d="2"><div class="scard-inner">
+      <div class="scard-n">05</div>
+      <div class="scard-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+      <h3 class="scard-name">Interior Fit-Out</h3>
+      <p class="scard-desc">Premium finishing, MEP systems, and bespoke interior solutions turning spaces into extraordinary experiences.</p>
+      <div class="scard-link">Learn More <svg width="22" height="10" viewBox="0 0 22 10" fill="none"><path d="M0 5h20M16 1l4 4-4 4" stroke="currentColor" stroke-width="1.3"/></svg></div>
+    </div></div>
+    <div class="scard s6 rv" data-d="3"><div class="scard-inner">
+      <div class="scard-n">06</div>
+      <div class="scard-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+      <h3 class="scard-name">Structural Engineering</h3>
+      <p class="scard-desc">Rigorous structural analysis, seismic design, and foundation engineering underpinning every STONEVIA build.</p>
+      <div class="scard-link">Learn More <svg width="22" height="10" viewBox="0 0 22 10" fill="none"><path d="M0 5h20M16 1l4 4-4 4" stroke="currentColor" stroke-width="1.3"/></svg></div>
+    </div></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="proj-header">
+    <div class="rl">
+      <p class="eyebrow" style="margin-bottom:14px">Portfolio</p>
+      <h2 class="proj-h">Featured<br>Projects</h2>
+    </div>
+    <button class="proj-cta rr" onclick="alert('Full portfolio coming soon!')">View All Projects</button>
+  </div>
+  <div class="proj-grid" style="padding:0">
+    <div class="pcard tall">
+      <div class="pcard-line"></div><div class="pcard-corner"></div>
+      <div class="pcard-bg" style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1400&q=95&fm=jpg&fit=crop')"></div>
+      <div class="pcard-grad"></div>
+      <div class="pcard-body">
+        <div class="pcard-cat">Commercial Tower</div>
+        <h3 class="pcard-title">Erbil Business Gate</h3>
+        <p class="pcard-meta">42 Floors · 180,000 m² · Completed 2023</p>
+        <div class="ptags"><span class="ptag">Mixed-Use</span><span class="ptag">LEED Gold</span><span class="ptag">Erbil</span></div>
+      </div>
+    </div>
+    <div class="pcard">
+      <div class="pcard-line"></div><div class="pcard-corner"></div>
+      <div class="pcard-bg" style="background-image:url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=95&fm=jpg&fit=crop')"></div>
+      <div class="pcard-grad"></div>
+      <div class="pcard-body">
+        <div class="pcard-cat">Residential Complex</div>
+        <h3 class="pcard-title">Zanko Heights</h3>
+        <p class="pcard-meta">520 Units · 3 Towers · Completed 2022</p>
+        <div class="ptags"><span class="ptag">Luxury Living</span><span class="ptag">Smart Home</span></div>
+      </div>
+    </div>
+    <div class="pcard">
+      <div class="pcard-line"></div><div class="pcard-corner"></div>
+      <div class="pcard-bg" style="background-image:url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1200&q=95&fm=jpg&fit=crop')"></div>
+      <div class="pcard-grad"></div>
+      <div class="pcard-body">
+        <div class="pcard-cat">Infrastructure</div>
+        <h3 class="pcard-title">Koya River Bridge</h3>
+        <p class="pcard-meta">840m Span · Cable-Stayed · 2021</p>
+        <div class="ptags"><span class="ptag">Engineering</span><span class="ptag">Landmark</span></div>
+      </div>
+    </div>
+    <div class="pcard tall">
+      <div class="pcard-line"></div><div class="pcard-corner"></div>
+      <div class="pcard-bg" style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1400&q=95&fm=jpg&fit=crop')"></div>
+      <div class="pcard-grad"></div>
+      <div class="pcard-body">
+        <div class="pcard-cat">Mixed-Use Development</div>
+        <h3 class="pcard-title">Citadel Plaza</h3>
+        <p class="pcard-meta">120,000 m² · 3 Phases · Completed 2024</p>
+        <div class="ptags"><span class="ptag">Retail</span><span class="ptag">Hospitality</span><span class="ptag">Office</span></div>
+      </div>
+    </div>
+    <div class="pcard">
+      <div class="pcard-line"></div><div class="pcard-corner"></div>
+      <div class="pcard-bg" style="background-image:url('https://images.unsplash.com/photo-1574359411659-15573a27fd0c?w=1200&q=95&fm=jpg&fit=crop')"></div>
+      <div class="pcard-grad"></div>
+      <div class="pcard-body">
+        <div class="pcard-cat">Healthcare</div>
+        <h3 class="pcard-title">Kurdistan Medical Center</h3>
+        <p class="pcard-meta">800 Beds · 75,000 m² · 2023</p>
+        <div class="ptags"><span class="ptag">Healthcare</span><span class="ptag">ISO</span></div>
+      </div>
+    </div>
+    <div class="pcard">
+      <div class="pcard-line"></div><div class="pcard-corner"></div>
+      <div class="pcard-bg" style="background-image:url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1200&q=95&fm=jpg&fit=crop')"></div>
+      <div class="pcard-grad"></div>
+      <div class="pcard-body">
+        <div class="pcard-cat">Industrial</div>
+        <h3 class="pcard-title">Sulaymaniyah Tech Hub</h3>
+        <p class="pcard-meta">40,000 m² · Campus · 2024</p>
+        <div class="ptags"><span class="ptag">Industrial</span><span class="ptag">Green Build</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTER STRIP -->
+<div class="cstrip">
+  <div class="csi rv">
+    <div class="csi-ico"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+    <div class="csi-n"><span class="cnt" data-t="200">0</span><span class="csi-u">+</span></div>
+    <div class="csi-l">Projects Completed</div>
+  </div>
+  <div class="csi rv" data-d="1">
+    <div class="csi-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+    <div class="csi-n"><span class="cnt" data-t="15">0</span><span class="csi-u">+</span></div>
+    <div class="csi-l">Years of Excellence</div>
+  </div>
+  <div class="csi rv" data-d="2">
+    <div class="csi-ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+    <div class="csi-n"><span class="cnt" data-t="500">0</span><span class="csi-u">+</span></div>
+    <div class="csi-l">Expert Team Members</div>
+  </div>
+  <div class="csi rv" data-d="3">
+    <div class="csi-ico"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+    <div class="csi-n"><span class="cnt" data-t="98">0</span><span class="csi-u">%</span></div>
+    <div class="csi-l">Client Satisfaction</div>
+  </div>
+</div>
+
+<!-- CRAFT PANELS -->
+<div class="craft">
+  <div class="cpanel">
+    <div class="cpanel-line"></div>
+    <div class="cpanel-bg" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1000&q=95&fm=jpg&fit=crop')"></div>
+    <div class="cpanel-overlay"></div>
+    <div class="cpanel-body">
+      <span class="cp-ico">🏗️</span>
+      <div class="cp-name">Structural Steel</div>
+      <div class="cp-sub">Grade A Premium</div>
+      <p class="cp-desc">Every steel element certified to international standards, inspected on-site and engineered for seismic resilience.</p>
+    </div>
+  </div>
+  <div class="cpanel">
+    <div class="cpanel-line"></div>
+    <div class="cpanel-bg" style="background-image:url('https://images.unsplash.com/photo-1590664863685-a99ef05e9f61?w=1000&q=95&fm=jpg&fit=crop')"></div>
+    <div class="cpanel-overlay"></div>
+    <div class="cpanel-body">
+      <span class="cp-ico">🧱</span>
+      <div class="cp-name">Reinforced Concrete</div>
+      <div class="cp-sub">C40 High Performance</div>
+      <p class="cp-desc">Custom mix designs tested for climate and load. Durability measured in decades, not years.</p>
+    </div>
+  </div>
+  <div class="cpanel">
+    <div class="cpanel-line"></div>
+    <div class="cpanel-bg" style="background-image:url('https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?w=1000&q=95&fm=jpg&fit=crop')"></div>
+    <div class="cpanel-overlay"></div>
+    <div class="cpanel-body">
+      <span class="cp-ico">🪟</span>
+      <div class="cp-name">Curtain Wall Glass</div>
+      <div class="cp-sub">Low-E Thermal Coating</div>
+      <p class="cp-desc">Floor-to-ceiling glazing engineered for thermal performance, wind load, and architectural elegance.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="proc-grid">
+      <div>
+        <p class="eyebrow rv">How We Work</p>
+        <h2 class="sh rv" data-d="1">Our Build<br>Process</h2>
+        <div class="proc-steps">
+          <div class="pstep rv" data-d="1"><div class="pstep-n">01</div><div><div class="pstep-name">Consultation & Planning</div><p class="pstep-desc">Deep site analysis, vision mapping, budget structuring, and timeline development before any ground breaks.</p></div></div>
+          <div class="pstep rv" data-d="2"><div class="pstep-n">02</div><div><div class="pstep-name">Design & Engineering</div><p class="pstep-desc">Detailed structural, MEP, and architectural drawings reviewed for every load case and building regulation.</p></div></div>
+          <div class="pstep rv" data-d="3"><div class="pstep-n">03</div><div><div class="pstep-name">Construction Execution</div><p class="pstep-desc">Elite crews execute the build with real-time quality control, daily reporting, and zero-tolerance site safety.</p></div></div>
+          <div class="pstep rv" data-d="4"><div class="pstep-n">04</div><div><div class="pstep-name">Handover & Aftercare</div><p class="pstep-desc">Final inspections, commissioning, snag resolution, and post-handover support for lasting asset performance.</p></div></div>
+        </div>
+      </div>
+      <div class="proc-img-wrap rr">
+        <div class="proc-img"></div>
+        <div class="proc-frame"></div>
+        <div class="proc-badge">
+          <div class="bn">ISO</div>
+          <div class="bs">9001 : 2015<br>Certified</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testi">
+  <div class="wrap">
+    <p class="eyebrow rv">Client Voices</p>
+    <h2 class="sh rv" data-d="1">What Our<br>Clients Say</h2>
+    <div class="tgrid">
+      <div class="tcard rv" data-d="1">
+        <div class="tcard-img" style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=700&q=90&fm=jpg')"></div>
+        <div class="tcard-body">
+          <div class="tstars">★★★★★</div>
+          <p class="tquote">"STONEVIA delivered our 42-floor tower two weeks ahead of schedule. Their quality control and on-site communication were unlike anything we'd experienced before."</p>
+          <div class="tauthor"><div class="tav">KA</div><div><div class="tname">Khalid Al-Amin</div><div class="trole">CEO, Erbil Real Estate Group</div></div></div>
+        </div>
+      </div>
+      <div class="tcard rv" data-d="2">
+        <div class="tcard-img" style="background-image:url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=700&q=90&fm=jpg')"></div>
+        <div class="tcard-body">
+          <div class="tstars">★★★★★</div>
+          <p class="tquote">"The bridge project required extraordinary engineering precision. STONEVIA exceeded every benchmark we set. A world-class team delivering world-class results."</p>
+          <div class="tauthor"><div class="tav">SR</div><div><div class="tname">Saman Rashid</div><div class="trole">Director, Kurdistan Infrastructure Fund</div></div></div>
+        </div>
+      </div>
+      <div class="tcard rv" data-d="3">
+        <div class="tcard-img" style="background-image:url('https://images.unsplash.com/photo-1574359411659-15573a27fd0c?w=700&q=90&fm=jpg')"></div>
+        <div class="tcard-body">
+          <div class="tstars">★★★★★</div>
+          <p class="tquote">"From first consultation to handover of our medical center, STONEVIA demonstrated professionalism that has made our facility a regional landmark in healthcare."</p>
+          <div class="tauthor"><div class="tav">DM</div><div><div class="tname">Dr. Dilan Mohammed</div><div class="trole">Chairman, Kurdistan Medical Group</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-left">
+    <div class="contact-bg" id="contactBg"></div>
+    <div class="contact-left-overlay"></div>
+    <div class="contact-left-content">
+      <h2>Let's Build<br>Something<br>Great.</h2>
+      <p>Whether it's a tower, a bridge, or a hospital — our team is ready to bring your project to life with precision and purpose.</p>
+      <div class="cinfo">
+        <div class="ci"><div class="ci-ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="ci-k">Office</div><div class="ci-v">Erbil Business District, Kurdistan</div></div></div>
+        <div class="ci"><div class="ci-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 9.81 19.79 19.79 0 011 1.18 2 2 0 012.96 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div><div><div class="ci-k">Phone</div><div class="ci-v">+964 750 000 0000</div></div></div>
+        <div class="ci"><div class="ci-ico"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="ci-k">Email</div><div class="ci-v">info@stonevia.com</div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-right">
+    <p class="eyebrow rv" style="margin-bottom:14px">Get In Touch</p>
+    <h2 class="sh rv" data-d="1" style="margin-bottom:36px">Start Your<br>Project</h2>
+    <div class="cform rv" data-d="2">
+      <div class="crow">
+        <div class="cfield"><label>Full Name</label><input type="text" placeholder="Ahmed Al-Hassan"></div>
+        <div class="cfield"><label>Company</label><input type="text" placeholder="Your Company Name"></div>
+      </div>
+      <div class="crow">
+        <div class="cfield"><label>Phone</label><input type="tel" placeholder="+964 750 000 0000"></div>
+        <div class="cfield"><label>Email</label><input type="email" placeholder="you@company.com"></div>
+      </div>
+      <div class="cfield">
+        <label>Project Type</label>
+        <select><option value="">Select Project Type</option><option>Commercial Building</option><option>Residential Tower</option><option>Infrastructure / Bridge</option><option>Healthcare Facility</option><option>Interior Fit-Out</option><option>Structural Engineering</option></select>
+      </div>
+      <div class="cfield">
+        <label>Budget Range (USD)</label>
+        <select><option value="">Select Budget Range</option><option>Under $500K</option><option>$500K – $2M</option><option>$2M – $10M</option><option>$10M – $50M</option><option>$50M+</option></select>
+      </div>
+      <div class="cfield"><label>Project Details</label><textarea rows="4" placeholder="Describe your project — location, scope, timeline and any specific requirements..."></textarea></div>
+      <button class="csub" id="subBtn"><span>Send Project Inquiry</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ftop">
+    <div class="fbrand">
+      <div class="flogo">
+        <div class="nav-mark" style="width:28px;height:28px"><svg viewBox="0 0 24 24" fill="none" style="width:14px;height:14px"><path d="M15 4H9Q5 4 5 8Q5 12 9.5 12.5L13 13Q17.5 13.5 17.5 18Q17.5 22 13 22H7" stroke="#B8962E" stroke-width="2.5" stroke-linecap="square"/><line x1="5" y1="4" x2="15" y2="4" stroke="#B8962E" stroke-width="2.5" stroke-linecap="square"/><line x1="7" y1="22" x2="17.5" y2="22" stroke="#B8962E" stroke-width="2.5" stroke-linecap="square"/></svg></div>
+        STONEVIA
+      </div>
+      <p>Premium construction and engineering solutions shaping the skylines of Kurdistan and beyond. Est. 2010, Erbil.</p>
+      <div class="fsocs">
+        <div class="fsoc"><svg viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></div>
+        <div class="fsoc"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+        <div class="fsoc"><svg viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+        <div class="fsoc"><svg viewBox="0 0 24 24" fill="none"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58a2.78 2.78 0 001.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg></div>
+      </div>
+    </div>
+    <div class="fcol"><h5>Services</h5><ul><li><a href="#">Commercial Buildings</a></li><li><a href="#">Residential Towers</a></li><li><a href="#">Infrastructure</a></li><li><a href="#">Project Management</a></li><li><a href="#">Interior Fit-Out</a></li><li><a href="#">Structural Engineering</a></li></ul></div>
+    <div class="fcol"><h5>Company</h5><ul><li><a href="#">About STONEVIA</a></li><li><a href="#">Our Projects</a></li><li><a href="#">Build Process</a></li><li><a href="#">Careers</a></li><li><a href="#">News & Press</a></li><li><a href="#">Contact Us</a></li></ul></div>
+    <div class="fcol">
+      <h5>Contact</h5>
+      <ul><li><a href="#">Erbil HQ Office</a></li><li><a href="#">+964 750 000 0000</a></li><li><a href="#">info@stonevia.com</a></li><li><a href="#">www.stonevia.com</a></li></ul>
+      <div style="margin-top:28px;padding:18px;border:1px solid rgba(255,255,255,.07)">
+        <div style="font-size:8.5px;letter-spacing:2.5px;color:var(--gold);margin-bottom:8px">CERTIFICATIONS</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.25);line-height:2">ISO 9001 : 2015<br>ISO 45001 : 2018<br>ISO 14001 : 2015</div>
+      </div>
+    </div>
+  </div>
+  <div class="fbot">
+    <div class="fcopy">© 2026 STONEVIA CONSTRUCTION. ALL RIGHTS RESERVED.</div>
+    <div class="flegal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Sitemap</a></div>
+  </div>
+</footer>
+
+<script>
+/* ─── LOADER ─── */
+const ldfill=document.getElementById('ldfill'),ldpct=document.getElementById('ldpct');
+// Set loader bg image
+document.querySelector('.ld-bg').style.backgroundImage="url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1800&q=95&fm=jpg&fit=crop')";
+document.querySelector('.ld-bg').style.backgroundSize='cover';
+document.querySelector('.ld-bg').style.backgroundPosition='center';
+let lp=0;
+const li=setInterval(()=>{
+  lp+=Math.random()*4+1;
+  if(lp>=100){lp=100;clearInterval(li);
+    setTimeout(()=>{const ld=document.getElementById('loader');ld.style.transition='opacity .9s';ld.style.opacity='0';setTimeout(()=>ld.remove(),900)},350)}
+  ldfill.style.width=lp+'%';ldpct.textContent=Math.round(lp)+'%';
+},48);
+
+/* ─── CURSOR ─── */
+const c1=document.getElementById('cur'),c2=document.getElementById('cur2');
+let mx=0,my=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;c1.style.left=mx+'px';c1.style.top=my+'px'});
+setInterval(()=>{c2.style.left=mx+'px';c2.style.top=my+'px'},55);
+document.querySelectorAll('a,button,.scard,.pcard,.cpanel,.tcard,.hnav-item').forEach(el=>{
+  el.addEventListener('mouseenter',()=>document.body.classList.add('hov'));
+  el.addEventListener('mouseleave',()=>document.body.classList.remove('hov'));
+});
+
+/* ─── NAV ─── */
+const nav=document.getElementById('nav');
+const heroEl=document.getElementById('hero');
+const updateNav=()=>{
+  const heroBottom=heroEl.getBoundingClientRect().bottom;
+  if(heroBottom<=80){nav.classList.remove('on-dark');nav.classList.add('on-white')}
+  else{nav.classList.remove('on-white');nav.classList.add('on-dark')}
+};
+window.addEventListener('scroll',updateNav,{passive:true});
+
+/* ─── SET PARALLAX IMAGES ─── */
+document.getElementById('aboutImg').style.cssText+="background-image:url('https://images.unsplash.com/photo-1590664863685-a99ef05e9f61?w=1600&q=95&fm=jpg&fit=crop');background-size:cover;background-position:center;";
+document.getElementById('qbg').style.cssText+="background-image:url('https://images.unsplash.com/photo-1501761095094-94d36f57edbb?w=2000&q=95&fm=jpg&fit=crop');background-size:cover;background-position:center 40%;";
+document.getElementById('contactBg').style.cssText+="background-image:url('https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?w=1400&q=95&fm=jpg&fit=crop');background-size:cover;background-position:center;";
+
+/* ─── PARALLAX ON SCROLL ─── */
+window.addEventListener('scroll',()=>{
+  const sy=window.scrollY;
+  // About image
+  const abt=document.getElementById('about');
+  if(abt){const r=abt.getBoundingClientRect();document.getElementById('aboutImg').style.transform=`translateY(${-r.top*.18}px)`}
+  // Quote strip
+  const qs=document.querySelector('.qstrip');
+  if(qs){const r=qs.getBoundingClientRect();document.getElementById('qbg').style.transform=`translateY(${-r.top*.22}px)`}
+  // Contact
+  const ct=document.getElementById('contact');
+  if(ct){const r=ct.getBoundingClientRect();document.getElementById('contactBg').style.transform=`translateY(${-r.top*.18}px)`}
+},{passive:true});
+
+/* ─── HERO CINEMATIC SLIDESHOW ─── */
+const slides=document.querySelectorAll('.hslide');
+const navItems=document.querySelectorAll('.hnav-item');
+const fills=[...document.querySelectorAll('.slide-counter-fill')];
+let cur=0,timer=null,fillTimer=null;
+
+function goSlide(n){
+  slides[cur].classList.remove('active');
+  navItems[cur].classList.remove('active');
+  fills[cur].style.transition='none';fills[cur].style.width='0';
+  cur=n;
+  slides[cur].classList.add('active');
+  navItems[cur].classList.add('active');
+  setTimeout(()=>{fills[cur].style.transition='width 6s linear';fills[cur].style.width='100%'},50);
+}
+function nextSlide(){goSlide((cur+1)%slides.length)}
+function startAuto(){timer=setInterval(nextSlide,6500)}
+function resetAuto(){clearInterval(timer);startAuto()}
+
+// Start first fill
+setTimeout(()=>{fills[0].style.transition='width 6s linear';fills[0].style.width='100%'},600);
+startAuto();
+
+navItems.forEach((item,i)=>{
+  item.addEventListener('click',()=>{goSlide(i);resetAuto()});
+});
+
+/* ─── COUNTER ANIMATION ─── */
+function animCount(el,target,dur=1800){
+  const s=performance.now();
+  const go=n=>{
+    const p=Math.min((n-s)/dur,1),e=1-Math.pow(1-p,4);
+    el.textContent=Math.round(e*target);
+    if(p<1)requestAnimationFrame(go);else el.textContent=target;
+  };
+  requestAnimationFrame(go);
+}
+
+/* ─── INTERSECTION OBSERVER ─── */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    e.target.classList.add('on','vis');
+    e.target.querySelectorAll('.cnt').forEach(c=>animCount(c,+c.dataset.t));
+    if(e.target.classList.contains('cnt'))animCount(e.target,+e.target.dataset.t);
+  });
+},{threshold:.14});
+document.querySelectorAll('.rv,.rl,.rr,.cpanel').forEach(el=>obs.observe(el));
+document.querySelectorAll('.cnt').forEach(el=>obs.observe(el));
+
+/* ─── SMOOTH SCROLL ─── */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();const t=document.querySelector(a.getAttribute('href'));
+    if(t)t.scrollIntoView({behavior:'smooth'});
+  });
+});
+
+/* ─── SUBMIT BTN ─── */
+document.getElementById('subBtn').addEventListener('click',function(){
+  this.innerHTML='<span>Inquiry Sent ✓</span>';
+  this.style.background='#2d6a4f';
+  setTimeout(()=>{
+    this.innerHTML='<span>Send Project Inquiry</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';
+    this.style.background='';
+  },3500);
+});
+</script>
+</body>
+</html>

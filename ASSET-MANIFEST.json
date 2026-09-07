@@ -1,0 +1,240 @@
+{
+  "workingMaster": "assets/images/watch-hero.webp",
+  "referenceOverrides": {
+    "brand": "Rolex reference",
+    "date": "28",
+    "time": "as supplied"
+  },
+  "omitted": {
+    "alphaMaster": "Generation rejected: baked checkerboard and microtext drift; original source used",
+    "newLiveAction": "Not generated; supplied footage/still edit delivered",
+    "webm": "Optional, not requested by code",
+    "verified3D": "Not available"
+  },
+  "assets": [
+    {
+      "path": "assets/fonts/LICENSE-display.txt",
+      "format": "txt",
+      "bytes": 52517,
+      "status": "complete",
+      "source": "Copied installed font license notice",
+      "license": "License text"
+    },
+    {
+      "path": "assets/fonts/LICENSE-interface.txt",
+      "format": "txt",
+      "bytes": 3859,
+      "status": "complete",
+      "source": "Copied installed font license notice",
+      "license": "License text"
+    },
+    {
+      "path": "assets/fonts/display.woff",
+      "format": "woff",
+      "bytes": 31928,
+      "status": "complete",
+      "source": "Subset of installed P052 Roman or DejaVu Sans using FontTools",
+      "license": "See adjacent LICENSE-display.txt and LICENSE-interface.txt"
+    },
+    {
+      "path": "assets/fonts/interface.woff",
+      "format": "woff",
+      "bytes": 33628,
+      "status": "complete",
+      "source": "Subset of installed P052 Roman or DejaVu Sans using FontTools",
+      "license": "See adjacent LICENSE-display.txt and LICENSE-interface.txt"
+    },
+    {
+      "path": "assets/images/bracelet-detail.webp",
+      "format": "webp",
+      "bytes": 37004,
+      "status": "complete",
+      "width": 501,
+      "height": 469,
+      "alpha": false,
+      "license": "User-supplied product media; rights not independently verified",
+      "source": "Cropped without upscaling from user-supplied 1536x1024 six-panel sheet"
+    },
+    {
+      "path": "assets/images/case-detail.webp",
+      "format": "webp",
+      "bytes": 41944,
+      "status": "complete",
+      "width": 499,
+      "height": 470,
+      "alpha": false,
+      "license": "User-supplied product media; rights not independently verified",
+      "source": "Cropped without upscaling from user-supplied 1536x1024 six-panel sheet"
+    },
+    {
+      "path": "assets/images/dial-macro.webp",
+      "format": "webp",
+      "bytes": 62058,
+      "status": "complete",
+      "width": 500,
+      "height": 470,
+      "alpha": false,
+      "license": "User-supplied product media; rights not independently verified",
+      "source": "Cropped without upscaling from user-supplied 1536x1024 six-panel sheet"
+    },
+    {
+      "path": "assets/images/film-poster-mobile.webp",
+      "format": "webp",
+      "bytes": 16698,
+      "status": "complete",
+      "width": 540,
+      "height": 960,
+      "alpha": false,
+      "license": "User-supplied product media; rights not independently verified",
+      "source": "Actual frame at 0.7s of associated finished 12-second MP4"
+    },
+    {
+      "path": "assets/images/film-poster.webp",
+      "format": "webp",
+      "bytes": 23900,
+      "status": "complete",
+      "width": 1280,
+      "height": 720,
+      "alpha": false,
+      "license": "User-supplied product media; rights not independently verified",
+      "source": "Actual frame at 0.7s of associated finished 12-second MP4"
+    },
+    {
+      "path": "assets/images/final-hero.webp",
+      "format": "webp",
+      "bytes": 28798,
+      "status": "complete",
+      "width": 499,
+      "height": 469,
+      "alpha": false,
+      "license": "User-supplied product media; rights not independently verified",
+      "source": "Cropped without upscaling from user-supplied 1536x1024 six-panel sheet"
+    },
+    {
+      "path": "assets/images/hero-poster.webp",
+      "format": "webp",
+      "bytes": 28798,
+      "status": "complete",
+      "width": 499,
+      "height": 469,
+      "alpha": false,
+      "license": "User-supplied product media; rights not independently verified",
+      "source": "Cropped without upscaling from user-supplied 1536x1024 six-panel sheet"
+    },
+    {
+      "path": "assets/images/reveal.webp",
+      "format": "webp",
+      "bytes": 31130,
+      "status": "complete",
+      "width": 501,
+      "height": 470,
+      "alpha": false,
+      "license": "User-supplied product media; rights not independently verified",
+      "source": "Cropped without upscaling from user-supplied 1536x1024 six-panel sheet"
+    },
+    {
+      "path": "assets/images/three-quarter.webp",
+      "format": "webp",
+      "bytes": 51838,
+      "status": "complete",
+      "width": 500,
+      "height": 469,
+      "alpha": false,
+      "license": "User-supplied product media; rights not independently verified",
+      "source": "Cropped without upscaling from user-supplied 1536x1024 six-panel sheet"
+    },
+    {
+      "path": "assets/images/watch-hero.webp",
+      "format": "webp",
+      "bytes": 28798,
+      "status": "complete fallback: original photograph with CSS feathering; not transparent alpha",
+      "width": 499,
+      "height": 469,
+      "alpha": false,
+      "license": "User-supplied product media; rights not independently verified",
+      "source": "Cropped without upscaling from user-supplied 1536x1024 six-panel sheet"
+    },
+    {
+      "path": "assets/images/wrist-lifestyle-mobile.webp",
+      "format": "webp",
+      "bytes": 25420,
+      "status": "complete",
+      "width": 540,
+      "height": 960,
+      "alpha": false,
+      "license": "User-supplied product media; rights not independently verified",
+      "source": "Frame extracted at 4.2s from supplied 3840x2160 8-second video; mobile crop separately composed"
+    },
+    {
+      "path": "assets/images/wrist-lifestyle.webp",
+      "format": "webp",
+      "bytes": 67256,
+      "status": "complete",
+      "width": 1280,
+      "height": 720,
+      "alpha": false,
+      "license": "User-supplied product media; rights not independently verified",
+      "source": "Frame extracted at 4.2s from supplied 3840x2160 8-second video; mobile crop separately composed"
+    },
+    {
+      "path": "assets/vector/favicon.svg",
+      "format": "svg",
+      "bytes": 204,
+      "status": "complete",
+      "source": "Original geometric editorial identity designed for this project",
+      "license": "Created for user; underlying watch design rights remain with their owners"
+    },
+    {
+      "path": "assets/vector/logo.svg",
+      "format": "svg",
+      "bytes": 206,
+      "status": "complete",
+      "source": "Original geometric editorial identity designed for this project",
+      "license": "Created for user; underlying watch design rights remain with their owners"
+    },
+    {
+      "path": "assets/vector/watch-outline.svg",
+      "format": "svg",
+      "bytes": 173123,
+      "status": "complete",
+      "source": "Source-aligned tonal contour extraction using matplotlib",
+      "license": "Created for user; underlying watch design rights remain with their owners"
+    },
+    {
+      "path": "assets/video/campaign-desktop.mp4",
+      "format": "mp4",
+      "bytes": 3646993,
+      "status": "complete",
+      "width": 1280,
+      "height": 720,
+      "duration": 12.0,
+      "fps": 24,
+      "codec": "h264",
+      "audio": false,
+      "source": "Local edit of supplied stills and selected supplied wrist footage; not newly generated live action",
+      "license": "Derivative of user-supplied media"
+    },
+    {
+      "path": "assets/video/campaign-mobile.mp4",
+      "format": "mp4",
+      "bytes": 1633956,
+      "status": "complete",
+      "width": 540,
+      "height": 960,
+      "duration": 12.0,
+      "fps": 24,
+      "codec": "h264",
+      "audio": false,
+      "source": "Local edit of supplied stills and selected supplied wrist footage; not newly generated live action",
+      "license": "Derivative of user-supplied media"
+    }
+  ],
+  "metrics": {
+    "production_files": 28,
+    "all_images_fonts_html_bytes_upper_bound": 725740,
+    "video_bytes": 5280949,
+    "html_bytes": 216542,
+    "missing_asset_references": [],
+    "invalid_anchors": []
+  }
+}

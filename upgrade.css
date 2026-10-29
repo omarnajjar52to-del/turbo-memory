@@ -1,0 +1,187 @@
+/* Large exercise cards, focused training and a readable recovery timer. */
+.motivation-banner{display:flex;align-items:center;gap:22px;padding:25px 28px;margin:0 0 28px;border:1px solid #445326;border-radius:14px;background:#1c2414;position:relative;overflow:hidden}
+.motivation-mark{font-family:Georgia,serif;font-size:105px;color:var(--lime);height:65px;line-height:1;opacity:.8;flex-shrink:0}
+.motivation-banner h2{font-size:27px;line-height:1.65;color:var(--text)}
+.motivation-banner p{font-size:13px;color:#b9c8a6;margin-top:4px;line-height:1.9}
+.motivation-banner .overline{color:#cfeb92;font-size:11px;letter-spacing:0}
+.motivation-banner .outline{margin-right:auto;white-space:nowrap;border-color:#60773c;color:#d8efb0}
+.training-layout{grid-template-columns:minmax(0,1fr) 310px;gap:26px;align-items:start}
+.training{padding:0;border:0;background:transparent}
+.training-head{padding:4px 0 15px;margin-bottom:6px}
+.training-head h2{font-size:32px}
+.training-head .muted{font-size:13px;margin-top:5px}
+.session-count{font-size:13px;padding:8px 15px;background:#1b2215}
+.warmup{font-size:12px;line-height:1.9;padding:15px 17px;margin-bottom:22px}
+#exerciseList{display:grid;gap:22px}
+.exercise-row,.exercise-row:first-child{display:grid;grid-template-columns:210px minmax(0,1fr);gap:24px;align-items:stretch;padding:21px;border:1px solid #38412e;border-radius:14px;background:#171b15;box-shadow:0 8px 24px #00000012}
+.exercise-row.exercise-complete{border-color:#8fae34;background:#1c2415}
+.workout-visual{padding:0;display:flex;align-items:center;justify-content:center;background:#fff;border-radius:9px;overflow:hidden;position:relative;min-height:255px;width:100%}
+.workout-visual .row-thumb{width:100%;height:100%;max-height:330px;min-height:240px;object-fit:contain;filter:none;padding:14px 10px 43px;background:#fff;border-radius:0}
+.visual-caption{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;gap:8px;font-size:12px;font-weight:800;min-height:38px;background:#edf2e6;color:#243016;border-top:1px solid #d5ddc9}
+.visual-caption svg{width:16px;height:16px}
+.workout-visual:hover .visual-caption{background:var(--lime);color:#151b0c}
+.exercise-content{display:flex;flex-direction:column;min-width:0;gap:14px}
+.exercise-topline{display:flex;align-items:center;gap:12px}
+.exercise-order{font:600 15px 'Barlow Condensed';letter-spacing:1px;color:#a7b498}
+.exercise-topline .tag{font-size:11px;padding:2px 10px;border:1px solid #465b2c;border-radius:20px;background:#232d19}
+.exercise-completion{font-size:10px;color:#a5b494;margin-right:auto;white-space:nowrap}
+.exercise-info b{font-size:20px;line-height:1.65;font-weight:900}
+.exercise-info .english{font-size:12px;margin-top:2px;text-align:right;color:#a6b29b}
+.workout-metrics{display:grid;grid-template-columns:.8fr 1fr 1.2fr;gap:0;border-top:1px solid #343e2b;border-bottom:1px solid #343e2b;padding:12px 0}
+.workout-metrics>div{display:flex;flex-direction:column;align-items:center;border-left:1px solid #343e2b;min-width:0}
+.workout-metrics>div:last-child{border-left:0}
+.workout-metrics strong{font:600 27px/1.1 'Barlow Condensed',Cairo,sans-serif;color:#f5f7f0}
+.workout-metrics span{font-size:10px;color:#a8b49c;margin-top:6px;text-align:center;line-height:1.6}
+.exercise-content .set-tracker{grid-column:auto;margin:0;display:flex;justify-content:space-between;gap:12px;align-items:flex-end;flex-wrap:wrap}
+.set-group{display:flex;flex-direction:column;gap:7px}
+.tracker-label,.exercise-content .weight-label{font-size:10px;color:#b8c4ab}
+.set-buttons{display:flex;gap:7px}
+.set-check{min-width:36px;height:34px;font:600 15px Cairo;border-color:#4b5a38;background:#252f1c;color:#ccdbb9;border-radius:6px}
+.set-check svg{width:17px;height:17px}
+.exercise-content .weight-label{display:flex;flex-direction:column;align-items:flex-start;gap:7px;margin:0}
+.weight-input{width:88px;height:34px;padding:3px 6px;font-size:15px;color:#f1f5ea;background:#0e140b;border-color:#4b5a38}
+.exercise-tip{display:flex;align-items:flex-start;gap:7px;font-size:10px;line-height:1.9;color:#a7b398;margin-top:auto}
+.exercise-tip svg{width:14px;height:14px;color:#a7c45f;margin-top:4px}
+.workout-actions{padding:3px 0 0;margin-top:24px}
+.workout-actions button{font-size:13px;padding:12px 18px}
+.training-layout>aside{position:sticky;top:104px}
+.timer-panel{padding:25px 20px;border-color:#3e4a2d;background:#151b11}
+.timer-panel h3{font-size:21px;font-weight:900}
+.timer-panel>.muted{font-size:12px}
+.timer-ring{width:230px;height:230px;margin:25px auto 18px}
+.timer-ring:before{inset:11px;background:#151b11}
+.timer-ring strong{font-size:69px;letter-spacing:1px}
+.timer-status{font-size:12px;min-height:28px;margin-bottom:13px}
+.timer-panel .full{font-size:14px;padding:12px 10px;min-height:48px}
+.timer-presets{gap:7px;margin-top:15px}
+.timer-presets button{font:600 16px 'Barlow Condensed';padding:10px 4px;min-height:40px}
+.timer-tools{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:15px}
+.timer-tools .compact{font-size:11px;padding:7px 12px;color:#d5e5c0;border-color:#53693b;min-height:36px}
+.timer-tools .text-btn{font-size:11px;margin:0;padding:8px}
+.timer-hint{font-size:10px;line-height:1.9;color:#929f85;margin-top:17px;padding-top:14px;border-top:1px solid #344129}
+.coach-note{padding:26px 9px}
+.coach-note h3{font-size:22px;margin:10px 0}
+.coach-note p{font-size:12px;line-height:2}
+.library-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:25px}
+.exercise-card{border-radius:13px;border-color:#3a4430}
+.media-btn{aspect-ratio:4/3}
+.media-btn img{padding:13px}
+.card-copy{padding:22px}
+.card-copy>b{font-size:18px;font-weight:900;line-height:1.65;display:block}
+.card-copy .english{font-size:12px;margin-top:5px;text-align:right}
+.card-foot{margin-top:18px;padding-top:15px;gap:12px}
+.card-foot .tag{font-size:12px}
+.card-foot button{font-size:12px;gap:6px;min-height:30px}
+.motion-badge{font-size:10px;padding:4px 10px}
+.media-btn .play{width:38px;height:38px}
+.library .section-line h2{font-size:31px}
+.library .search{min-width:260px;padding:11px 15px}
+.library .search input{font-size:13px}
+.filters{gap:9px;padding-bottom:23px}
+.filter{font-size:12px;padding:8px 17px}
+.modal-footer{justify-content:flex-start}
+.modal-footer .primary{min-width:190px}
+@media(max-width:1150px){
+ .training-layout{grid-template-columns:minmax(0,1fr) 280px;gap:20px}
+ .exercise-row,.exercise-row:first-child{grid-template-columns:160px minmax(0,1fr);gap:18px;padding:18px}
+ .workout-visual{min-height:270px}
+ .workout-visual .row-thumb{padding:10px 4px 43px}
+ .exercise-info b{font-size:18px}
+ .timer-ring{width:210px;height:210px}
+ .timer-ring strong{font-size:63px}
+ .motivation-banner h2{font-size:23px}
+ .motivation-banner p{font-size:12px}
+ .library-grid{gap:18px}
+ .card-copy{padding:18px}
+ .card-copy>b{font-size:16px}
+}
+@media(max-width:900px){
+ .training-layout{grid-template-columns:minmax(0,1fr) 250px;gap:18px}
+ .exercise-row,.exercise-row:first-child{grid-template-columns:1fr;padding:18px;gap:18px}
+ .workout-visual{min-height:0;height:220px}
+ .workout-visual .row-thumb{min-height:0;max-height:none;height:100%;padding:10px 12px 42px}
+ .timer-ring{width:195px;height:195px}
+ .timer-ring strong{font-size:58px}
+ .timer-panel{padding:21px 16px}
+ .timer-panel h3{font-size:19px}
+ .library-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .motivation-banner{gap:16px;padding:20px}
+ .motivation-mark{display:none}
+ .motivation-banner h2{font-size:22px}
+}
+@media(max-width:760px){
+ .motivation-banner{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:24px;padding:19px}
+ .motivation-banner h2{font-size:22px;line-height:1.7}
+ .motivation-banner p{font-size:12px;line-height:1.9}
+ .motivation-banner .outline{justify-self:start;margin:0;font-size:11px;padding:7px 12px;min-height:35px}
+ .training-layout{display:flex;flex-direction:column;gap:25px}
+ .training-layout>aside{position:static;order:-1;width:100%;display:block}
+ .timer-panel{display:grid;grid-template-columns:minmax(0,1fr) 150px;column-gap:16px;padding:20px;align-items:center;text-align:right}
+ .timer-panel h3{grid-column:1;font-size:19px;align-self:end}
+ .timer-panel>.muted{grid-column:1;font-size:11px}
+ .timer-ring{grid-column:2;grid-row:1/span 4;width:150px;height:150px;margin:0}
+ .timer-ring:before{inset:8px}
+ .timer-ring strong{font-size:46px}
+ .timer-status{grid-column:1;font-size:10px;margin:3px 0 8px;min-height:0;line-height:1.8}
+ .timer-panel .full{grid-column:1;font-size:11px;gap:6px;min-height:39px;padding:8px 7px}
+ .timer-presets{grid-column:1/-1;margin-top:17px;gap:8px}
+ .timer-presets button{font-size:18px;min-height:42px}
+ .timer-tools{grid-column:1/-1;margin-top:13px}
+ .timer-hint{grid-column:1/-1;font-size:10px;margin-top:13px;padding-top:12px}
+ .training-layout .coach-note{display:none}
+ .training{width:100%}
+ .training-head h2{font-size:26px}
+ .training-head .muted{font-size:11px;line-height:1.9}
+ .session-count{font-size:11px;padding:7px 10px}
+ .warmup{font-size:11px;padding:13px;line-height:1.9}
+ #exerciseList{gap:20px}
+ .exercise-row,.exercise-row:first-child{grid-template-columns:1fr;gap:18px;padding:16px;border-radius:13px}
+ .workout-visual{height:245px;min-height:0}
+ .workout-visual .row-thumb{height:100%;width:100%;min-height:0;padding:12px 14px 43px}
+ .visual-caption{font-size:12px;height:38px}
+ .exercise-content{gap:15px}
+ .exercise-info b{font-size:21px;line-height:1.6}
+ .exercise-info .english{font-size:12px;margin-top:4px}
+ .exercise-topline .tag{font-size:11px}
+ .exercise-order{font-size:15px}
+ .exercise-completion{font-size:10px}
+ .workout-metrics{padding:14px 0}
+ .workout-metrics strong{font-size:31px}
+ .workout-metrics span{font-size:10px;line-height:1.7}
+ .set-check{width:40px;min-width:40px;height:38px;font-size:15px}
+ .exercise-content .set-tracker{gap:15px}
+ .tracker-label,.exercise-content .weight-label{font-size:11px}
+ .weight-input{width:90px;height:38px;font-size:16px}
+ .exercise-tip{font-size:11px;line-height:1.9}
+ .workout-actions button{font-size:12px;padding:11px 15px}
+ .library-grid{grid-template-columns:1fr;gap:24px}
+ .library .section-line h2{font-size:25px}
+ .library .search{min-width:0}
+ .media-btn{aspect-ratio:4/3;max-height:340px}
+ .media-btn img{padding:15px}
+ .card-copy{padding:20px}
+ .card-copy>b{font-size:20px}
+ .card-copy .english{font-size:12px}
+ .card-foot .tag,.card-foot button{font-size:12px}
+ .card-foot{padding-top:15px;margin-top:16px;flex-wrap:nowrap}
+ .motion-badge{font-size:10px;padding:4px 8px;bottom:12px;right:12px}
+ .media-btn .play{width:35px;height:35px;bottom:12px;left:12px}
+ .filter{font-size:12px;padding:8px 16px}
+}
+@media(max-width:380px){
+ .timer-panel{grid-template-columns:minmax(0,1fr) 130px;padding:16px;column-gap:12px}
+ .timer-ring{width:130px;height:130px}
+ .timer-ring strong{font-size:41px}
+ .timer-panel h3{font-size:17px}
+ .timer-panel .full{font-size:10px}
+ .exercise-info b{font-size:19px}
+ .workout-visual{height:220px}
+ .set-check{width:35px;min-width:35px}
+ .weight-input{width:80px}
+}
+
+.days{scrollbar-color:#59713b #1d2515}
+.days::-webkit-scrollbar{height:5px}
+.days::-webkit-scrollbar-track{background:#1d2515}
+.days::-webkit-scrollbar-thumb{background:#59713b;border-radius:5px}
+@media(max-width:760px){.plan-controls .compact{white-space:nowrap;flex-shrink:0;padding:8px 10px}.plan-controls #weeklabel{flex:1;text-align:center;font-size:9px;min-width:0}.plan-controls{gap:5px}}

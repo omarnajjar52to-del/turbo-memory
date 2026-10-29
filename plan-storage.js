@@ -4,7 +4,11 @@ export function applyPlanRevision(state, defaultPlan, revision) {
     state.planArchive ||= {};
     state.planArchive[state.planRevision || 'upper-lower-v1'] = structuredClone(state.plan);
   }
-  state.plan = structuredClone(defaultPlan);
+  if (state.planRevision === 'muscle-pairs-v2' && revision === 'arms-focus-v3' && state.plan?.length === 7) {
+    state.plan[5] = structuredClone(defaultPlan[5]);
+  } else {
+    state.plan = structuredClone(defaultPlan);
+  }
   state.planRevision = revision;
   return true;
 }

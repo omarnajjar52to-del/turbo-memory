@@ -1,9 +1,13 @@
 {
   "name": "omar-fit",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
   "description": "Arabic personal workout planner with local animated exercise illustrations",
-  "scripts": {"start": "node start-server.mjs"},
-  "engines": {"node": ">=20"}
+  "scripts": {
+    "start": "node start-server.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
 }

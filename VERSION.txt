@@ -1,0 +1,3 @@
+20261031-github-01
+Source: 55887253b7099c5dbd37b46c89b390bae3a4fa4c
+Static GitHub Pages build; local device storage.

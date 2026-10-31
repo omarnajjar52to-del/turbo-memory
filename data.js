@@ -8,7 +8,7 @@ export const exercises = [
     "source": "Fitness Programer",
     "sets": 3,
     "reps": "8–12",
-    "rest": 180,
+    "rest": 60,
     "tips": [
       "ثبّت قدميك على الأرض، وأمسك البار بعرض مناسب.",
       "أنزل البار بتحكّم ثم ادفعه دون ارتداد عن الصدر.",
@@ -29,7 +29,7 @@ export const exercises = [
     "source": "Fitness Programer",
     "sets": 3,
     "reps": "8–12",
-    "rest": 150,
+    "rest": 60,
     "tips": [
       "ثبّت الفخذين تحت الوسادة واجلس بصدر مرفوع.",
       "اسحب المرفقين إلى الأسفل باتجاه جانبي الجسم.",
@@ -50,7 +50,7 @@ export const exercises = [
     "source": "Fitness Programer",
     "sets": 3,
     "reps": "10–12",
-    "rest": 150,
+    "rest": 60,
     "tips": [
       "اجلس بثبات مع ثني خفيف للركبتين.",
       "اسحب المقبض باتجاه الجذع دون تأرجح الظهر.",
@@ -71,7 +71,7 @@ export const exercises = [
     "source": "Fitness Programer",
     "sets": 2,
     "reps": "8–12",
-    "rest": 180,
+    "rest": 60,
     "tips": [
       "اجلس على بنش ثابت مع دعم الظهر.",
       "ابدأ والدمبل قرب مستوى الكتفين، ثم ادفع للأعلى بتحكّم.",
@@ -92,7 +92,7 @@ export const exercises = [
     "source": "Fitness Programer",
     "sets": 2,
     "reps": "12–15",
-    "rest": 120,
+    "rest": 60,
     "tips": [
       "قف بثبات مع ثني بسيط للمرفقين.",
       "ارفع الذراعين جانباً حتى مستوى مريح قرب الكتفين.",
@@ -113,7 +113,7 @@ export const exercises = [
     "source": "Fitness Programer",
     "sets": 2,
     "reps": "10–12",
-    "rest": 120,
+    "rest": 60,
     "tips": [
       "ثبّت المرفقين قرب الجذع.",
       "ارفع الدمبل بثني المرفق، دون إرجاع الجذع للخلف.",
@@ -134,7 +134,7 @@ export const exercises = [
     "source": "Fitness Programer",
     "sets": 2,
     "reps": "10–15",
-    "rest": 120,
+    "rest": 60,
     "tips": [
       "قف بثبات وثبّت المرفقين بجانب الجسم.",
       "ادفع المقبض لأسفل بمد المرفقين دون تحريك الكتفين.",
@@ -155,7 +155,7 @@ export const exercises = [
     "source": "Fitness Programer",
     "sets": 2,
     "reps": "10–15",
-    "rest": 120,
+    "rest": 60,
     "tips": [
       "قف مستقيماً والدمبل بجانب الجسم.",
       "ارفع الكتفين مباشرة للأعلى مع إبقاء الذراعين ممدودتين.",
@@ -176,7 +176,7 @@ export const exercises = [
     "source": "Fitness Programer",
     "sets": 3,
     "reps": "8–10",
-    "rest": 240,
+    "rest": 60,
     "tips": [
       "اضبط ارتفاع البار وحوامل الأمان قبل البدء.",
       "شد الجذع وانزل إلى عمق مريح مع تتبّع الركبتين لاتجاه القدمين.",
@@ -198,7 +198,7 @@ export const exercises = [
     "source": "Fitness Programer",
     "sets": 3,
     "reps": "8–12",
-    "rest": 180,
+    "rest": 60,
     "tips": [
       "أمسك البار قريباً من الفخذين مع ثني بسيط للركبتين.",
       "ادفع الوركين للخلف مع الحفاظ على ظهر محايد.",
@@ -219,7 +219,7 @@ export const exercises = [
     "source": "Fitness Programer",
     "sets": 2,
     "reps": "12–15",
-    "rest": 120,
+    "rest": 60,
     "tips": [
       "اضبط المقعد بحيث يتوافق محور الجهاز مع الركبة.",
       "مد الساقين ضمن مدى مريح دون اندفاع.",
@@ -240,7 +240,7 @@ export const exercises = [
     "source": "Fitness Programer",
     "sets": 3,
     "reps": "12–15",
-    "rest": 120,
+    "rest": 60,
     "tips": [
       "قف بثبات مع الاستناد إلى دعم ثابت عند الحاجة.",
       "ارفع الكعبين بحركة متحكّم بها دون ارتداد.",
@@ -261,7 +261,7 @@ export const exercises = [
     "source": "Fitness Programer",
     "sets": 3,
     "reps": "20–40 ث",
-    "rest": 120,
+    "rest": 60,
     "tips": [
       "ضع المرفقين أسفل الكتفين، وامدد الساقين للخلف.",
       "حافظ على استقامة الرأس والجذع والحوض مع التنفّس.",
@@ -285,7 +285,7 @@ export const exercises = [
     "referencePage3": true,
     "sets": 2,
     "reps": "10–15",
-    "rest": 120,
+    "rest": 60,
     "tips": [
       "ثبّت وضع الركوع قبل سحب الكابل.",
       "اسحب بتحكّم مع ثبات الجذع، ثم عُد ببطء."
@@ -307,7 +307,7 @@ export const exercises = [
     "referencePage3": true,
     "sets": 2,
     "reps": "10–15",
-    "rest": 120,
+    "rest": 60,
     "tips": [
       "ابدأ بوزن خفيف وقبضة مريحة.",
       "ارفع المرفقين ضمن مدى مريح، وتوقف إذا ظهر ألم في الكتف."
@@ -329,7 +329,7 @@ export const exercises = [
     "referencePage3": true,
     "sets": 2,
     "reps": "10–15",
-    "rest": 120,
+    "rest": 60,
     "tips": [
       "مد الذراعين أمامك مع شدّ خفيف للمطاط.",
       "افتح الذراعين بتحكّم دون رفع الكتفين نحو الأذنين."
@@ -351,7 +351,7 @@ export const exercises = [
     "referencePage3": true,
     "sets": 2,
     "reps": "10–15",
-    "rest": 120,
+    "rest": 60,
     "tips": [
       "انحنِ من الوركين مع ظهر محايد وثبات الجذع.",
       "افتح الذراعين إلى الجانبين دون دفع الوزن بالجسم."
@@ -373,7 +373,7 @@ export const exercises = [
     "referencePage3": true,
     "sets": 2,
     "reps": "10–15",
-    "rest": 120,
+    "rest": 60,
     "tips": [
       "استعمل باراً خفيفاً، وثبّت وضع الانحناء.",
       "تحرّك ببطء ضمن مدى مريح، وراجع الوضعية مع مدربك."
@@ -395,7 +395,7 @@ export const exercises = [
     "referencePage3": true,
     "sets": 2,
     "reps": "10–15",
-    "rest": 120,
+    "rest": 60,
     "tips": [
       "اختر حملاً يمكنك التحكم به طوال الحركة.",
       "حافظ على ثبات الجذع، وتجنّب الاندفاع والشد المفاجئ."
@@ -417,7 +417,7 @@ export const exercises = [
     "referencePage3": true,
     "sets": 2,
     "reps": "10–15",
-    "rest": 120,
+    "rest": 60,
     "tips": [
       "اضبط البار والأمان، وقف بثبات.",
       "ارفع الكتفين للأعلى مباشرة ثم اخفضهما ببطء دون تدوير."
@@ -438,7 +438,7 @@ export const exercises = [
     "referencePage3": true,
     "sets": 2,
     "reps": "10–15",
-    "rest": 120,
+    "rest": 60,
     "tips": [
       "اسند صدرك على البنش وثبّت القدمين.",
       "افتح الذراعين مع ثني خفيف للمرفقين، ثم اخفضهما بتحكّم."
@@ -460,7 +460,7 @@ export const exercises = [
     "referencePage3": true,
     "sets": 2,
     "reps": "10–15",
-    "rest": 120,
+    "rest": 60,
     "tips": [
       "اسند صدرك على بنش ثابت واستعمل دمبل خفيفاً.",
       "ارفع الذراعين بشكل Y ضمن مدى مريح دون تقويس الظهر."
@@ -482,7 +482,7 @@ export const exercises = [
     "referencePage3": true,
     "sets": 2,
     "reps": "10–15",
-    "rest": 120,
+    "rest": 60,
     "tips": [
       "ثبّت الصدر على البنش واترك الذراعين للأسفل.",
       "ارفع الذراعين جانباً بشكل T ثم اخفضهما ببطء."
@@ -503,7 +503,7 @@ export const exercises = [
     "remoteAnimation": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Incline-Barbell-Bench-Press.gif",
     "sets": 3,
     "reps": "8–12",
-    "rest": 180,
+    "rest": 60,
     "tips": [
       "اضبط البنش على ميل مريح وثبّت القدمين.",
       "اخفض البار بتحكّم ثم ادفعه دون ارتداد، مع استخدام الأمان."
@@ -523,7 +523,7 @@ export const exercises = [
     "remoteAnimation": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Pec-Deck-Fly.gif",
     "sets": 2,
     "reps": "10–15",
-    "rest": 120,
+    "rest": 60,
     "tips": [
       "اضبط المقعد بحيث تكون المقابض عند مستوى مريح للصدر.",
       "اجمع الذراعين ببطء ثم افتحهما دون مبالغة في المدى."
@@ -543,7 +543,7 @@ export const exercises = [
     "remoteAnimation": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Kickback.gif",
     "sets": 2,
     "reps": "10–15",
-    "rest": 120,
+    "rest": 60,
     "tips": [
       "ثبّت الجذع والعضد إلى جانب الجسم.",
       "مد المرفق بتحكّم دون تأرجح الدمبل ثم عد ببطء."
@@ -563,7 +563,7 @@ export const exercises = [
     "remoteAnimation": "https://fitnessprogramer.com/wp-content/uploads/2021/04/Cable-Rope-Overhead-Triceps-Extension.gif",
     "sets": 2,
     "reps": "10–15",
-    "rest": 120,
+    "rest": 60,
     "tips": [
       "ثبّت الجذع واختر وزناً خفيفاً يمكنك التحكم به.",
       "مد المرفقين دون تغيير وضع العضدين أو تقويس الظهر."
@@ -583,7 +583,7 @@ export const exercises = [
     "remoteAnimation": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Barbell-Curl.gif",
     "sets": 2,
     "reps": "10–12",
-    "rest": 120,
+    "rest": 60,
     "tips": [
       "قف بثبات وأبقِ المرفقين قرب الجسم.",
       "اثنِ المرفقين دون إرجاع الجذع للخلف، ثم اخفض الوزن ببطء."
@@ -603,7 +603,7 @@ export const exercises = [
     "remoteAnimation": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Concentration-Curl.gif",
     "sets": 2,
     "reps": "10–12",
-    "rest": 120,
+    "rest": 60,
     "tips": [
       "اجلس وثبّت العضد على الجانب الداخلي للفخذ.",
       "ارفع الدمبل بثني المرفق ثم اخفضه بتحكّم، وبدّل الذراع."
@@ -614,15 +614,15 @@ export const exercises = [
   }
 ];
 export const dayNames=['السبت','الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة'];
-export const planRevision='arms-focus-v3';
+export const planRevision='weekly-private-v4';
 export const planLogRevision=day=>day===5?'arms-focus-v3':'muscle-pairs-v2';
 const rows=ids=>ids.map(id=>{const e=exercises.find(x=>x.id===id);return{id,sets:e.sets,reps:e.reps}});
 export const defaultPlan=[
 {title:'صدر + ترايسبس',desc:'صدر مسطح ومائل وتفتيح • دفع ومد الترايسبس',short:'صدر + ترايسبس',items:rows(['bench','incline-bench','pec-deck','triceps','rope-overhead'])},
 {title:'ظهر + بايسبس',desc:'سحب علوي وتجديف • بايسبس دمبل وتركيز',short:'ظهر + بايسبس',items:rows(['lat','row','kneeling-row','curl','concentration'])},
 {title:'أرجل + بطن',desc:'فخذ أمامي وخلفي وسمانة • ثبات البطن',short:'أرجل + بطن',items:rows(['squat','rdl','extension','calf','plank'])},
-{title:'أكتاف + ترابيس',desc:'ضغط ورفرفة للأكتاف • رفع الترابيس',short:'أكتاف + ترابيس',items:rows(['shoulder','lateral','incline-reverse','shrug','smith-shrug'])},
-{title:'صدر + ترايسبس',desc:'حصة الصدر الثانية • ترايسبس بالكابل والدمبل',short:'صدر + ترايسبس',items:rows(['incline-bench','bench','pec-deck','triceps','kickback'])},
+{title:'راحة نشطة',desc:'مشي خفيف وحركة مريحة • مساحة للاستشفاء',short:'استشفاء',items:[]},
+{title:'أكتاف + ترابيس',desc:'ضغط ورفرفة أمامية وجانبية وخلفية • رفع الترابيس',short:'أكتاف + ترابيس',items:rows(['shoulder','lateral','incline-reverse','shrug'])},
 {title:'بايسبس + ترايسبس',desc:'يوم الذراعين المستقل • ٣ حركات باي و٣ حركات تراي',short:'باي + تراي',items:rows(['barbell-curl','triceps','curl','rope-overhead','concentration','kickback'])},
 {title:'راحة واستشفاء',desc:'استعد لأسبوع جديد مع النوم الكافي والحركة الخفيفة حسب رغبتك',short:'راحة',items:[]}
 ];

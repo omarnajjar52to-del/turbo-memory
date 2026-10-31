@@ -1,8 +1,8 @@
-import {setupFeatures} from './workout-features.js?v=20261031-github-01';
-import {RestAlerts} from './rest-alerts.js?v=20261031-github-01';
-import {exercises,dayNames,defaultPlan,planRevision,planLogRevision} from './data.js?v=20261031-github-01';
-import {createInitialState,normalizeState,ensureWeek,latestWeight,mergeBackup} from './workout-model.js?v=20261031-github-01';
-import {PrivateStore} from './cloud-store.js?v=20261031-github-01';
+import {setupFeatures} from './workout-features.js?v=20261031-orange-02';
+import {RestAlerts} from './rest-alerts.js?v=20261031-orange-02';
+import {exercises,dayNames,defaultPlan,planRevision,planLogRevision} from './data.js?v=20261031-orange-02';
+import {createInitialState,normalizeState,ensureWeek,latestWeight,mergeBackup} from './workout-model.js?v=20261031-orange-02';
+import {PrivateStore} from './cloud-store.js?v=20261031-orange-02';
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const paths={arrow:'M18 12H6m5-5-5 5 5 5',left:'m14 6-6 6 6 6',right:'m10 6 6 6-6 6',edit:'m15 5 4 4M4 20l4-1L20 7a2.8 2.8 0 0 0-4-4L4 15z',check:'m5 12 4 4L19 6',plus:'M12 5v14M5 12h14',play:'m8 5 11 7-11 7z',close:'m6 6 12 12M18 6 6 18',search:'M20 20l-5-5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0',bolt:'m13 2-9 12h7l-1 8 10-13h-7z',download:'M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5',dumbbell:'M6 5v14M3 8v8M18 5v14M21 8v8M6 12h12',rest:'M4 17V7m0 7h16v5M4 10h5v4m0-4h8a3 3 0 0 1 3 3v1',trash:'M3 6h18M9 6V3h6v3M6 6l1 15h10l1-15M10 10v7m4-7v7',pause:'M8 5v14m8-14v14'};
 function icon(n){return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${paths[n]||paths.dumbbell}"/></svg>`}

@@ -1,4 +1,4 @@
-import {defaultPlan,exercises} from './data.js?v=20261031-github-01';
+import {defaultPlan,exercises} from './data.js?v=20261031-orange-02';
 export const schemaVersion=4;
 const clone=x=>structuredClone(x);
 export const weekFor=(date=new Date())=>{const parts=date.toLocaleDateString('en-CA',{timeZone:'Asia/Baghdad'}).split('-').map(Number),d=new Date(parts[0],parts[1]-1,parts[2],12);d.setDate(d.getDate()-(d.getDay()+1)%7);return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};

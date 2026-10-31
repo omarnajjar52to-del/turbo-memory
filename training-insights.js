@@ -1,5 +1,5 @@
-import {weekFor} from './workout-model.js?v=20261031-github-01';
-import {defaultPlan} from './data.js?v=20261031-github-01';
+import {weekFor} from './workout-model.js?v=20261031-orange-02';
+import {defaultPlan} from './data.js?v=20261031-orange-02';
 export function dayDate(week,day){const d=new Date(week+'T12:00:00');d.setDate(d.getDate()+Number(day));return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
 export function priorRound(state,week,day,id,index){const p=new Date(week+'T12:00:00');p.setDate(p.getDate()-7);const key=dayDate(p.toISOString().slice(0,10),0);const set=state.logs[`${key}/${day}/${id}`]?.sets?.[index];return set?.done&&set.weight!==''&&set.reps!==''?set:null}
 export function compareRound(current,previous){

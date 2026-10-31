@@ -1,4 +1,4 @@
-import {normalizeState} from './workout-model.js?v=20261031-github-01';
+import {normalizeState} from './workout-model.js?v=20261031-orange-02';
 // GitHub Pages has no authenticated backend. Keep storage local and clearly labelled.
 export class PrivateStore {
  constructor({onStatus,onRemote}){Object.assign(this,{onStatus,onRemote});this.ready=false;this.currentState=null;this.key='omar-fit-github-v4:'+new URL('.',document.baseURI).pathname;try{this.storage=window.localStorage}catch{this.storage=null}}

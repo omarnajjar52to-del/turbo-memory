@@ -31,5 +31,6 @@ export function latestWeight(state,id,beforeWeek){
 }
 export function mergeBackup(current,incoming){
  const next=clone(current),copy=normalizeState(incoming);for(const root of ['weeks','logs','sessions','archives'])for(const [key,value]of Object.entries(copy[root]||{})){if(!next[root][key]||(root==='logs'&&(value.updatedAt||'')>(next[root][key].updatedAt||'')))next[root][key]=clone(value)}
+ for(const [key,value]of Object.entries(copy.settings||{}))if(key.startsWith('note-')&&next.settings[key]===undefined)next.settings[key]=clone(value);
  next.archives['import-'+Date.now()]=copy;return next;
 }

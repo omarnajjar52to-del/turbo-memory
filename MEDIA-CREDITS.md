@@ -37,10 +37,3 @@
 الصورة الرئيسية: مولّدة بالذكاء الاصطناعي للموقع.
 
 الخطوط: Cairo وBarlow Condensed، من Google Fonts. راجع ملفات OFL داخل licenses.
-
-Training edition: ملفات MP4 في assets/video محولة محلياً من رسوم Fitness Programer الموجودة في assets/motion، بدون صوت. المصدر والحقوق لم يتغيرا.
-
-## OMAR GYM identity update
-
-- `public/assets/omar-gym-logo.png`: original AI-generated OMAR GYM brand artwork created for this project.
-- Tajawal (Arabic/Latin, 400/500/700/800/900) and Anton (Latin, 400): self-hosted Google Fonts files, licensed under the SIL Open Font License; license texts in `licenses/TAJAWAL-OFL.txt` and `licenses/ANTON-OFL.txt`.

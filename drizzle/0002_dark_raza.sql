@@ -1,1 +1,0 @@
-ALTER TABLE `clubs` ADD `mode` text DEFAULT 'coach' NOT NULL;

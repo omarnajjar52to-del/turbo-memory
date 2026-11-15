@@ -19,11 +19,9 @@ const ui={
  showroomLaundryDetail:['غسالات تحميل أمامي.','Front-load washing machines.'],
  galleryKitchenArea:['أجهزة المطبخ','Kitchen appliances'],
  galleryKitchenAreaDetail:['أجهزة الطهي وغسالات الصحون.','Cooking appliances and dishwashers.'],
- galleryFloorCare:['ركن المكانس','Vacuum display'],
- galleryFloorCareDetail:['مكانس عمودية وروبوتية.','Stick and robot vacuums.'],
  showroomGallery:['داخل المعرض','Inside the showroom'],
  heroApplianceFridge:['ثلاجة LG','LG refrigerator'],heroApplianceAc:['مكيّف LG','LG air conditioner'],
- heroApplianceWasher:['غسالة LG','LG washing machine'],heroApplianceTv:['شاشة LG OLED','LG OLED television'],
+ heroNavigation:['التنقّل بين صور المنتجات','Browse product images'],heroApplianceTv:['شاشة LG OLED','LG OLED television'],
  heroImageError:['تعذّر تحميل صورة المنتج','Unable to load the product image'],
  back:['رجوع','Back'],
  pauseTv:['إيقاف حركة شاشة التلفزيون','Pause TV display'],playTv:['تشغيل حركة شاشة التلفزيون','Play TV display'],
@@ -39,7 +37,7 @@ const ui={
  featureTitle:['لحظاتك الكبيرة<br>تبدأ من هنا.','YOUR BIG MOMENTS<br>START HERE.'],featureBody:['تجربة مشاهدة ومساحات منزلية تستحق تفاصيل أقرب.','Viewing experiences and living spaces deserve a closer look.'],featureAction:['اكتشف الشاشات','EXPLORE TELEVISIONS'],
  catalog:['الكتالوج','CATALOG'],catalogKicker:['اختر ما يناسبك','FIND YOUR FIT'],catalogTitle:['كل منتج<br>له قصته.','EVERY PRODUCT<br>HAS A STORY.'],catalogBody:['صور واضحة، مواصفات موثّقة للموديلات المضافة، ومقارنة تساعدك على الاختيار.','Clear visuals, documented model specifications, and a useful comparison.'],
  search:['بحث','Search'],searchPlaceholder:['ابحث عن اسم المنتج أو الموديل','Search by name or model'],filter:['الفلاتر','Filters'],sortDefault:['ترتيب افتراضي','Featured'],sortName:['الاسم','Name'],sortSmall:['السعة: الأصغر','Capacity: smaller'],sortLarge:['السعة: الأكبر','Capacity: larger'],clearFilters:['مسح الفلاتر','Clear filters'],emptyTitle:['لا توجد نتائج مطابقة','No matching results'],emptyBody:['جرّب اسمًا آخر أو امسح الفلاتر.','Try another search or clear filters.'],catalogNote:['الموديلات التجريبية موضحة بوضوح. حالة توفر الموديلات الفعلية تحتاج تأكيدًا من المعرض؛ الصور المعزولة تمثيل بصري.','Demo entries are clearly marked. Confirm actual model availability with the showroom; isolated visuals are illustrative.'],
- visit:['الزيارة','VISIT'],showroomKicker:['معرض الأجهزة المنزلية','HOME APPLIANCE SHOWROOM'],showroomBody:['تصفّح شاشات LG والثلاجات والغسالات والمكيّفات. راجع المواصفات، وقارن الموديلات قبل الاستفسار من المعرض عن التوفّر.','Browse LG TVs, refrigerators, washers and air conditioners. Check specifications and compare models before asking the showroom about availability.'],showroomAction:['تصفّح المنتجات','EXPLORE PRODUCTS'],showroomConceptNote:['الواجهة تصوّر بصري، ولقطات الداخل معالجة من صور المعرض.','The exterior is an illustration. Interior views are enhanced from showroom photos.'],exploreShowroom:['شاهد المشهد كاملًا','VIEW THE SCENE'],address:['العنوان','Address'],hours:['ساعات العمل','Hours'],phone:['الهاتف / واتساب','Phone / WhatsApp'],legal:['معرض يبيع منتجات LG، وليس الموقع الرسمي للعلامة التجارية.','A showroom selling LG products. Not the official LG website.'],
+ visit:['واجهة المعرض','Showroom exterior'],showroomKicker:['معرض الأجهزة المنزلية','HOME APPLIANCE SHOWROOM'],showroomBody:['تصفّح شاشات LG والثلاجات والغسالات والمكيّفات. راجع المواصفات، وقارن الموديلات قبل الاستفسار من المعرض عن التوفّر.','Browse LG TVs, refrigerators, washers and air conditioners. Check specifications and compare models before asking the showroom about availability.'],showroomAction:['تصفّح المنتجات','EXPLORE PRODUCTS'],showroomConceptNote:['الواجهة تصوّر بصري، ولقطات الداخل معالجة من صور المعرض.','The exterior is an illustration. Interior views are enhanced from showroom photos.'],exploreShowroom:['شاهد المشهد كاملًا','VIEW THE SCENE'],address:['العنوان','Address'],hours:['ساعات العمل','Hours'],phone:['الهاتف / واتساب','Phone / WhatsApp'],legal:['معرض يبيع منتجات LG، وليس الموقع الرسمي للعلامة التجارية.','A showroom selling LG products. Not the official LG website.'],
  inquiryTitle:['نص الاستفسار','Inquiry message'],inquiryHelp:['لم يُضف رقم واتساب بعد. انسخ النص وأرسله إلى المعرض.','No WhatsApp number has been added yet. Copy this message to contact the showroom.'],copy:['نسخ النص','Copy message'],availability:['حالة التوفر','Availability'],available:['متوفر','Available'],order:['حسب الطلب','On request'],unavailable:['غير متوفر','Unavailable'],unknown:['يحتاج تأكيدًا','To confirm'],favoritesOnly:['المفضلة فقط','Favorites only'],showResults:['عرض النتائج','Show results'],compareNow:['قارن الآن','Compare now'],all:['الكل','All'],results:['منتج','products'],demo:['نموذج تجريبي','DEMO'],discover:['استكشف المنتج','EXPLORE PRODUCT'],details:['التفاصيل','DETAILS'],specifications:['المواصفات','SPECIFICATIONS'],similar:['منتجات مشابهة','SIMILAR PRODUCTS'],inquire:['استفسر عن المنتج','ASK ABOUT THIS PRODUCT'],restock:['استفسر عن موعد التوفر','ASK ABOUT RESTOCK'],favorite:['المفضلة','Favorite'],compare:['المقارنة','Compare'],remove:['إزالة','Remove'],sameCategory:['اختر منتجات من الفئة نفسها للمقارنة.','Compare products in the same category.'],compareLimit:['يمكن مقارنة ثلاثة منتجات كحد أقصى.','Compare up to three products.'],needTwo:['اختر منتجين على الأقل للمقارنة.','Choose at least two products to compare.'],saved:['تم التحديث','Updated'],price:['السعر','Price'],askPrice:['استفسر عن السعر','Ask for price'],source:['مصدر المواصفات','Specifications source'],visual:['عرض بصري توضيحي','Illustrative visual'],zoom:['تكبير الصورة','Zoom image'],
  assistantTitle:['دليل الاختيار الذكي','SMART CHOICE GUIDE'],assistantIntro:['اقتراح يعتمد على المواصفات المدخلة فقط. أخبرنا ما الذي يهمك.','A suggestion based only on entered specifications. What matters to you?'],assistantLarge:['أريد الأكبر','I prefer larger'],assistantSmall:['أريد الأصغر','I prefer smaller'],assistantEnergy:['استهلاك الطاقة','Energy use'],assistantDifference:['ما الفروق؟','What differs?'],assistantPlaceholder:['اسأل عن السعة أو استهلاك الطاقة...','Ask about capacity or energy...'],assistantSend:['اسأل','Ask'],assistantDisclaimer:['هذا دليل آلي يعتمد على بيانات الملصقات، وليس مخزونًا مباشرًا أو خدمة ذكاء اصطناعي متصلة.','This automatic guide uses label data; it is not live inventory or a connected AI service.'],insufficient:['البيانات المسجلة لا تكفي للحسم في هذه النقطة. اسأل المعرض قبل القرار.','The recorded data is insufficient for this choice. Ask the showroom before deciding.']
 };
@@ -161,7 +159,7 @@ function renderCollection() {
         <span class="category-card-arrow">${detailIcon}</span>
       </span>
       <span class="category-card-visual" aria-hidden="true">
-        <img src="assets/${file}" alt="" fetchpriority="low" decoding="async">
+        <img src="assets/${file}" alt="" loading="lazy" decoding="async">
       </span>
     </button>`;
   }).join('');
@@ -198,7 +196,7 @@ function productCard(product) {
   return `<article class="product-card" data-product-category="${esc(category)}" style="--card-hue-offset:${productTint.get(id)}">
     <button type="button" class="card-image" data-detail="${id}" aria-label="${t('discover')}: ${name}">
       <span class="card-label">${demo ? t('demo') : esc(model)}</span>
-      ${image ? `<img src="${esc(image)}" alt="" width="480" height="480" loading="lazy">` : '<span class="image-placeholder">LG</span>'}
+      ${image ? `<img src="${esc(image)}" alt="" width="480" height="480" loading="lazy" decoding="async">` : '<span class="image-placeholder">LG</span>'}
       <span class="image-arrow">${detailIcon}</span>
     </button>
     <button type="button" class="card-fav" data-favorite="${id}" aria-label="${t('favorite')}: ${name}" aria-pressed="${favorite}">${favoriteIcon}</button>
@@ -284,7 +282,7 @@ function restorePage(page) {
   $$('dialog[open]').reverse().forEach(dialog => closeDialog(dialog.id));
   if (!page) {
     const section = document.getElementById(location.hash.slice(1)) || $('#top');
-    section.scrollIntoView({block: 'start', behavior: 'instant'});
+    scrollToSection(section, false);
     return;
   }
 
@@ -328,7 +326,9 @@ function scrollToSection(target, moveFocus = true) {
     heading.tabIndex = -1;
     heading.focus({preventScroll: true});
   }
-  target.scrollIntoView({block: 'start', behavior: smooth ? 'smooth' : 'instant'});
+  const behavior = smooth ? 'smooth' : 'instant';
+  if (target.id === 'top') window.scrollTo({top: 0, left: 0, behavior});
+  else target.scrollIntoView({block: 'start', behavior});
 }
 function navigateToSection(hash, trigger) {
   if (hash !== location.hash) rememberPage(trigger, hash);
@@ -502,38 +502,72 @@ function initHeroSlideshow() {
   const scenes = $$('#hero-stage .hero-slide');
   const toggle = $('#slide-toggle');
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-  const fridge = scenes[0];
+  const fridge = scenes.find(scene => scene.dataset.scene === 'fridge');
   const last = scenes.length - 1;
+  const downloads = new WeakMap();
   let visible = false;
   let playing = !reducedMotion.matches;
   let active = 0;
   let requested = 0;
   let requestId = 0;
   let timer;
+  let departure;
+  let fridgeEffectsRequested = false;
 
-  const canPlay = () => playing && visible && !document.hidden && !document.body.classList.contains('modal-open');
+  const onScreen = () => visible && !document.hidden && !document.body.classList.contains('modal-open');
+  const canPlay = () => playing && onScreen();
+
+  function prepareImage(image) {
+    if (downloads.has(image)) return downloads.get(image);
+    if (image.dataset.src) {
+      image.src = image.dataset.src;
+      delete image.dataset.src;
+    }
+    const decoding = image.decode().catch(error => {
+      downloads.delete(image);
+      throw error;
+    });
+    downloads.set(image, decoding);
+    return decoding;
+  }
+
+  function prepareScene(index) {
+    const scene = scenes[index];
+    const ready = prepareImage(scene.querySelector('.hero-product'));
+    if (scene === fridge && !reducedMotion.matches && !fridgeEffectsRequested) {
+      fridgeEffectsRequested = true;
+      const details = [...scene.querySelectorAll('.hero-fridge-motion img')];
+      Promise.all([ready, ...details.map(prepareImage)])
+        .then(() => scene.setAttribute('data-effect-ready', ''))
+        .catch(() => {}); // Keep the closed fridge available if the effect is incomplete.
+    }
+    return ready;
+  }
 
   function schedule() {
     clearTimeout(timer);
     const running = canPlay();
-    hero.toggleAttribute('data-motion-paused', !running);
+    hero.toggleAttribute('data-motion-paused', !onScreen() || (!playing && active !== last));
     toggle.dataset.aria = playing ? 'pauseSlide' : 'playSlide';
     toggle.setAttribute('aria-label', t(toggle.dataset.aria));
     toggle.querySelector('path').setAttribute('d', playing ? 'M9 5v14m6-14v14' : 'M8 5l11 7-11 7z');
     if (running && requested === active && active < last) {
-      timer = setTimeout(() => show(active + 1, true), active === 0 ? 5900 : 4800);
+      const upcoming = active + 1;
+      prepareScene(active).then(() => prepareScene(upcoming)).catch(() => {});
+      timer = setTimeout(() => show(upcoming, 1, true), 5000);
     }
   }
 
-  async function show(index, automatic = false) {
+  async function show(index, direction = 1, automatic = false) {
     const next = (index + scenes.length) % scenes.length;
     const request = ++requestId;
+    departure?.cancel();
     requested = next;
     schedule();
     if (next === active) return;
 
     try {
-      await scenes[next].querySelector('.hero-product').decode();
+      await prepareScene(next);
     } catch {
       if (request !== requestId) return;
       requested = active;
@@ -545,14 +579,28 @@ function initHeroSlideshow() {
 
     // Only the latest request may replace the scene, after its image is decoded.
     if (request !== requestId) return;
+    const outgoing = scenes[active];
+    const offset = direction * (document.documentElement.dir === 'rtl' ? -1 : 1);
+    if (!reducedMotion.matches && (!automatic || canPlay())) {
+      const exit = outgoing.animate([
+        {opacity: getComputedStyle(outgoing).opacity},
+        {opacity: .58, transform: `translateX(${-9 * offset}px) scale(.99)`},
+      ], {duration: 150, easing: 'ease-in', fill: 'forwards'});
+      departure = exit;
+      try { await exit.finished; } catch { return; }
+      if (request !== requestId) return;
+      exit.cancel();
+      departure = null;
+    }
     if (automatic && !canPlay()) {
       requested = active;
       schedule();
       return;
     }
-    scenes[active].hidden = true;
-    scenes[active].classList.remove('is-active', 'scene-enter');
+    outgoing.hidden = true;
+    outgoing.classList.remove('is-active', 'scene-enter');
     const incoming = scenes[next];
+    incoming.style.setProperty('--hero-entry-x', `${17 * offset}px`);
     incoming.hidden = false;
     incoming.classList.add('is-active', 'scene-enter');
     active = next;
@@ -560,15 +608,8 @@ function initHeroSlideshow() {
     schedule();
   }
 
-  if (!reducedMotion.matches) {
-    const fridgeImages = [...fridge.querySelectorAll('img')];
-    Promise.all(fridgeImages.map(image => image.decode()))
-      .then(() => fridge.setAttribute('data-effect-ready', ''))
-      .catch(() => {}); // The closed fridge image remains available.
-  }
-
   $('#slide-next').addEventListener('click', () => show(requested + 1));
-  $('#slide-prev').addEventListener('click', () => show(requested - 1));
+  $('#slide-prev').addEventListener('click', () => show(requested - 1, -1));
   toggle.addEventListener('click', () => {
     playing = !playing;
     if (playing && active === last) show(0);

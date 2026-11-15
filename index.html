@@ -5,9 +5,10 @@
 <meta name="description" content="مجموعة وسيم السيد — معرض لمنتجات LG. استكشف الأجهزة والمواصفات وقارن الموديلات.">
 <title>مجموعة وسيم السيد — عالم LG لمنزلك</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="icon" type="image/webp" href="assets/lg-brand-logo.webp?v=31"><link rel="preload" as="image" href="assets/hero-fridge-cutout.webp"><link rel="stylesheet" href="style.css?v=40">
-<script src="catalog-data.js?v=25" defer></script><script src="script.js?v=40" defer></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Inter:wght@400..900&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Inter:wght@400..900&display=swap"></noscript>
+<link rel="icon" type="image/webp" href="assets/lg-brand-logo.webp?v=31"><link rel="preload" as="image" imagesrcset="assets/hero-tv-640.webp 640w, assets/hero-tv-1120.webp 1120w, assets/product-tv-cutout.webp 1539w" imagesizes="(max-width: 700px) 91vw, 55vw" fetchpriority="high"><link rel="stylesheet" href="style.css?v=41">
+<script src="catalog-data.js?v=41" defer></script><script src="script.js?v=41" defer></script>
 </head>
 <body><svg class="svg-filters" width="0" height="0" aria-hidden="true" focusable="false"><defs><filter id="gooey-filter"><feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/><feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -9" result="goo"/><feComposite in="SourceGraphic" in2="goo" operator="atop"/></filter></defs></svg>
 <a class="skip" href="#catalog">انتقل إلى المنتجات</a>
@@ -34,40 +35,37 @@
     <div class="hero-typography" aria-hidden="true"><span>LG</span><strong>LIVING</strong></div>
     <div class="hero-stage" id="hero-stage">
       <div class="hero-halo" aria-hidden="true"></div>
-      <div class="hero-slide is-active" data-scene="fridge" role="img" data-aria="heroApplianceFridge" aria-label="ثلاجة LG">
-        <img class="hero-product" src="assets/hero-fridge-cutout.webp" width="1254" height="1254" alt="" fetchpriority="high">
-        <div class="hero-fridge-motion" aria-hidden="true">
-          <div class="fridge-assembly">
-            <img class="fridge-cabinet" src="assets/hero-fridge-interior.webp" width="1254" height="1254" alt="" decoding="async">
-            <div class="fridge-door fridge-door-left"><img src="assets/hero-fridge-cutout.webp" width="1254" height="1254" alt="" decoding="async"></div>
-            <div class="fridge-door fridge-door-right"><img src="assets/hero-fridge-cutout.webp" width="1254" height="1254" alt="" decoding="async"></div>
-          </div>
-        </div>
+      <div class="hero-slide is-active" data-scene="tv" role="img" data-aria="heroApplianceTv" aria-label="شاشة LG OLED">
+        <img class="hero-product" src="assets/hero-tv-1120.webp" srcset="assets/hero-tv-640.webp 640w, assets/hero-tv-1120.webp 1120w, assets/product-tv-cutout.webp 1539w" sizes="(max-width: 700px) 91vw, 55vw" width="1539" height="1022" alt="" fetchpriority="high" decoding="async">
       </div>
       <div class="hero-slide" data-scene="ac" role="img" data-aria="heroApplianceAc" aria-label="مكيّف LG" hidden>
-        <img class="hero-product" src="assets/hero-ac-cutout.webp" width="2048" height="768" alt="" decoding="async">
+        <img class="hero-product" data-src="assets/hero-ac-cutout.webp" width="2048" height="768" alt="" decoding="async">
         <div class="hero-airflow" aria-hidden="true">
           <span class="air-stream"></span><span class="air-stream"></span><span class="air-stream"></span><span class="air-stream"></span><span class="air-stream"></span>
         </div>
       </div>
-      <div class="hero-slide" data-scene="washer" role="img" data-aria="heroApplianceWasher" aria-label="غسالة LG" hidden>
-        <img class="hero-product" src="assets/hero-washer-cutout.webp" width="1539" height="1022" alt="" decoding="async">
-      </div>
-      <div class="hero-slide" data-scene="tv" role="img" data-aria="heroApplianceTv" aria-label="شاشة LG OLED" hidden>
-        <img class="hero-product" src="assets/product-tv-cutout.webp" width="1539" height="1022" alt="" decoding="async">
+      <div class="hero-slide" data-scene="fridge" role="img" data-aria="heroApplianceFridge" aria-label="ثلاجة LG" hidden>
+        <img class="hero-product" data-src="assets/hero-fridge-cutout.webp" width="1254" height="1254" alt="" decoding="async">
+        <div class="hero-fridge-motion" aria-hidden="true">
+          <div class="fridge-assembly">
+            <img class="fridge-cabinet" data-src="assets/hero-fridge-interior.webp" width="1254" height="1254" alt="" decoding="async">
+            <div class="fridge-door fridge-door-left"><img data-src="assets/hero-fridge-cutout.webp" width="1254" height="1254" alt="" decoding="async"></div>
+            <div class="fridge-door fridge-door-right"><img data-src="assets/hero-fridge-cutout.webp" width="1254" height="1254" alt="" decoding="async"></div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="hero-bottom">
       <div class="hero-copy"><span class="red-line"></span><p class="hero-kicker identity-line"><img src="assets/lg-brand-logo.webp" alt="LG" width="252" height="111"><strong data-shop-name>مجموعة وسيم السيد</strong></p><h1 id="hero-title" data-t="heroTitle"><span class="hero-line"><span>تفاصيل أذكى.</span></span> <span class="hero-line"><span>حياة أجمل.</span></span></h1><p data-t="heroDescription">كل جهاز مساحة جديدة للحياة. اكتشف الموديلات، شاهد تفاصيلها، واختر ما يناسب منزلك.</p><a href="#catalog" class="solid-cta" data-action="catalog"><span data-t="exploreProducts">استكشف المنتجات</span><span class="cta-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 18 18 6M8 6h10v10"/></svg></span></a></div>
-      <div class="hero-controls"><div class="hero-controls-row">
-        <button type="button" id="slide-prev" aria-label="المشهد السابق" data-aria="previousSlide">
+      <div class="hero-controls"><div class="hero-controls-row" role="group" aria-label="التنقّل بين صور المنتجات" data-aria="heroNavigation">
+        <button type="button" id="slide-prev" aria-controls="hero-stage" aria-label="المشهد السابق" data-aria="previousSlide">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg>
         </button>
-        <button type="button" id="slide-next" aria-label="المشهد التالي" data-aria="nextSlide">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg>
-        </button>
-        <button type="button" id="slide-toggle" data-aria="pauseSlide" aria-label="إيقاف الحركة">
+        <button type="button" id="slide-toggle" aria-controls="hero-stage" data-aria="pauseSlide" aria-label="إيقاف الحركة">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5v14m6-14v14"/></svg>
+        </button>
+        <button type="button" id="slide-next" aria-controls="hero-stage" aria-label="المشهد التالي" data-aria="nextSlide">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg>
         </button>
       </div></div>
 
@@ -107,16 +105,12 @@
           <img src="assets/showroom-thumb-12.webp" width="416" height="234" alt="" loading="lazy" decoding="async">
           <span data-t="galleryKitchenArea">أجهزة المطبخ</span>
         </button>
-        <button type="button" class="gallery-thumb" data-gallery-jump="5" aria-controls="gallery-card-6">
-          <img src="assets/showroom-thumb-15.webp" width="416" height="234" alt="" loading="lazy" decoding="async">
-          <span data-t="galleryFloorCare">ركن المكانس</span>
-        </button>
       </div>
       <div class="gallery-stacks" id="gallery-stacks">
         <ol class="gallery-stack" role="list">
           <li class="gallery-card" id="gallery-card-1">
             <button class="gallery-picture" type="button" aria-haspopup="dialog" aria-labelledby="gallery-label-1 gallery-zoom-label" data-gallery-photo="assets/showroom-shot-04.webp">
-              <img class="gallery-image" src="assets/showroom-shot-04.webp" srcset="assets/showroom-thumb-04.webp 416w, assets/showroom-shot-04.webp 1672w" sizes="(max-width: 600px) 92vw, (max-width: 1400px) 88vw, 1220px" width="1672" height="941" alt="" loading="lazy" decoding="async">
+              <img class="gallery-image" src="assets/showroom-shot-04.webp" srcset="assets/showroom-thumb-04.webp 416w, assets/showroom-mid-1.webp 860w, assets/showroom-shot-04.webp 1672w" sizes="(max-width: 600px) 92vw, (max-width: 1400px) 88vw, 1220px" width="1672" height="941" alt="" loading="lazy" decoding="async">
               <span class="gallery-copy">
                 <strong id="gallery-label-1" data-t="galleryMainAisle">صالة العرض</strong>
                 <span data-t="galleryMainAisleDetail">معرض LG لدى مجموعة وسيم السيد.</span>
@@ -126,7 +120,7 @@
           </li>
           <li class="gallery-card" id="gallery-card-2">
             <button class="gallery-picture" type="button" aria-haspopup="dialog" aria-labelledby="gallery-label-2 gallery-zoom-label" data-gallery-photo="assets/showroom-tv-cinema.webp">
-              <img class="gallery-image" src="assets/showroom-tv-cinema.webp" srcset="assets/showroom-thumb-13.webp 416w, assets/showroom-tv-cinema.webp 1672w" sizes="(max-width: 600px) 92vw, (max-width: 1400px) 88vw, 1220px" width="1672" height="941" alt="" loading="lazy" decoding="async">
+              <img class="gallery-image" src="assets/showroom-tv-cinema.webp" srcset="assets/showroom-thumb-13.webp 416w, assets/showroom-mid-2.webp 860w, assets/showroom-tv-cinema.webp 1672w" sizes="(max-width: 600px) 92vw, (max-width: 1400px) 88vw, 1220px" width="1672" height="941" alt="" loading="lazy" decoding="async">
               <span class="gallery-copy">
                 <strong id="gallery-label-2" data-t="showroomTv">شاشات LG</strong>
                 <span data-t="showroomTvDetail">شاشات OLED وأحجام متعددة.</span>
@@ -136,7 +130,7 @@
           </li>
           <li class="gallery-card" id="gallery-card-3">
             <button class="gallery-picture" type="button" aria-haspopup="dialog" aria-labelledby="gallery-label-3 gallery-zoom-label" data-gallery-photo="assets/showroom-fridges-cinema.webp">
-              <img class="gallery-image" src="assets/showroom-fridges-cinema.webp" srcset="assets/showroom-thumb-06.webp 416w, assets/showroom-fridges-cinema.webp 1672w" sizes="(max-width: 600px) 92vw, (max-width: 1400px) 88vw, 1220px" width="1672" height="941" alt="" loading="lazy" decoding="async">
+              <img class="gallery-image" src="assets/showroom-fridges-cinema.webp" srcset="assets/showroom-thumb-06.webp 416w, assets/showroom-mid-3.webp 860w, assets/showroom-fridges-cinema.webp 1672w" sizes="(max-width: 600px) 92vw, (max-width: 1400px) 88vw, 1220px" width="1672" height="941" alt="" loading="lazy" decoding="async">
               <span class="gallery-copy">
                 <strong id="gallery-label-3" data-t="showroomFridges">ثلاجات LG</strong>
                 <span data-t="showroomFridgesDetail">موديلات بتشطيبات وأحجام مختلفة.</span>
@@ -146,7 +140,7 @@
           </li>
           <li class="gallery-card" id="gallery-card-4">
             <button class="gallery-picture" type="button" aria-haspopup="dialog" aria-labelledby="gallery-label-4 gallery-zoom-label" data-gallery-photo="assets/showroom-laundry-cinema.webp">
-              <img class="gallery-image" src="assets/showroom-laundry-cinema.webp" srcset="assets/showroom-thumb-09.webp 416w, assets/showroom-laundry-cinema.webp 1672w" sizes="(max-width: 600px) 92vw, (max-width: 1400px) 88vw, 1220px" width="1672" height="941" alt="" loading="lazy" decoding="async">
+              <img class="gallery-image" src="assets/showroom-laundry-cinema.webp" srcset="assets/showroom-thumb-09.webp 416w, assets/showroom-mid-4.webp 860w, assets/showroom-laundry-cinema.webp 1672w" sizes="(max-width: 600px) 92vw, (max-width: 1400px) 88vw, 1220px" width="1672" height="941" alt="" loading="lazy" decoding="async">
               <span class="gallery-copy">
                 <strong id="gallery-label-4" data-t="showroomLaundry">غسالات LG</strong>
                 <span data-t="showroomLaundryDetail">غسالات تحميل أمامي.</span>
@@ -156,20 +150,10 @@
           </li>
           <li class="gallery-card" id="gallery-card-5">
             <button class="gallery-picture" type="button" aria-haspopup="dialog" aria-labelledby="gallery-label-5 gallery-zoom-label" data-gallery-photo="assets/showroom-shot-12.webp">
-              <img class="gallery-image" src="assets/showroom-shot-12.webp" srcset="assets/showroom-thumb-12.webp 416w, assets/showroom-shot-12.webp 1672w" sizes="(max-width: 600px) 92vw, (max-width: 1400px) 88vw, 1220px" width="1672" height="941" alt="" loading="lazy" decoding="async">
+              <img class="gallery-image" src="assets/showroom-shot-12.webp" srcset="assets/showroom-thumb-12.webp 416w, assets/showroom-mid-5.webp 860w, assets/showroom-shot-12.webp 1672w" sizes="(max-width: 600px) 92vw, (max-width: 1400px) 88vw, 1220px" width="1672" height="941" alt="" loading="lazy" decoding="async">
               <span class="gallery-copy">
                 <strong id="gallery-label-5" data-t="galleryKitchenArea">أجهزة المطبخ</strong>
                 <span data-t="galleryKitchenAreaDetail">أجهزة الطهي وغسالات الصحون.</span>
-              </span>
-              <span class="gallery-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13 5h6v6M19 5l-6 6M11 19H5v-6m0 6 6-6"/></svg></span>
-            </button>
-          </li>
-          <li class="gallery-card" id="gallery-card-6">
-            <button class="gallery-picture" type="button" aria-haspopup="dialog" aria-labelledby="gallery-label-6 gallery-zoom-label" data-gallery-photo="assets/showroom-shot-15.webp">
-              <img class="gallery-image" src="assets/showroom-shot-15.webp" srcset="assets/showroom-thumb-15.webp 416w, assets/showroom-shot-15.webp 1672w" sizes="(max-width: 600px) 92vw, (max-width: 1400px) 88vw, 1220px" width="1672" height="941" alt="" loading="lazy" decoding="async">
-              <span class="gallery-copy">
-                <strong id="gallery-label-6" data-t="galleryFloorCare">ركن المكانس</strong>
-                <span data-t="galleryFloorCareDetail">مكانس عمودية وروبوتية.</span>
               </span>
               <span class="gallery-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13 5h6v6M19 5l-6 6M11 19H5v-6m0 6 6-6"/></svg></span>
             </button>
@@ -179,8 +163,8 @@
       <span id="gallery-zoom-label" hidden data-t="zoom">تكبير الصورة</span>
     </div>
   </section>
-  <section class="statement reveal" id="story"><div class="section-rail"><span>01 / <span data-t="ourPerspective">رؤيتنا</span></span><span>LG / HOME</span></div><div class="statement-content"><p class="section-kicker" data-t="statementKicker">التكنولوجيا داخل منزلك</p><h2 data-t="statementTitle">الجهاز المناسب<br><em>يغيّر كل التفاصيل.</em></h2><div class="statement-foot"><p data-t="statementBody">من اللحظة الأولى وحتى أدق المواصفات، صممنا هذه التجربة لتمنحك رؤية أوضح لكل خيار في معرضنا.</p><a class="circle-link" href="#collection" aria-label="اكتشف المجموعة" data-aria="discoverCollection"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 6 6 18m0-10v10h10"/></svg></a></div></div></section>
-  <section class="collection" id="collection"><div class="section-rail"><span>02 / <span data-t="categories">الفئات</span></span><span>EXPLORE / LG</span></div><div class="section-heading reveal"><div><p class="section-kicker" data-t="collectionKicker">من غرفة إلى أخرى</p><h2 data-t="collectionTitle">عالم من<br> الاحتمالات.</h2></div><p data-t="collectionBody">اختيارات منزلية صُممت لتجعل كل يوم أسهل وأكثر جمالًا.</p></div><div id="category-list" class="category-grid"></div></section>
+  <section class="statement reveal" id="story"><div class="section-rail"><span data-t="ourPerspective">رؤيتنا</span><span lang="en">LG / HOME</span></div><div class="statement-content"><p class="section-kicker" data-t="statementKicker">التكنولوجيا داخل منزلك</p><h2 data-t="statementTitle">الجهاز المناسب<br><em>يغيّر كل التفاصيل.</em></h2><div class="statement-foot"><p data-t="statementBody">من اللحظة الأولى وحتى أدق المواصفات، صممنا هذه التجربة لتمنحك رؤية أوضح لكل خيار في معرضنا.</p><a class="circle-link" href="#collection" aria-label="اكتشف المجموعة" data-aria="discoverCollection"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 6 6 18m0-10v10h10"/></svg></a></div></div></section>
+  <section class="collection" id="collection"><div class="section-rail"><span data-t="categories">الفئات</span><span lang="en">EXPLORE / LG</span></div><div class="section-heading reveal"><div><p class="section-kicker" data-t="collectionKicker">من غرفة إلى أخرى</p><h2 data-t="collectionTitle">عالم من<br> الاحتمالات.</h2></div><p data-t="collectionBody">اختيارات منزلية صُممت لتجعل كل يوم أسهل وأكثر جمالًا.</p></div><div id="category-list" class="category-grid"></div></section>
   <section class="feature-panel reveal"><div class="feature-visual">
       <div class="feature-tv" id="feature-tv">
         <img class="feature-tv-frame" src="assets/product-tv-cutout.webp" alt="تلفزيون LG OLED" loading="lazy" width="1539" height="1022">
@@ -193,12 +177,12 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5v14m6-14v14"/></svg>
       </button>
     </div><div class="feature-content"><span class="section-kicker">LG / EXPERIENCE</span><h2 data-t="featureTitle">لحظاتك الكبيرة<br>تبدأ من هنا.</h2><p data-t="featureBody">تجربة مشاهدة ومساحات منزلية تستحق تفاصيل أقرب.</p><button data-category="tv" class="outline-cta"><span data-t="featureAction">اكتشف الشاشات</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M8 6h10v10"/></svg></button></div><span class="feature-counter">03 / 05</span></section>
-  <section class="catalog-section" id="catalog"><div class="section-rail"><span>03 / <span data-t="catalog">الكتالوج</span></span><span>THE COLLECTION</span></div><div class="section-heading catalog-heading reveal"><div><p class="section-kicker" data-t="catalogKicker">اختر ما يناسبك</p><h2 data-t="catalogTitle">كل منتج<br>له قصته.</h2></div><p data-t="catalogBody">صور واضحة، مواصفات موثّقة للموديلات المضافة، ومقارنة تساعدك على الاختيار.</p></div>
+  <section class="catalog-section" id="catalog"><div class="section-rail"><span data-t="catalog">الكتالوج</span><span lang="en">THE COLLECTION</span></div><div class="section-heading catalog-heading reveal"><div><p class="section-kicker" data-t="catalogKicker">اختر ما يناسبك</p><h2 data-t="catalogTitle">كل منتج<br>له قصته.</h2></div><p data-t="catalogBody">صور واضحة، مواصفات موثّقة للموديلات المضافة، ومقارنة تساعدك على الاختيار.</p></div>
     <div class="catalog-tools"><div class="search-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><label class="sr-only" for="search" data-t="search">بحث</label><input id="search" type="search" placeholder="ابحث عن اسم المنتج أو الموديل" autocomplete="off"></div><button class="filter-toggle" id="filter-toggle"><span data-t="filter">الفلاتر</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></button><select id="sort" aria-label="ترتيب"><option value="default" data-t="sortDefault">ترتيب افتراضي</option><option value="name" data-t="sortName">الاسم</option><option value="size-asc" data-t="sortSmall">السعة: الأصغر</option><option value="size-desc" data-t="sortLarge">السعة: الأكبر</option></select></div>
     <div class="category-chips" id="category-chips"></div><div class="catalog-result-line"><span id="result-count"></span><button id="clear-filters" data-t="clearFilters">مسح الفلاتر</button></div><div class="product-grid reveal" id="product-grid"></div><div class="empty-state" id="empty-state" hidden><span class="empty-mark" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2c0 6 4 10 10 10-6 0-10 4-10 10 0-6-4-10-10-10 6 0 10-4 10-10Z"/></svg></span><h3 data-t="emptyTitle">لا توجد نتائج مطابقة</h3><p data-t="emptyBody">جرّب اسمًا آخر أو امسح الفلاتر.</p><button id="empty-reset" data-t="clearFilters">مسح الفلاتر</button></div><p class="catalog-footnote" data-t="catalogNote">الموديلات التجريبية موضحة بوضوح. حالة توفر الموديلات الفعلية تحتاج تأكيدًا من المعرض؛ الصور المعزولة تمثيل بصري.</p>
   </section>
   <section class="showroom-section" id="showroom" aria-labelledby="showroom-title">
-    <div class="section-rail"><span>04 / <span data-t="visit">الزيارة</span></span><span>OUR SHOWROOM</span></div>
+    <div class="section-rail"><span data-t="visit">واجهة المعرض</span><span lang="en">OUR SHOWROOM</span></div>
     <div class="showroom-stage reveal">
       <img src="assets/showroom-campaign.webp" alt="تصوّر لواجهة معرض مجموعة وسيم السيد" width="1672" height="941" loading="lazy">
       <div class="showroom-sign identity-line"><img src="assets/lg-brand-logo.webp" alt="LG" width="252" height="111"><strong data-shop-name>مجموعة وسيم السيد</strong></div>

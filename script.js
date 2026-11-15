@@ -7,6 +7,7 @@ let favorites=read('lg-favorites',[]),comparison=read('lg-comparison',[]);
 if(!Array.isArray(favorites))favorites=[];if(!Array.isArray(comparison))comparison=[];
 favorites=favorites.filter(id=>PRODUCTS.some(p=>p.id===id));comparison=comparison.filter(id=>PRODUCTS.some(p=>p.id===id)).slice(0,3);
 const ui={
+<<<<<<< HEAD
  galleryKitchenView:['المطبخ والشاشات','Kitchen and television view'],
  galleryTvWall:['جدار الشاشات','Television wall'],
  galleryScreensWide:['عرض الشاشات الواسع','Wide screen display'],
@@ -44,6 +45,8 @@ const ui={
  galleryNanoDetailDetail:['نظرة أقرب إلى شاشة NanoCell في المعرض.','A closer view of a NanoCell television.'],
  showroomGallery:['داخل المعرض','Inside the showroom'],showroomTv:['قسم الشاشات','Television display'],showroomFridges:['قسم الثلاجات','Refrigerator display'],showroomLaundry:['قسم الغسالات','Laundry display'],
  fridgeMotion:['ثلاجة LG يفتح باباها ويغلقان','LG refrigerator with opening and closing doors'],
+=======
+>>>>>>> 015f9d4a7e3d8fbd0d228e890bf3e94eb7ef0113
  back:['رجوع','Back'],
  pauseTv:['إيقاف حركة شاشة التلفزيون','Pause TV display'],playTv:['تشغيل حركة شاشة التلفزيون','Play TV display'],
  discoverCollection:['اكتشف المجموعة','Explore the collection'],backTop:['العودة إلى الأعلى','Back to top'],zoomShowroom:['تكبير مشهد المعرض','Enlarge showroom image'],
@@ -58,7 +61,11 @@ const ui={
  featureTitle:['لحظاتك الكبيرة<br>تبدأ من هنا.','YOUR BIG MOMENTS<br>START HERE.'],featureBody:['تجربة مشاهدة ومساحات منزلية تستحق تفاصيل أقرب.','Viewing experiences and living spaces deserve a closer look.'],featureAction:['اكتشف الشاشات','EXPLORE TELEVISIONS'],
  catalog:['الكتالوج','CATALOG'],catalogKicker:['اختر ما يناسبك','FIND YOUR FIT'],catalogTitle:['كل منتج<br>له قصته.','EVERY PRODUCT<br>HAS A STORY.'],catalogBody:['صور واضحة، مواصفات موثّقة للموديلات المضافة، ومقارنة تساعدك على الاختيار.','Clear visuals, documented model specifications, and a useful comparison.'],
  search:['بحث','Search'],searchPlaceholder:['ابحث عن اسم المنتج أو الموديل','Search by name or model'],filter:['الفلاتر','Filters'],sortDefault:['ترتيب افتراضي','Featured'],sortName:['الاسم','Name'],sortSmall:['السعة: الأصغر','Capacity: smaller'],sortLarge:['السعة: الأكبر','Capacity: larger'],clearFilters:['مسح الفلاتر','Clear filters'],emptyTitle:['لا توجد نتائج مطابقة','No matching results'],emptyBody:['جرّب اسمًا آخر أو امسح الفلاتر.','Try another search or clear filters.'],catalogNote:['الموديلات التجريبية موضحة بوضوح. حالة توفر الموديلات الفعلية تحتاج تأكيدًا من المعرض؛ الصور المعزولة تمثيل بصري.','Demo entries are clearly marked. Confirm actual model availability with the showroom; isolated visuals are illustrative.'],
+<<<<<<< HEAD
  visit:['الزيارة','VISIT'],showroomKicker:['معرض الأجهزة المنزلية','HOME APPLIANCE SHOWROOM'],showroomBody:['تصفّح شاشات LG والثلاجات والغسالات والمكيّفات. راجع المواصفات، وقارن الموديلات قبل الاستفسار من المعرض عن التوفّر.','Browse LG TVs, refrigerators, washers and air conditioners. Check specifications and compare models before asking the showroom about availability.'],showroomAction:['تصفّح المنتجات','EXPLORE PRODUCTS'],showroomConceptNote:['الواجهة تصوّر بصري، ولقطات الداخل معالجة من صور المعرض.','The exterior is an illustration. Interior views are enhanced from showroom photos.'],exploreShowroom:['شاهد المشهد كاملًا','VIEW THE SCENE'],address:['العنوان','Address'],hours:['ساعات العمل','Hours'],phone:['الهاتف / واتساب','Phone / WhatsApp'],legal:['معرض يبيع منتجات LG، وليس الموقع الرسمي للعلامة التجارية.','A showroom selling LG products. Not the official LG website.'],
+=======
+ visit:['الزيارة','VISIT'],showroomKicker:['معرض الأجهزة المنزلية','HOME APPLIANCE SHOWROOM'],showroomBody:['تصفّح شاشات LG والثلاجات والغسالات والمكيّفات. راجع المواصفات، وقارن الموديلات قبل الاستفسار من المعرض عن التوفّر.','Browse LG TVs, refrigerators, washers and air conditioners. Check specifications and compare models before asking the showroom about availability.'],showroomAction:['تصفّح المنتجات','EXPLORE PRODUCTS'],showroomConceptNote:['تصوّر بصري مستوحى من واجهة المعرض.','Illustration inspired by the showroom exterior.'],exploreShowroom:['شاهد المشهد كاملًا','VIEW THE SCENE'],address:['العنوان','Address'],hours:['ساعات العمل','Hours'],phone:['الهاتف / واتساب','Phone / WhatsApp'],legal:['معرض يبيع منتجات LG، وليس الموقع الرسمي للعلامة التجارية.','A showroom selling LG products. Not the official LG website.'],
+>>>>>>> 015f9d4a7e3d8fbd0d228e890bf3e94eb7ef0113
  inquiryTitle:['نص الاستفسار','Inquiry message'],inquiryHelp:['لم يُضف رقم واتساب بعد. انسخ النص وأرسله إلى المعرض.','No WhatsApp number has been added yet. Copy this message to contact the showroom.'],copy:['نسخ النص','Copy message'],availability:['حالة التوفر','Availability'],available:['متوفر','Available'],order:['حسب الطلب','On request'],unavailable:['غير متوفر','Unavailable'],unknown:['يحتاج تأكيدًا','To confirm'],favoritesOnly:['المفضلة فقط','Favorites only'],showResults:['عرض النتائج','Show results'],compareNow:['قارن الآن','Compare now'],all:['الكل','All'],results:['منتج','products'],demo:['نموذج تجريبي','DEMO'],discover:['استكشف المنتج','EXPLORE PRODUCT'],details:['التفاصيل','DETAILS'],specifications:['المواصفات','SPECIFICATIONS'],similar:['منتجات مشابهة','SIMILAR PRODUCTS'],inquire:['استفسر عن المنتج','ASK ABOUT THIS PRODUCT'],restock:['استفسر عن موعد التوفر','ASK ABOUT RESTOCK'],favorite:['المفضلة','Favorite'],compare:['المقارنة','Compare'],remove:['إزالة','Remove'],sameCategory:['اختر منتجات من الفئة نفسها للمقارنة.','Compare products in the same category.'],compareLimit:['يمكن مقارنة ثلاثة منتجات كحد أقصى.','Compare up to three products.'],needTwo:['اختر منتجين على الأقل للمقارنة.','Choose at least two products to compare.'],saved:['تم التحديث','Updated'],price:['السعر','Price'],askPrice:['استفسر عن السعر','Ask for price'],source:['مصدر المواصفات','Specifications source'],visual:['عرض بصري توضيحي','Illustrative visual'],zoom:['تكبير الصورة','Zoom image'],
  assistantTitle:['دليل الاختيار الذكي','SMART CHOICE GUIDE'],assistantIntro:['اقتراح يعتمد على المواصفات المدخلة فقط. أخبرنا ما الذي يهمك.','A suggestion based only on entered specifications. What matters to you?'],assistantLarge:['أريد الأكبر','I prefer larger'],assistantSmall:['أريد الأصغر','I prefer smaller'],assistantEnergy:['استهلاك الطاقة','Energy use'],assistantDifference:['ما الفروق؟','What differs?'],assistantPlaceholder:['اسأل عن السعة أو استهلاك الطاقة...','Ask about capacity or energy...'],assistantSend:['اسأل','Ask'],assistantDisclaimer:['هذا دليل آلي يعتمد على بيانات الملصقات، وليس مخزونًا مباشرًا أو خدمة ذكاء اصطناعي متصلة.','This automatic guide uses label data; it is not live inventory or a connected AI service.'],insufficient:['البيانات المسجلة لا تكفي للحسم في هذه النقطة. اسأل المعرض قبل القرار.','The recorded data is insufficient for this choice. Ask the showroom before deciding.']
 };
@@ -66,6 +73,7 @@ const t=k=>(ui[k]||[k,k])[lang==='ar'?0:1], local=v=>typeof v==='object'&&v!==nu
 const categoryName=id=>{const c=CATEGORIES.find(x=>x[0]===id);return c?c[lang==='ar'?1:2]:t('all')};
 let state={category:'all',query:'',sort:'default',statuses:[],favoritesOnly:false};
 let current=null,currentImage=0,slide=0,paused=matchMedia('(prefers-reduced-motion: reduce)').matches,slideTimer,slideTransition,toastTimer;
+<<<<<<< HEAD
 const pageViews = [];
 const navigationSession = String(performance.timeOrigin);
 let pagePosition = 0;
@@ -76,6 +84,16 @@ const slides=[
  {src:'assets/lg-glb-582gvlp-cutout.webp',alt:['ثلاجة LG','LG refrigerator']},
  {src:'assets/hero-ac-cutout.webp',device:'ac',alt:['مكيّف LG','LG air conditioner']},
  {src:'assets/hero-fridge-cutout.webp',device:'fridge',alt:['ثلاجة LG','LG refrigerator']},
+=======
+const pageTrail = [];
+const productTrail = [];
+let menuTrigger, filterTrigger;
+const mobileLayout = matchMedia('(max-width: 700px)');
+const slides=[
+ {src:'assets/lg-glb-582gvlp-cutout.webp',alt:['ثلاجة LG','LG refrigerator']},
+ {src:'assets/hero-ac-cutout.webp',alt:['مكيّف LG','LG air conditioner']},
+ {src:'assets/lg-gr-x30frbrb-cutout.webp',alt:['ثلاجة LG','LG refrigerator']},
+>>>>>>> 015f9d4a7e3d8fbd0d228e890bf3e94eb7ef0113
  {src:'assets/hero-washer-cutout.webp',alt:['غسالة LG','LG washing machine']}
 ];
 function persist(){try{localStorage.setItem('lg-language',JSON.stringify(lang));localStorage.setItem('lg-favorites',JSON.stringify(favorites));localStorage.setItem('lg-comparison',JSON.stringify(comparison))}catch{}}
@@ -120,11 +138,19 @@ function revealHome() {
 function resetHomeOnReload() {
   if (performance.getEntriesByType('navigation')[0]?.type !== 'reload') return false;
 
+<<<<<<< HEAD
+=======
+  const previousRestoration = history.scrollRestoration;
+>>>>>>> 015f9d4a7e3d8fbd0d228e890bf3e94eb7ef0113
   history.scrollRestoration = 'manual';
   setSectionHash('');
   window.scrollTo({top: 0, left: 0, behavior: 'instant'});
   window.addEventListener('pageshow', () => {
     window.scrollTo({top: 0, left: 0, behavior: 'instant'});
+<<<<<<< HEAD
+=======
+    requestAnimationFrame(() => { history.scrollRestoration = previousRestoration; });
+>>>>>>> 015f9d4a7e3d8fbd0d228e890bf3e94eb7ef0113
   }, {once: true});
   return true;
 }
@@ -169,7 +195,10 @@ function syncSlideControls() {
   const button = $('#slide-toggle');
   button.setAttribute('aria-label', t(paused ? 'playSlide' : 'pauseSlide'));
   button.querySelector('path').setAttribute('d', paused ? 'M8 5l11 7-11 7z' : 'M9 5v14m6-14v14');
+<<<<<<< HEAD
   $('.hero').toggleAttribute('data-motion-paused', paused);
+=======
+>>>>>>> 015f9d4a7e3d8fbd0d228e890bf3e94eb7ef0113
   $('#hero-image').alt = slides[slide].alt[lang === 'ar' ? 0 : 1];
 }
 function setSlide(index) {
@@ -180,7 +209,10 @@ function setSlide(index) {
   stage.classList.add('changing');
   slideTransition = setTimeout(() => {
     $('#hero-image').src = next.src;
+<<<<<<< HEAD
     stage.dataset.device = next.device || 'still';
+=======
+>>>>>>> 015f9d4a7e3d8fbd0d228e890bf3e94eb7ef0113
     syncSlideControls();
     stage.classList.remove('changing');
   }, 145);
@@ -189,7 +221,11 @@ function setSlide(index) {
 function startSlideTimer() {
   clearTimeout(slideTimer);
   if (paused) return;
+<<<<<<< HEAD
   slideTimer = setTimeout(() => setSlide(slide + 1), slides[slide].device === 'fridge' ? 6000 : 5200);
+=======
+  slideTimer = setTimeout(() => setSlide(slide + 1), 5200);
+>>>>>>> 015f9d4a7e3d8fbd0d228e890bf3e94eb7ef0113
 }
 function syncLanguage(){document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';$$('[data-t]').forEach(el=>{el.innerHTML=t(el.dataset.t)});$$('[data-aria]').forEach(el=>el.setAttribute('aria-label',t(el.dataset.aria)));syncSlideControls();$('#search').placeholder=t('searchPlaceholder');$('#language').textContent=lang==='ar'?'EN':'ع';$('#language').setAttribute('aria-label',lang==='ar'?'Switch to English':'التبديل إلى العربية');$$('[data-shop-name]').forEach(el=>el.textContent=local(SHOP.name));$('#shop-address').textContent=local(SHOP.address)|| (lang==='ar'?'يُضاف قريبًا':'To be added');$('#shop-hours').textContent=local(SHOP.hours)||(lang==='ar'?'تُحدّد قريبًا':'To be confirmed');$('#shop-phone').textContent=SHOP.phone||SHOP.whatsapp||(lang==='ar'?'يُضاف قريبًا':'To be added');$('#showroom-info').hidden=!(local(SHOP.address)||local(SHOP.hours)||SHOP.phone||SHOP.whatsapp);renderCollection();renderCategories();renderProducts();updateCounters();if(current&&$('#product-dialog').open)renderDetail();if($('#compare-dialog').open)renderComparison()}
 const collectionCategories = [
@@ -281,12 +317,18 @@ function resetFilters(category = 'all') {
   writeCatalogState({category, query: '', sort: 'default', statuses: [], favoritesOnly: false});
 }
 
+<<<<<<< HEAD
 function capturePage(trigger) {
   return {
+=======
+function rememberPage(trigger) {
+  pageTrail.push({
+>>>>>>> 015f9d4a7e3d8fbd0d228e890bf3e94eb7ef0113
     y: window.scrollY,
     hash: location.hash,
     catalog: {...state},
     trigger,
+<<<<<<< HEAD
     category: trigger?.dataset.category,
     categoryScope: trigger?.closest('#filter-categories') ? '#filter-categories' : '#category-chips',
     menu: !$('#menu-overlay').hidden,
@@ -384,11 +426,44 @@ function scrollToSection(target, moveFocus = true) {
 function navigateToSection(hash, trigger) {
   if (hash !== location.hash) rememberPage(trigger, hash);
   setMenu(false, false);
+=======
+    menu: !$('#menu-overlay').hidden,
+    filters: !$('#filter-panel').hidden
+  });
+  $('#page-back').hidden = false;
+}
+function setSectionHash(hash) {
+  if (hash === location.hash) return;
+  try { history.replaceState(history.state, '', location.pathname + location.search + hash); } catch {}
+}
+function goBackPage() {
+  const page = pageTrail.pop();
+  if (!page) return;
+  $('#page-back').hidden = pageTrail.length === 0;
+  writeCatalogState(page.catalog);
+  setSectionHash(page.hash);
+  window.scrollTo({top: page.y, behavior: 'instant'});
+  if (page.menu) setMenu(true);
+  else if (page.filters) setFilters(true);
+  else if (page.trigger?.isConnected) page.trigger.focus({preventScroll: true});
+}
+function scrollToSection(target) {
+  target.scrollIntoView({block: 'start', behavior: mobileLayout.matches || paused ? 'instant' : 'smooth'});
+}
+function navigateToSection(hash, trigger) {
+  rememberPage(trigger);
+  setMenu(false, false);
+  setSectionHash(hash);
+>>>>>>> 015f9d4a7e3d8fbd0d228e890bf3e94eb7ef0113
   scrollToSection(document.getElementById(hash.slice(1)));
 }
 function chooseCategory(id, trigger) {
   const fromCollection = trigger.classList.contains('category-card');
+<<<<<<< HEAD
   if (fromCollection || id !== state.category || !$('#filter-panel').hidden) rememberPage(trigger, '#catalog');
+=======
+  if (fromCollection || id !== state.category || !$('#filter-panel').hidden) rememberPage(trigger);
+>>>>>>> 015f9d4a7e3d8fbd0d228e890bf3e94eb7ef0113
   if (fromCollection) {
     resetFilters(id);
   } else {
@@ -406,11 +481,16 @@ function openComparison() {
 }
 const navigationActions = {
   catalog(trigger) {
+<<<<<<< HEAD
     rememberPage(trigger, '#catalog');
+=======
+    rememberPage(trigger);
+>>>>>>> 015f9d4a7e3d8fbd0d228e890bf3e94eb7ef0113
     if (state.favoritesOnly) resetFilters();
     scrollToSection($('#catalog'));
   },
   search(trigger) {
+<<<<<<< HEAD
     rememberPage(trigger, '#catalog');
     const input = $('#search');
     input.focus({preventScroll: true});
@@ -418,6 +498,15 @@ const navigationActions = {
   },
   favorites(trigger) {
     rememberPage(trigger, '#catalog');
+=======
+    rememberPage(trigger);
+    const input = $('#search');
+    input.focus({preventScroll: true});
+    scrollToSection($('.catalog-tools'));
+  },
+  favorites(trigger) {
+    rememberPage(trigger);
+>>>>>>> 015f9d4a7e3d8fbd0d228e890bf3e94eb7ef0113
     const showFavorites = !state.favoritesOnly;
     if (showFavorites) resetFilters();
     state.favoritesOnly = showFavorites;
@@ -485,6 +574,7 @@ function goBackDialog(id) {
 }
 function renderDetail(){const p=current,imgs=p.images||[],image=imgs[currentImage],features=local(p.features)||[];const specs=Object.entries(p.specifications||{});const similar=PRODUCTS.filter(x=>x.category===p.category&&x.id!==p.id).slice(0,3);$('#product-detail').innerHTML=`<div class="detail-hero"><div class="detail-copy"><span class="eyebrow">${esc(categoryName(p.category))} / ${p.demo?t('demo'):'LG COLLECTION'}</span><span class="model">MODEL / ${esc(p.model)}</span><h2>${esc(local(p.name))}</h2><span class="status ${p.availability}">${t(p.availability)}</span><ul class="detail-feature-list">${features.map(f=>`<li>${esc(f)}</li>`).join('')}</ul><div class="detail-actions"><button class="solid-cta" data-inquire="${p.id}">${t(p.availability==='unavailable'?'restock':'inquire')} ${detailIcon}</button><button data-favorite="${p.id}" aria-label="${t('favorite')}" aria-pressed="${favorites.includes(p.id)}">${favoriteIcon} ${t('favorite')}</button><button data-compare="${p.id}">${comparison.includes(p.id)?'✓ ':''}${t('compare')}</button></div></div><div class="detail-visual"><button class="detail-main-image" data-zoom="${esc(image||'')}" aria-label="${t('zoom')}">${image?`<img src="${esc(image)}" alt="${esc(local(p.name))}">`:'LG'}</button><div class="detail-thumbs">${imgs.map((src,i)=>`<button data-image="${i}" class="${i===currentImage?'active':''}" aria-label="${esc(local(p.imageCaptions)?.[i]||String(i+1))}"><img src="${esc(src)}" alt=""></button>`).join('')}</div></div></div><div class="detail-sections"><span class="section-kicker">LG / ${t('specifications')}</span><h3>${t('specifications')}</h3><dl class="detail-specs">${specs.map(([k,v])=>`<div><dt>${esc((TEXT[k]||[k,k])[lang==='ar'?0:1])}</dt><dd>${esc(local(v))}</dd></div>`).join('')}</dl>${p.specificationSource?`<p class="detail-note">${esc(local(p.specificationSource))}</p>`:''}${p.demo?`<p class="detail-note">${t('demo')} · ${t('catalogNote')}</p>`:''}<h3 class="similar-title">${t('similar')}</h3><div class="similar-grid">${similar.map(x=>`<button data-detail="${x.id}"><img src="${esc(x.images?.[0]||'')}" alt="" loading="lazy"><span>${esc(local(x.name))}</span><small>${esc(x.model)}</small></button>`).join('')}</div></div>`}
 function chooseImage(i){currentImage=i;renderDetail()}
+<<<<<<< HEAD
 function zoom(src, description = t('zoom')) {
   if (!src) return;
   const image = $('#zoom-image');
@@ -492,6 +582,9 @@ function zoom(src, description = t('zoom')) {
   image.alt = description;
   openDialog('image-dialog');
 }
+=======
+function zoom(src){if(!src)return;$('#zoom-image').src=src;openDialog('image-dialog')}
+>>>>>>> 015f9d4a7e3d8fbd0d228e890bf3e94eb7ef0113
 function inquire(p){const msg=lang==='ar'?`مرحبًا ${local(SHOP.name)}، أود الاستفسار عن ${local(p.name)}، الموديل ${p.model}. ${p.availability==='unavailable'?'متى يتوفر؟':''}`:`Hello ${local(SHOP.name)}, I would like to ask about ${local(p.name)}, model ${p.model}. ${p.availability==='unavailable'?'When will it be available?':''}`;const n=String(SHOP.whatsapp||'').replace(/\D/g,'');if(n.length>=8)window.open(`https://wa.me/${n}?text=${encodeURIComponent(msg)}`,'_blank','noopener,noreferrer');else{$('#inquiry-text').value=msg;openDialog('contact-dialog')}}
 function assistantResponse(list,q){const query=q.toLocaleLowerCase(),values=list.map(p=>({p,n:Number(p.attribute)||0}));let pick=null,basis='';if(/كبير|أكبر|سعة|large|bigger|capacity/.test(query)){if(values.every(x=>x.n)){pick=values.reduce((a,b)=>a.n>b.n?a:b).p;basis=values.map(x=>`${x.p.model}: ${x.n} L`).join(' · ')}}else if(/صغير|أصغر|small|compact/.test(query)){if(values.every(x=>x.n)){pick=values.reduce((a,b)=>a.n<b.n?a:b).p;basis=values.map(x=>`${x.p.model}: ${x.n} L`).join(' · ')}}else if(/طاقة|استهلاك|energy|electric/.test(query)){const v=list.map(p=>({p,n:parseFloat(local(p.specifications?.energyConsumption))}));if(v.every(x=>Number.isFinite(x.n))){pick=v.reduce((a,b)=>a.n<b.n?a:b).p;basis=v.map(x=>`${x.p.model}: ${x.n} kWh/year`).join(' · ')}}else if(/فرق|مقارن|difference|compare/.test(query)){const keys=[...new Set(list.flatMap(p=>Object.keys(p.specifications||{})))].filter(k=>new Set(list.map(p=>local(p.specifications?.[k])||'')).size>1).slice(0,5);return keys.length?keys.map(k=>`${(TEXT[k]||[k,k])[lang==='ar'?0:1]}: ${list.map(p=>`${p.model} ${local(p.specifications?.[k])||'—'}`).join(' / ')}`).join(' · '):t('insufficient')}return pick?(lang==='ar'?`بحسب ${/طاقة|استهلاك/.test(query)?'استهلاك الطاقة المسجّل':'السعة المسجّلة'}، أنصح بالنظر إلى ${local(pick.name)} (${pick.model}).`:`Based on recorded ${/energy/.test(query)?'energy use':'capacity'}, consider ${local(pick.name)} (${pick.model}).`)+` ${basis}. ${lang==='ar'?'تحقّق من التوفّر مع المعرض.':'Confirm availability with the showroom.'}`:t('insufficient')}
 function renderComparison(){const list=comparison.map(id=>PRODUCTS.find(x=>x.id===id)).filter(Boolean);if(list.length<2){$('#compare-content').innerHTML=`<h2>${t('compare')}</h2><p>${t('needTwo')}</p>`;return}const keys=[...new Set(list.flatMap(p=>Object.keys(p.specifications||{})))];$('#compare-content').innerHTML=`<span class="section-kicker">LG / COMPARE</span><h2>${t('compare')}</h2><div class="choice-assistant"><h3><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2c0 6 4 10 10 10-6 0-10 4-10 10 0-6-4-10-10-10 6 0 10-4 10-10Z"/></svg> ${t('assistantTitle')}</h3><p>${t('assistantIntro')}</p><div class="assistant-prompts">${['assistantLarge','assistantSmall','assistantEnergy','assistantDifference'].map(k=>`<button data-prompt="${k}">${t(k)}</button>`).join('')}</div><form class="assistant-form" id="assistant-form"><input id="assistant-input" aria-label="${t('assistantPlaceholder')}" placeholder="${t('assistantPlaceholder')}" maxlength="180"><button>${t('assistantSend')} ${detailIcon}</button></form><div class="assistant-response" id="assistant-response"></div><p>${t('assistantDisclaimer')}</p></div><div class="compare-table-wrap"><table class="compare-table"><thead><tr><th>${t('specifications')}</th>${list.map(p=>`<th><img src="${esc(p.images?.[0]||'')}" alt=""><div>${esc(local(p.name))}</div><small>${esc(p.model)}</small><br><button data-compare="${p.id}">${t('remove')} <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18"/></svg></button></th>`).join('')}</tr></thead><tbody><tr><th>${t('availability')}</th>${list.map(p=>`<td>${t(p.availability)}</td>`).join('')}</tr>${keys.map(k=>`<tr><th>${esc((TEXT[k]||[k,k])[lang==='ar'?0:1])}</th>${list.map(p=>`<td>${esc(local(p.specifications?.[k])||'—')}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`}
@@ -511,7 +604,11 @@ function initGooeyNav(){
  }
  nav.addEventListener('click',e=>{const link=e.target.closest('a');if(link)move(link,true)});
  window.addEventListener('resize',()=>move(nav.querySelector('a.active')||links[0]),{passive:true});
+<<<<<<< HEAD
  requestAnimationFrame(()=>move(links.find(link=>link.hash===location.hash)||links[0]));
+=======
+ requestAnimationFrame(()=>move(links[0]));
+>>>>>>> 015f9d4a7e3d8fbd0d228e890bf3e94eb7ef0113
  const sections=links.map(link=>[link,link.hash==='#top'?$('.hero'):$(link.hash)]).filter(([,section])=>section);
  const observer=new IntersectionObserver(entries=>{const visible=entries.filter(x=>x.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(visible){const match=sections.find(([,section])=>section===visible.target);if(match)move(match[0])}},{rootMargin:'-25% 0px -55% 0px',threshold:[0,.15,.3,.5]});
  sections.forEach(([,section])=>observer.observe(section));
@@ -547,6 +644,7 @@ function initTvDisplay() {
   syncPlayback();
 }
 
+<<<<<<< HEAD
 
 function initShowroomGallery() {
   const gallery = $('#gallery-stacks');
@@ -656,6 +754,9 @@ function initShowroomGallery() {
 }
 
 function setup(){const reloadingHome=resetHomeOnReload();setupPageNavigation();window.revealObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');window.revealObserver.unobserve(e.target)}}),{threshold:.08});syncLanguage();$('#year').textContent=new Date().getFullYear();startSlideTimer();initGooeyNav();initTvDisplay();initShowroomGallery();
+=======
+function setup(){const reloadingHome=resetHomeOnReload();window.revealObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');window.revealObserver.unobserve(e.target)}}),{threshold:.08});syncLanguage();$('#year').textContent=new Date().getFullYear();startSlideTimer();initGooeyNav();initTvDisplay();
+>>>>>>> 015f9d4a7e3d8fbd0d228e890bf3e94eb7ef0113
  document.addEventListener('click',e=>{
   const el=e.target instanceof Element ? e.target.closest('button,a') : null;
   if(!el)return;

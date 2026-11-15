@@ -12,5 +12,8 @@ Replace illustrative appliance renderings with showroom-owned, licensed and mode
 - `assets/lg-brand-logo.webp` — LG Global brand assets, Heritage Red / White logo for dark backgrounds. https://www.lg.com/global/our-identity/brand-assets/
 
 - `collection-microwave.webp`: LG NeoChef product image from the LMC0975 specification sheet, used to illustrate the kitchen appliances category. It does not indicate showroom stock. https://www.lg.com/us/support/products/documents/LMC0975-Spec-Sheet.pdf
+<<<<<<< HEAD
 
 - The 18 interior views and their thumbnails are cinematic edits of the supplied showroom photographs, presented in the homepage gallery. The gallery retains distinct views of the televisions, refrigerators, washers, kitchen displays, floor-care devices and showroom aisles.
+=======
+>>>>>>> 015f9d4a7e3d8fbd0d228e890bf3e94eb7ef0113

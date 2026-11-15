@@ -7,6 +7,8 @@ let favorites=read('lg-favorites',[]),comparison=read('lg-comparison',[]);
 if(!Array.isArray(favorites))favorites=[];if(!Array.isArray(comparison))comparison=[];
 favorites=favorites.filter(id=>PRODUCTS.some(p=>p.id===id));comparison=comparison.filter(id=>PRODUCTS.some(p=>p.id===id)).slice(0,3);
 const ui={
+ pauseTv:['إيقاف حركة شاشة التلفزيون','Pause TV display'],playTv:['تشغيل حركة شاشة التلفزيون','Play TV display'],
+ skipIntro:['تخطّي شاشة البداية','Skip introduction'],
  previousSlide:['المشهد السابق','Previous slide'],nextSlide:['المشهد التالي','Next slide'],
  pauseSlide:['إيقاف الحركة','Pause slideshow'],playSlide:['تشغيل الحركة','Play slideshow'],
  openMenu:['فتح القائمة','Open menu'],close:['إغلاق','Close'],
@@ -27,10 +29,10 @@ let state={category:'all',query:'',sort:'default',statuses:[],favoritesOnly:fals
 let current=null,currentImage=0,slide=0,paused=matchMedia('(prefers-reduced-motion: reduce)').matches,slideTimer,slideTransition,toastTimer;
 const mobileLayout = matchMedia('(max-width: 700px)');
 const slides=[
- {src:'assets/lg-glb-582gvlp-cutout.webp',model:'GLB-582GVLP',alt:['ثلاجة LG','LG refrigerator']},
- {src:'assets/hero-ac-cutout.webp',model:'LG / COMFORT',alt:['مكيّف LG','LG air conditioner']},
- {src:'assets/lg-gr-x30frbrb-cutout.webp',model:'GR-X30FRBRB',alt:['ثلاجة LG','LG refrigerator']},
- {src:'assets/hero-washer-cutout.webp',model:'LG / CARE',alt:['غسالة LG','LG washing machine']}
+ {src:'assets/lg-glb-582gvlp-cutout.webp',alt:['ثلاجة LG','LG refrigerator']},
+ {src:'assets/hero-ac-cutout.webp',alt:['مكيّف LG','LG air conditioner']},
+ {src:'assets/lg-gr-x30frbrb-cutout.webp',alt:['ثلاجة LG','LG refrigerator']},
+ {src:'assets/hero-washer-cutout.webp',alt:['غسالة LG','LG washing machine']}
 ];
 function persist(){try{localStorage.setItem('lg-language',JSON.stringify(lang));localStorage.setItem('lg-favorites',JSON.stringify(favorites));localStorage.setItem('lg-comparison',JSON.stringify(comparison))}catch{}}
 function toast(message){const el=$('#toast');el.textContent=message;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),3000)}
@@ -60,19 +62,38 @@ function showWelcome() {
   const dialog = $('#welcome-intro');
   if ((location.hash && location.hash !== '#top') || typeof dialog.showModal !== 'function') return false;
 
-  const welcomeKey = 'lg-showroom-welcome-v31';
+  const welcomeKey = 'lg-showroom-welcome-v32';
   try {
     if (sessionStorage.getItem(welcomeKey)) return false;
     sessionStorage.setItem(welcomeKey, 'seen');
   } catch {}
 
-  const duration = 2300;
-  dialog.style.setProperty('--welcome-duration', String(duration) + 'ms');
+  const motion = matchMedia('(prefers-reduced-motion: no-preference)');
+  const listeners = new AbortController();
+  let exitTimer;
+  function finish() {
+    if (!dialog.open || dialog.classList.contains('welcome-leaving')) return;
+    if (!motion.matches) {
+      closeDialog(dialog.id);
+      return;
+    }
+    dialog.classList.add('welcome-leaving');
+    exitTimer = setTimeout(() => closeDialog(dialog.id), 320);
+  }
+
+  dialog.addEventListener('pointermove', event => {
+    if (!motion.matches) return;
+    dialog.style.setProperty('--welcome-x', `${event.clientX}px`);
+    dialog.style.setProperty('--welcome-y', `${event.clientY}px`);
+  }, {passive: true, signal: listeners.signal});
+  $('#welcome-skip').addEventListener('click', finish, {signal: listeners.signal});
   openDialog(dialog.id);
 
-  const done = setTimeout(() => closeDialog(dialog.id), duration);
+  const autoExit = setTimeout(finish, motion.matches ? 2380 : 1300);
   dialog.addEventListener('close', () => {
-    clearTimeout(done);
+    clearTimeout(autoExit);
+    clearTimeout(exitTimer);
+    listeners.abort();
     revealHome();
   }, {once:true});
   return true;
@@ -92,10 +113,6 @@ function setSlide(index) {
   stage.classList.add('changing');
   slideTransition = setTimeout(() => {
     $('#hero-image').src = next.src;
-    const number = String(slide + 1).padStart(2, '0');
-    $('#slide-number').textContent = number;
-    $('#slide-model').textContent = next.model;
-    $('.hero-index').textContent = number + ' / ' + String(slides.length).padStart(2, '0');
     syncSlideControls();
     stage.classList.remove('changing');
   }, 145);
@@ -103,15 +120,7 @@ function setSlide(index) {
 }
 function startSlideTimer() {
   clearTimeout(slideTimer);
-  const bar = $('#progress-fill');
-  bar.style.transition = 'none';
-  bar.style.width = '0%';
   if (paused) return;
-  requestAnimationFrame(() => {
-    if (paused) return;
-    bar.style.transition = 'width 5.2s linear';
-    bar.style.width = '100%';
-  });
   slideTimer = setTimeout(() => setSlide(slide + 1), 5200);
 }
 function syncLanguage(){document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';$$('[data-t]').forEach(el=>{el.innerHTML=t(el.dataset.t)});$$('[data-aria]').forEach(el=>el.setAttribute('aria-label',t(el.dataset.aria)));syncSlideControls();$('#search').placeholder=t('searchPlaceholder');$('#language').textContent=lang==='ar'?'EN':'ع';$('#language').setAttribute('aria-label',lang==='ar'?'Switch to English':'التبديل إلى العربية');$$('[data-shop-name]').forEach(el=>el.textContent=local(SHOP.name));$('#shop-address').textContent=local(SHOP.address)|| (lang==='ar'?'يُضاف قريبًا':'To be added');$('#shop-hours').textContent=local(SHOP.hours)||(lang==='ar'?'تُحدّد قريبًا':'To be confirmed');$('#shop-phone').textContent=SHOP.phone||SHOP.whatsapp||(lang==='ar'?'يُضاف قريبًا':'To be added');$('#showroom-info').hidden=!(local(SHOP.address)||local(SHOP.hours)||SHOP.phone||SHOP.whatsapp);renderCollection();renderCategories();renderProducts();updateCounters();if(current&&$('#product-dialog').open)renderDetail();if($('#compare-dialog').open)renderComparison()}
@@ -153,6 +162,15 @@ function renderCategories() {
 function visibleProducts(){let list=PRODUCTS.filter(p=>(state.category==='all'||p.category===state.category)&&(!state.favoritesOnly||favorites.includes(p.id))&&(!state.statuses.length||state.statuses.includes(p.availability))&&(!state.query||[local(p.name),p.name.ar,p.name.en,p.model].join(' ').toLocaleLowerCase().includes(state.query.toLocaleLowerCase())));if(state.sort==='name')list.sort((a,b)=>local(a.name).localeCompare(local(b.name),lang));if(state.sort.startsWith('size-'))list.sort((a,b)=>{const n=p=>Number(p.attribute)||0;return state.sort==='size-asc'?n(a)-n(b):n(b)-n(a)});return list}
 const detailIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10"/></svg>';
 const favoriteIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.4 5.4 0 0 0-7.6 0L12 5.8l-1.2-1.2a5.4 5.4 0 0 0-7.6 7.6L12 21l8.8-8.8a5.4 5.4 0 0 0 0-7.6Z"/></svg>';
+const productTint = new Map();
+const categoryTintCount = new Map();
+const tintOffsets = [0, 20, -20, 13, -11, 28, -28, -35, 35];
+for (const {id, category} of PRODUCTS) {
+  const order = categoryTintCount.get(category) ?? 0;
+  productTint.set(id, tintOffsets[order % tintOffsets.length]);
+  categoryTintCount.set(category, order + 1);
+}
+
 function productCard(product) {
   const {id, model, category, availability, demo} = product;
   const name = esc(local(product.name));
@@ -160,7 +178,7 @@ function productCard(product) {
   const features = local(product.features) || [];
   const favorite = favorites.includes(id);
   const compared = comparison.includes(id);
-  return `<article class="product-card">
+  return `<article class="product-card" data-product-category="${esc(category)}" style="--card-hue-offset:${productTint.get(id)}">
     <button type="button" class="card-image" data-detail="${id}" aria-label="${t('discover')}: ${name}">
       <span class="card-label">${demo ? t('demo') : esc(model)}</span>
       ${image ? `<img src="${esc(image)}" alt="" width="480" height="480" loading="lazy">` : '<span class="image-placeholder">LG</span>'}
@@ -277,7 +295,38 @@ function initGooeyNav(){
  const observer=new IntersectionObserver(entries=>{const visible=entries.filter(x=>x.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(visible){const match=sections.find(([,section])=>section===visible.target);if(match)move(match[0])}},{rootMargin:'-25% 0px -55% 0px',threshold:[0,.15,.3,.5]});
  sections.forEach(([,section])=>observer.observe(section));
 }
-function setup(){window.revealObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');window.revealObserver.unobserve(e.target)}}),{threshold:.08});syncLanguage();$('#year').textContent=new Date().getFullYear();startSlideTimer();initGooeyNav();
+function initTvDisplay() {
+  const tv = $('#feature-tv');
+  const playback = $('#tv-playback');
+  const motion = matchMedia('(prefers-reduced-motion: no-preference)');
+  let visible = false;
+  let pausedByUser = false;
+
+  function syncPlayback() {
+    playback.hidden = !motion.matches;
+    tv.toggleAttribute('data-playing', motion.matches && visible && !document.hidden && !pausedByUser);
+  }
+
+  playback.addEventListener('click', () => {
+    pausedByUser = !pausedByUser;
+    playback.dataset.aria = pausedByUser ? 'playTv' : 'pauseTv';
+    playback.setAttribute('aria-label', t(playback.dataset.aria));
+    playback.querySelector('path').setAttribute('d', pausedByUser ? 'M8 5l11 7-11 7z' : 'M9 5v14m6-14v14');
+    syncPlayback();
+  });
+
+  const observer = new IntersectionObserver(([entry]) => {
+    visible = entry.isIntersecting;
+    syncPlayback();
+  });
+  observer.observe(tv);
+  motion.addEventListener('change', syncPlayback);
+  document.addEventListener('visibilitychange', syncPlayback);
+  tv.setAttribute('data-ready', '');
+  syncPlayback();
+}
+
+function setup(){window.revealObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');window.revealObserver.unobserve(e.target)}}),{threshold:.08});syncLanguage();$('#year').textContent=new Date().getFullYear();startSlideTimer();initGooeyNav();initTvDisplay();
  document.addEventListener('click',e=>{
   const el=e.target instanceof Element ? e.target.closest('button,a') : null;
   if(!el)return;

@@ -677,25 +677,35 @@ html { scroll-padding-top: 94px; }
   margin: 0;
   padding: 24px;
   color: #faf3f5;
-  background: radial-gradient(ellipse at 50% 63%, #4d2037 0%, #2a1728 39%, #151219 80%);
+  background: #000;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+  isolation: isolate;
 }
 
 .welcome-intro[open] { display: grid; place-items: center; }
 .welcome-intro::backdrop { background: transparent; }
 
 .welcome-content {
+  display: grid;
+  justify-items: center;
+  width: min(100%, 720px);
+  gap: clamp(24px, 4.8vw, 42px);
+  color: #fff;
+}
+.welcome-lockup {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: min(100%, 720px);
   gap: clamp(12px, 3vw, 36px);
-  color: #fff7fa;
 }
 .welcome-lg { flex: none; width: clamp(73px, 16vw, 161px); height: auto; }
 .welcome-content h2 {
   margin: 0;
   padding-inline-start: clamp(13px, 3vw, 36px);
-  border-inline-start: 1px solid #ebbdcf73;
+  border-inline-start: 1px solid #484348;
   font: 700 clamp(16px, 3.15vw, 45px)/1.15 Inter, Arial, sans-serif;
   letter-spacing: -.045em;
   white-space: nowrap;
@@ -703,7 +713,7 @@ html { scroll-padding-top: 94px; }
 .welcome-content h2 span {
   display: block;
   margin-top: .65em;
-  color: #f0bdcf;
+  color: #c4bec2;
   font-size: .45em;
   font-weight: 700;
   letter-spacing: .25em;
@@ -788,11 +798,6 @@ html { scroll-padding-top: 94px; }
 .showroom-section { background: linear-gradient(143deg, #22273a, #2c1828 65%, #1c1420); }
 .menu-overlay,
 footer { background-color: #201523; }
-.welcome-intro {
-  background:
-    radial-gradient(ellipse at 71% 9%, #4534698a, transparent 55%),
-    radial-gradient(ellipse at 44% 58%, #872247, #391c35 46%, #1a1426 82%);
-}
 
 .identity-line {
   display: inline-flex;
@@ -846,22 +851,19 @@ footer { background-color: #201523; }
   background: linear-gradient(155deg, #fff, hsl(var(--card-hue) 47% 95%));
 }
 
-.welcome-intro { isolation: isolate; overflow: hidden; }
-.welcome-intro::before,
-.welcome-intro::after {
+.welcome-track {
+  position: relative;
+  width: min(70%, clamp(156px, 31vw, 365px));
+  height: 2px;
+  overflow: hidden;
+  background: #2d282b;
+}
+.welcome-track::before {
   content: "";
   position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: -1;
-}
-.welcome-intro::before {
-  background: radial-gradient(ellipse at var(--welcome-x, 53%) var(--welcome-y, 53%),
-    #f966a03d 0%, #e6478d19 23%, transparent 58%);
-}
-.welcome-intro::after {
-  background: linear-gradient(122deg, transparent 35%, #f5a5cf20 49%, transparent 64%);
-  opacity: 0;
+  inset: 0 auto 0 0;
+  width: 47%;
+  background: linear-gradient(90deg, transparent, #be073d 29%, #ff557a 68%, transparent);
 }
 .welcome-skip {
   position: absolute;
@@ -872,10 +874,12 @@ footer { background-color: #201523; }
   background: transparent;
   touch-action: manipulation;
 }
-.welcome-skip:focus-visible { outline: 2px solid #f45177; outline-offset: -6px; }
+.welcome-skip:focus-visible { outline: none; }
+.welcome-skip:focus-visible + .welcome-content .welcome-track { outline: 1px solid #7d4355; outline-offset: 4px; }
 
 @media (prefers-reduced-motion: no-preference) {
-  .welcome-intro[open]::after { animation: welcome-light 2.05s var(--ease) both; }
+  .welcome-intro[open] .welcome-track { animation: welcome-track-in .48s .16s ease both; }
+  .welcome-intro[open] .welcome-track::before { animation: welcome-sweep 1.45s .20s linear infinite both; }
   .welcome-intro[open] .welcome-lg { animation: welcome-logo .9s var(--ease) both; }
   .welcome-intro[open] h2 { animation: welcome-name .85s .25s var(--ease) both; }
   .welcome-intro[open].welcome-leaving {
@@ -883,10 +887,13 @@ footer { background-color: #201523; }
     animation: welcome-out .32s ease both;
   }
 
-  @keyframes welcome-light {
-    0% { opacity: 0; transform: translateX(-62%); }
-    37% { opacity: 1; }
-    100% { opacity: 0; transform: translateX(70%); }
+  @keyframes welcome-track-in {
+    from { opacity: 0; transform: scaleX(.72); }
+    to { opacity: 1; transform: scaleX(1); }
+  }
+  @keyframes welcome-sweep {
+    from { transform: translateX(-102%); }
+    to { transform: translateX(215%); }
   }
   @keyframes welcome-logo {
     from { opacity: 0; transform: translateY(15px) scale(.84); filter: blur(7px); }

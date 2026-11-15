@@ -78,18 +78,32 @@ function revealHome() {
   if (!location.hash || location.hash === '#top') $('.hero').classList.add('home-arrived');
 }
 
-function showWelcome() {
+function resetHomeOnReload() {
+  if (performance.getEntriesByType('navigation')[0]?.type !== 'reload') return false;
+
+  const previousRestoration = history.scrollRestoration;
+  history.scrollRestoration = 'manual';
+  setSectionHash('');
+  window.scrollTo({top: 0, left: 0, behavior: 'instant'});
+  window.addEventListener('pageshow', () => {
+    window.scrollTo({top: 0, left: 0, behavior: 'instant'});
+    requestAnimationFrame(() => { history.scrollRestoration = previousRestoration; });
+  }, {once: true});
+  return true;
+}
+
+function showWelcome(reloadingHome) {
   const dialog = $('#welcome-intro');
   if ((location.hash && location.hash !== '#top') || typeof dialog.showModal !== 'function') return false;
 
-  const welcomeKey = 'lg-showroom-welcome-v34';
+  const welcomeKey = 'lg-showroom-welcome-v36';
   try {
-    if (sessionStorage.getItem(welcomeKey)) return false;
+    if (!reloadingHome && sessionStorage.getItem(welcomeKey)) return false;
     sessionStorage.setItem(welcomeKey, 'seen');
   } catch {}
 
   const motion = matchMedia('(prefers-reduced-motion: no-preference)');
-  const listeners = new AbortController();
+  const skip = $('#welcome-skip');
   let exitTimer;
   function finish() {
     if (!dialog.open || dialog.classList.contains('welcome-leaving')) return;
@@ -101,19 +115,14 @@ function showWelcome() {
     exitTimer = setTimeout(() => closeDialog(dialog.id), 320);
   }
 
-  dialog.addEventListener('pointermove', event => {
-    if (!motion.matches) return;
-    dialog.style.setProperty('--welcome-x', `${event.clientX}px`);
-    dialog.style.setProperty('--welcome-y', `${event.clientY}px`);
-  }, {passive: true, signal: listeners.signal});
-  $('#welcome-skip').addEventListener('click', finish, {signal: listeners.signal});
+  skip.addEventListener('click', finish, {once: true});
   openDialog(dialog.id);
 
   const autoExit = setTimeout(finish, motion.matches ? 2380 : 1300);
   dialog.addEventListener('close', () => {
     clearTimeout(autoExit);
     clearTimeout(exitTimer);
-    listeners.abort();
+    skip.removeEventListener('click', finish);
     revealHome();
   }, {once:true});
   return true;
@@ -423,7 +432,7 @@ function initTvDisplay() {
   syncPlayback();
 }
 
-function setup(){window.revealObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');window.revealObserver.unobserve(e.target)}}),{threshold:.08});syncLanguage();$('#year').textContent=new Date().getFullYear();startSlideTimer();initGooeyNav();initTvDisplay();
+function setup(){const reloadingHome=resetHomeOnReload();window.revealObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');window.revealObserver.unobserve(e.target)}}),{threshold:.08});syncLanguage();$('#year').textContent=new Date().getFullYear();startSlideTimer();initGooeyNav();initTvDisplay();
  document.addEventListener('click',e=>{
   const el=e.target instanceof Element ? e.target.closest('button,a') : null;
   if(!el)return;
@@ -491,6 +500,6 @@ function setup(){window.revealObserver=new IntersectionObserver(entries=>entries
  window.addEventListener('resize', syncCompareTray, {passive:true});
  document.documentElement.classList.add('motion-ready');
  observeReveal();
- if (!showWelcome()) revealHome();
+ if (!showWelcome(reloadingHome)) revealHome();
 }
 setup();

@@ -7,43 +7,24 @@ let favorites=read('lg-favorites',[]),comparison=read('lg-comparison',[]);
 if(!Array.isArray(favorites))favorites=[];if(!Array.isArray(comparison))comparison=[];
 favorites=favorites.filter(id=>PRODUCTS.some(p=>p.id===id));comparison=comparison.filter(id=>PRODUCTS.some(p=>p.id===id)).slice(0,3);
 const ui={
- galleryKitchenView:['المطبخ والشاشات','Kitchen and television view'],
- galleryTvWall:['جدار الشاشات','Television wall'],
- galleryScreensWide:['عرض الشاشات الواسع','Wide screen display'],
- galleryMainAisle:['الممر الرئيسي','Main showroom aisle'],
- galleryWashAndCool:['الغسالات والثلاجات','Washers and refrigerators'],
- galleryApplianceAisle:['ممر الأجهزة','Appliance aisle'],
- galleryWashersRow:['صف الغسالات','Washer lineup'],
- gallerySmallKitchen:['أجهزة المطبخ','Kitchen appliances'],
- galleryGraphite:['غسالات باللون الفحمي','Graphite washing machines'],
- galleryKitchenArea:['ركن المطبخ','Kitchen display'],
- galleryScreenPair:['ركن الشاشات','Television corner'],
- galleryFloorCare:['أجهزة العناية بالأرضيات','Floor care appliances'],
- galleryUhd:['عرض شاشات UHD','UHD display'],
- galleryNanoWall:['جدار شاشات NanoCell','NanoCell television wall'],
- galleryNanoDetail:['شاشة NanoCell','NanoCell television'],
- galleryIntro:['مرّر لتتجوّل بين أقسام معرض LG لدى مجموعة وسيم السيد.','Scroll through the LG displays at Waseem Al Sayed Group.'],
- galleryExpand:['عرض كل الصور','Show all photos'],galleryCollapse:['إخفاء الصور المصغّرة','Hide thumbnails'],
- showroomTvDetail:['شاشات LG مرتّبة للمشاهدة جنبًا إلى جنب.','LG screens displayed side by side.'],
- showroomFridgesDetail:['واجهات زجاجية وتشطيبات معدنية في صف واحد.','Glass fronts and metal finishes in one lineup.'],
- showroomLaundryDetail:['غسالات بتحميل أمامي وتشطيبات متعددة.','Front-load washers in a range of finishes.'],
- galleryKitchenViewDetail:['لقطة تجمع أجهزة المطبخ والشاشات في المعرض.','A view bringing kitchen appliances and screens together.'],
- galleryTvWallDetail:['شاشات بأحجام مختلفة على رفوف العرض.','Screens of different sizes across the display shelves.'],
- galleryScreensWideDetail:['لقطة واسعة تظهر ترتيب الشاشات على امتداد الجدار.','A wide view of the screens along the display wall.'],
- galleryMainAisleDetail:['جولة بصرية بين صفوف الأجهزة تحت إضاءة دافئة.','A walk through rows of appliances under warm lighting.'],
- galleryWashAndCoolDetail:['قسمان من المعرض في لقطة واحدة.','Two showroom displays in a single view.'],
- galleryApplianceAisleDetail:['زاوية ممتدة على صفوف الأجهزة المنزلية.','An extended view down the home-appliance aisle.'],
- galleryWashersRowDetail:['صف من الغسالات يبيّن اختلاف الألوان والواجهات.','A washer lineup showing different colors and finishes.'],
- gallerySmallKitchenDetail:['أجهزة المطبخ كما تظهر على رفوف المعرض.','Kitchen appliances on the showroom shelves.'],
- galleryGraphiteDetail:['لقطة مقرّبة للتشطيبات الفحميّة وتفاصيل الواجهات.','A closer look at graphite finishes and front panels.'],
- galleryKitchenAreaDetail:['عرض لأجهزة المطبخ بتشطيبات سوداء ومعدنية.','Kitchen appliances in black and metal finishes.'],
- galleryScreenPairDetail:['زاوية أخرى لعرض شاشات LG.','Another angle on the LG screen display.'],
- galleryFloorCareDetail:['عرض للمكنسة الروبوتية ضمن أجهزة العناية بالأرضيات.','A robot vacuum in the floor-care display.'],
- galleryUhdDetail:['لقطة لشاشة UHD ضمن مساحة العرض.','A UHD television in the showroom display.'],
- galleryNanoWallDetail:['لقطة واسعة لجدار شاشات NanoCell.','A wide view of the NanoCell television wall.'],
- galleryNanoDetailDetail:['نظرة أقرب إلى شاشة NanoCell في المعرض.','A closer view of a NanoCell television.'],
- showroomGallery:['داخل المعرض','Inside the showroom'],showroomTv:['قسم الشاشات','Television display'],showroomFridges:['قسم الثلاجات','Refrigerator display'],showroomLaundry:['قسم الغسالات','Laundry display'],
- fridgeMotion:['ثلاجة LG يفتح باباها ويغلقان','LG refrigerator with opening and closing doors'],
+ galleryIntro:['لمحة عن أقسام معرض LG لدى مجموعة وسيم السيد.','A look inside the LG showroom at Waseem Al Sayed Group.'],
+ galleryExpand:['عرض الصور','Show photos'],galleryCollapse:['إخفاء الصور المصغّرة','Hide thumbnails'],
+ galleryMainAisle:['صالة العرض','Showroom floor'],
+ galleryMainAisleDetail:['معرض LG لدى مجموعة وسيم السيد.','The LG showroom at Waseem Al Sayed Group.'],
+ showroomTv:['شاشات LG','LG televisions'],
+ showroomTvDetail:['شاشات OLED وأحجام متعددة.','OLED screens in a range of sizes.'],
+ showroomFridges:['ثلاجات LG','LG refrigerators'],
+ showroomFridgesDetail:['موديلات بتشطيبات وأحجام مختلفة.','Models in a range of finishes and sizes.'],
+ showroomLaundry:['غسالات LG','LG washing machines'],
+ showroomLaundryDetail:['غسالات تحميل أمامي.','Front-load washing machines.'],
+ galleryKitchenArea:['أجهزة المطبخ','Kitchen appliances'],
+ galleryKitchenAreaDetail:['أجهزة الطهي وغسالات الصحون.','Cooking appliances and dishwashers.'],
+ galleryFloorCare:['ركن المكانس','Vacuum display'],
+ galleryFloorCareDetail:['مكانس عمودية وروبوتية.','Stick and robot vacuums.'],
+ showroomGallery:['داخل المعرض','Inside the showroom'],
+ heroApplianceFridge:['ثلاجة LG','LG refrigerator'],heroApplianceAc:['مكيّف LG','LG air conditioner'],
+ heroApplianceWasher:['غسالة LG','LG washing machine'],heroApplianceTv:['شاشة LG OLED','LG OLED television'],
+ heroImageError:['تعذّر تحميل صورة المنتج','Unable to load the product image'],
  back:['رجوع','Back'],
  pauseTv:['إيقاف حركة شاشة التلفزيون','Pause TV display'],playTv:['تشغيل حركة شاشة التلفزيون','Play TV display'],
  discoverCollection:['اكتشف المجموعة','Explore the collection'],backTop:['العودة إلى الأعلى','Back to top'],zoomShowroom:['تكبير مشهد المعرض','Enlarge showroom image'],
@@ -65,19 +46,13 @@ const ui={
 const t=k=>(ui[k]||[k,k])[lang==='ar'?0:1], local=v=>typeof v==='object'&&v!==null?(v[lang]??v.ar??v.en??''):v??'';
 const categoryName=id=>{const c=CATEGORIES.find(x=>x[0]===id);return c?c[lang==='ar'?1:2]:t('all')};
 let state={category:'all',query:'',sort:'default',statuses:[],favoritesOnly:false};
-let current=null,currentImage=0,slide=0,paused=matchMedia('(prefers-reduced-motion: reduce)').matches,slideTimer,slideTransition,toastTimer;
+let current=null,currentImage=0,toastTimer;
 const pageViews = [];
 const navigationSession = String(performance.timeOrigin);
 let pagePosition = 0;
 let browserNavigation = false;
 const productTrail = [];
 let menuTrigger, filterTrigger;
-const slides=[
- {src:'assets/lg-glb-582gvlp-cutout.webp',alt:['ثلاجة LG','LG refrigerator']},
- {src:'assets/hero-ac-cutout.webp',device:'ac',alt:['مكيّف LG','LG air conditioner']},
- {src:'assets/hero-fridge-cutout.webp',device:'fridge',alt:['ثلاجة LG','LG refrigerator']},
- {src:'assets/hero-washer-cutout.webp',alt:['غسالة LG','LG washing machine']}
-];
 function persist(){try{localStorage.setItem('lg-language',JSON.stringify(lang));localStorage.setItem('lg-favorites',JSON.stringify(favorites));localStorage.setItem('lg-comparison',JSON.stringify(comparison))}catch{}}
 function toast(message){const el=$('#toast');el.textContent=message;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),3000)}
 function syncScrollLock() {
@@ -165,33 +140,7 @@ function showWelcome(reloadingHome) {
   return true;
 }
 
-function syncSlideControls() {
-  const button = $('#slide-toggle');
-  button.setAttribute('aria-label', t(paused ? 'playSlide' : 'pauseSlide'));
-  button.querySelector('path').setAttribute('d', paused ? 'M8 5l11 7-11 7z' : 'M9 5v14m6-14v14');
-  $('.hero').toggleAttribute('data-motion-paused', paused);
-  $('#hero-image').alt = slides[slide].alt[lang === 'ar' ? 0 : 1];
-}
-function setSlide(index) {
-  clearTimeout(slideTransition);
-  slide = (index + slides.length) % slides.length;
-  const stage = $('#hero-stage');
-  const next = slides[slide];
-  stage.classList.add('changing');
-  slideTransition = setTimeout(() => {
-    $('#hero-image').src = next.src;
-    stage.dataset.device = next.device || 'still';
-    syncSlideControls();
-    stage.classList.remove('changing');
-  }, 145);
-  startSlideTimer();
-}
-function startSlideTimer() {
-  clearTimeout(slideTimer);
-  if (paused) return;
-  slideTimer = setTimeout(() => setSlide(slide + 1), slides[slide].device === 'fridge' ? 6000 : 5200);
-}
-function syncLanguage(){document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';$$('[data-t]').forEach(el=>{el.innerHTML=t(el.dataset.t)});$$('[data-aria]').forEach(el=>el.setAttribute('aria-label',t(el.dataset.aria)));syncSlideControls();$('#search').placeholder=t('searchPlaceholder');$('#language').textContent=lang==='ar'?'EN':'ع';$('#language').setAttribute('aria-label',lang==='ar'?'Switch to English':'التبديل إلى العربية');$$('[data-shop-name]').forEach(el=>el.textContent=local(SHOP.name));$('#shop-address').textContent=local(SHOP.address)|| (lang==='ar'?'يُضاف قريبًا':'To be added');$('#shop-hours').textContent=local(SHOP.hours)||(lang==='ar'?'تُحدّد قريبًا':'To be confirmed');$('#shop-phone').textContent=SHOP.phone||SHOP.whatsapp||(lang==='ar'?'يُضاف قريبًا':'To be added');$('#showroom-info').hidden=!(local(SHOP.address)||local(SHOP.hours)||SHOP.phone||SHOP.whatsapp);renderCollection();renderCategories();renderProducts();updateCounters();if(current&&$('#product-dialog').open)renderDetail();if($('#compare-dialog').open)renderComparison()}
+function syncLanguage(){document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';$$('[data-t]').forEach(el=>{el.innerHTML=t(el.dataset.t)});$$('[data-aria]').forEach(el=>el.setAttribute('aria-label',t(el.dataset.aria)));$('#search').placeholder=t('searchPlaceholder');$('#language').textContent=lang==='ar'?'EN':'ع';$('#language').setAttribute('aria-label',lang==='ar'?'Switch to English':'التبديل إلى العربية');$$('[data-shop-name]').forEach(el=>el.textContent=local(SHOP.name));$('#shop-address').textContent=local(SHOP.address)|| (lang==='ar'?'يُضاف قريبًا':'To be added');$('#shop-hours').textContent=local(SHOP.hours)||(lang==='ar'?'تُحدّد قريبًا':'To be confirmed');$('#shop-phone').textContent=SHOP.phone||SHOP.whatsapp||(lang==='ar'?'يُضاف قريبًا':'To be added');$('#showroom-info').hidden=!(local(SHOP.address)||local(SHOP.hours)||SHOP.phone||SHOP.whatsapp);renderCollection();renderCategories();renderProducts();updateCounters();if(current&&$('#product-dialog').open)renderDetail();if($('#compare-dialog').open)renderComparison()}
 const collectionCategories = [
   ['fridge', 'lg-grb-862bvlb-cutout.webp'],
   ['tv', 'product-tv-cutout.webp'],
@@ -548,6 +497,97 @@ function initTvDisplay() {
 }
 
 
+function initHeroSlideshow() {
+  const hero = $('.hero');
+  const scenes = $$('#hero-stage .hero-slide');
+  const toggle = $('#slide-toggle');
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const fridge = scenes[0];
+  const last = scenes.length - 1;
+  let visible = false;
+  let playing = !reducedMotion.matches;
+  let active = 0;
+  let requested = 0;
+  let requestId = 0;
+  let timer;
+
+  const canPlay = () => playing && visible && !document.hidden && !document.body.classList.contains('modal-open');
+
+  function schedule() {
+    clearTimeout(timer);
+    const running = canPlay();
+    hero.toggleAttribute('data-motion-paused', !running);
+    toggle.dataset.aria = playing ? 'pauseSlide' : 'playSlide';
+    toggle.setAttribute('aria-label', t(toggle.dataset.aria));
+    toggle.querySelector('path').setAttribute('d', playing ? 'M9 5v14m6-14v14' : 'M8 5l11 7-11 7z');
+    if (running && requested === active && active < last) {
+      timer = setTimeout(() => show(active + 1, true), active === 0 ? 5900 : 4800);
+    }
+  }
+
+  async function show(index, automatic = false) {
+    const next = (index + scenes.length) % scenes.length;
+    const request = ++requestId;
+    requested = next;
+    schedule();
+    if (next === active) return;
+
+    try {
+      await scenes[next].querySelector('.hero-product').decode();
+    } catch {
+      if (request !== requestId) return;
+      requested = active;
+      playing = false;
+      if (!automatic) toast(t('heroImageError'));
+      schedule();
+      return;
+    }
+
+    // Only the latest request may replace the scene, after its image is decoded.
+    if (request !== requestId) return;
+    if (automatic && !canPlay()) {
+      requested = active;
+      schedule();
+      return;
+    }
+    scenes[active].hidden = true;
+    scenes[active].classList.remove('is-active', 'scene-enter');
+    const incoming = scenes[next];
+    incoming.hidden = false;
+    incoming.classList.add('is-active', 'scene-enter');
+    active = next;
+    if (active === last) playing = false;
+    schedule();
+  }
+
+  if (!reducedMotion.matches) {
+    const fridgeImages = [...fridge.querySelectorAll('img')];
+    Promise.all(fridgeImages.map(image => image.decode()))
+      .then(() => fridge.setAttribute('data-effect-ready', ''))
+      .catch(() => {}); // The closed fridge image remains available.
+  }
+
+  $('#slide-next').addEventListener('click', () => show(requested + 1));
+  $('#slide-prev').addEventListener('click', () => show(requested - 1));
+  toggle.addEventListener('click', () => {
+    playing = !playing;
+    if (playing && active === last) show(0);
+    else schedule();
+  });
+  const observer = new IntersectionObserver(([entry]) => {
+    visible = entry.isIntersecting && entry.intersectionRatio >= .25;
+    schedule();
+  }, {threshold: [.25]});
+  observer.observe(hero);
+  reducedMotion.addEventListener('change', event => {
+    if (event.matches) playing = false;
+    schedule();
+  });
+  document.addEventListener('visibilitychange', schedule);
+  new MutationObserver(schedule).observe(document.body, {attributes: true, attributeFilter: ['class']});
+  schedule();
+}
+
 function initShowroomGallery() {
   const gallery = $('#gallery-stacks');
   const overview = $('#gallery-overview');
@@ -655,7 +695,7 @@ function initShowroomGallery() {
   resize();
 }
 
-function setup(){const reloadingHome=resetHomeOnReload();setupPageNavigation();window.revealObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');window.revealObserver.unobserve(e.target)}}),{threshold:.08});syncLanguage();$('#year').textContent=new Date().getFullYear();startSlideTimer();initGooeyNav();initTvDisplay();initShowroomGallery();
+function setup(){const reloadingHome=resetHomeOnReload();setupPageNavigation();window.revealObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');window.revealObserver.unobserve(e.target)}}),{threshold:.08});syncLanguage();$('#year').textContent=new Date().getFullYear();initHeroSlideshow();initGooeyNav();initTvDisplay();initShowroomGallery();
  document.addEventListener('click',e=>{
   const el=e.target instanceof Element ? e.target.closest('button,a') : null;
   if(!el)return;
@@ -682,13 +722,6 @@ function setup(){const reloadingHome=resetHomeOnReload();setupPageNavigation();w
   }
  });
  $('#language').addEventListener('click',()=>{lang=lang==='ar'?'en':'ar';persist();syncLanguage();requestAnimationFrame(()=>window.dispatchEvent(new Event('resize')))});
- $('#slide-next').addEventListener('click',()=>setSlide(slide+1));
- $('#slide-prev').addEventListener('click',()=>setSlide(slide-1));
- $('#slide-toggle').addEventListener('click',()=>{
-   paused = !paused;
-   syncSlideControls();
-   startSlideTimer();
- });
  $('#menu-close').addEventListener('click',()=>setMenu(false));
  $('#search').addEventListener('input',e=>{state.query=e.target.value.trim();renderProducts()});$('#sort').addEventListener('change',e=>{state.sort=e.target.value;renderProducts()});$('#clear-filters').addEventListener('click',()=>resetFilters());$('#empty-reset').addEventListener('click',()=>resetFilters());
  $('#compare-view').addEventListener('click',openComparison);

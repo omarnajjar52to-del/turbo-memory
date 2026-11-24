@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>NAAR design system preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700&amp;family=Playfair+Display+SC:wght@400;700&amp;display=swap">
+  <style>
+    :root {
+    --color-primary: #DC2626;
+    --color-on-primary: #FFFFFF;
+    --color-secondary: #F87171;
+    --color-on-secondary: #0F172A;
+    --color-accent: #A16207;
+    --color-on-accent: #FFFFFF;
+    --color-background: #FEF2F2;
+    --color-foreground: #450A0A;
+    --color-card: #FFFFFF;
+    --color-card-foreground: #450A0A;
+    --color-muted: #F0EDF1;
+    --color-muted-foreground: #475569;
+    --color-border: #FECACA;
+    --color-destructive: #DC2626;
+    --color-on-destructive: #FFFFFF;
+    --color-ring: #DC2626;
+      --font-heading: "Playfair Display SC", system-ui, -apple-system, "Segoe UI", sans-serif;
+      --font-body: "Karla", system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { font-size: 16px; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--font-body);
+      background: #FEF2F2;
+      color: #450A0A;
+      line-height: 1.5;
+    }
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible {
+      outline: 3px solid #DC2626;
+      outline-offset: 2px;
+    }
+    header, main {
+      width: min(1100px, calc(100% - 2rem));
+      margin-inline: auto;
+    }
+    header {
+      padding: 2.5rem 0 1.5rem;
+      border-bottom: 1px solid #FECACA;
+    }
+    .eyebrow {
+      margin: 0 0 0.35rem;
+      text-transform: none;
+      letter-spacing: 0;
+      font-size: 0.75rem;
+      color: #475569;
+    }
+    h1, h2, h3, .specimen-heading {
+      font-family: var(--font-heading);
+      line-height: 1.2;
+      margin: 0 0 0.5rem;
+    }
+    html[dir="rtl"] h1, html[dir="rtl"] h2, html[dir="rtl"] h3, html[dir="rtl"] .specimen-heading {
+      letter-spacing: 0;
+    }
+    h1 { font-size: 2.25rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.2rem; }
+    main { padding: 2rem 0 4rem; display: grid; gap: 2.5rem; }
+    section {
+      background: #FFFFFF;
+      color: #450A0A;
+      border: 1px solid #FECACA;
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .swatches {
+      list-style: none;
+      margin: 1rem 0 0;
+      padding: 0;
+      display: grid;
+      gap: 0.75rem;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+    .swatch {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+    .swatch-chip {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 8px;
+      border: 1px solid #FECACA;
+      flex-shrink: 0;
+    }
+    .swatch-meta p { margin: 0; font-size: 0.9rem; }
+    .swatch-role { font-weight: 600; }
+    .swatch-contrast { color: #475569; }
+    code { font-size: 0.85em; }
+    .badge {
+      display: inline-block;
+      margin-inline-start: 0.35rem;
+      padding: 0.05rem 0.4rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+    .badge-aaa { background: #DC2626; color: #FFFFFF; }
+    .badge-aa { background: #F0EDF1; color: #475569; }
+    .badge-fail { background: #DC2626; color: #FFFFFF; }
+    .type-scale { display: grid; gap: 0.75rem; }
+    .type-scale p { margin: 0; max-width: 42rem; }
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 0.75rem 0;
+    }
+    .btn {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 12px 24px;
+      border-radius: 8px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: opacity 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+    }
+    .btn-primary { background: #DC2626; color: #FFFFFF; }
+    .btn-secondary {
+      background: transparent;
+      color: #450A0A;
+      border-color: #F87171;
+    }
+    .btn-accent { background: #A16207; color: #FFFFFF; }
+    .btn-destructive { background: #DC2626; color: #FFFFFF; }
+    .btn:hover, .btn.is-hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+      transform: translateY(-1px);
+    }
+    .btn:focus-visible, .btn.is-focus {
+      outline: 3px solid #DC2626;
+      outline-offset: 2px;
+    }
+    .btn:disabled, .btn.is-disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .state-label {
+      font-size: 0.8rem;
+      color: #475569;
+      margin: 0.25rem 0 0;
+    }
+    .preview-card {
+      background: #FFFFFF;
+      color: #450A0A;
+      border: 1px solid #FECACA;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      max-width: 28rem;
+    }
+    .field { display: grid; gap: 0.35rem; max-width: 28rem; }
+    .field + .field { margin-top: 1rem; }
+    label { font-weight: 600; }
+    input[type="text"], input[type="email"] {
+      font: inherit;
+      padding: 12px 16px;
+      border: 1px solid #FECACA;
+      border-radius: 8px;
+      background: #FEF2F2;
+      color: #450A0A;
+    }
+    input[aria-invalid="true"] {
+      border-color: #DC2626;
+    }
+    .help { margin: 0; color: #475569; font-size: 0.9rem; }
+    .error {
+      margin: 0;
+      color: #FFFFFF;
+      background: #DC2626;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+    }
+    .notes { color: #475569; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+      .btn:hover, .btn.is-hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">Design system preview</p>
+    <h1>NAAR</h1>
+    <p>Vibrant &amp; Block-based · Restaurant/Food Service</p>
+  </header>
+  <main>
+    <section aria-labelledby="palette-heading">
+      <h2 id="palette-heading">Palette</h2>
+      <p class="notes">Appetizing red + warm gold [Accent adjusted from #CA8A04]</p>
+      <ul class="swatches">
+        <li class="swatch"><div class="swatch-chip" style="background:#DC2626" aria-hidden="true"></div><div class="swatch-meta"><p class="swatch-role">Primary</p><p><code dir="ltr" style="unicode-bidi:isolate">#DC2626</code> <code dir="ltr" style="unicode-bidi:isolate">--color-primary</code></p><p class="swatch-contrast">vs On Primary <code dir="ltr" style="unicode-bidi:isolate">#FFFFFF</code>: <span dir="ltr" style="unicode-bidi:isolate">4.83:1</span> <span class="badge badge-aa" dir="ltr" style="unicode-bidi:isolate">AA</span></p></div></li><li class="swatch"><div class="swatch-chip" style="background:#FFFFFF" aria-hidden="true"></div><div class="swatch-meta"><p class="swatch-role">On Primary</p><p><code dir="ltr" style="unicode-bidi:isolate">#FFFFFF</code> <code dir="ltr" style="unicode-bidi:isolate">--color-on-primary</code></p><p class="swatch-contrast">vs Primary <code dir="ltr" style="unicode-bidi:isolate">#DC2626</code>: <span dir="ltr" style="unicode-bidi:isolate">4.83:1</span> <span class="badge badge-aa" dir="ltr" style="unicode-bidi:isolate">AA</span></p></div></li><li class="swatch"><div class="swatch-chip" style="background:#F87171" aria-hidden="true"></div><div class="swatch-meta"><p class="swatch-role">Secondary</p><p><code dir="ltr" style="unicode-bidi:isolate">#F87171</code> <code dir="ltr" style="unicode-bidi:isolate">--color-secondary</code></p><p class="swatch-contrast">vs On Secondary <code dir="ltr" style="unicode-bidi:isolate">#0F172A</code>: <span dir="ltr" style="unicode-bidi:isolate">6.45:1</span> <span class="badge badge-aa" dir="ltr" style="unicode-bidi:isolate">AA</span></p></div></li><li class="swatch"><div class="swatch-chip" style="background:#0F172A" aria-hidden="true"></div><div class="swatch-meta"><p class="swatch-role">On Secondary</p><p><code dir="ltr" style="unicode-bidi:isolate">#0F172A</code> <code dir="ltr" style="unicode-bidi:isolate">--color-on-secondary</code></p><p class="swatch-contrast">vs Secondary <code dir="ltr" style="unicode-bidi:isolate">#F87171</code>: <span dir="ltr" style="unicode-bidi:isolate">6.45:1</span> <span class="badge badge-aa" dir="ltr" style="unicode-bidi:isolate">AA</span></p></div></li><li class="swatch"><div class="swatch-chip" style="background:#A16207" aria-hidden="true"></div><div class="swatch-meta"><p class="swatch-role">Accent/CTA</p><p><code dir="ltr" style="unicode-bidi:isolate">#A16207</code> <code dir="ltr" style="unicode-bidi:isolate">--color-accent</code></p><p class="swatch-contrast">vs On Accent/CTA <code dir="ltr" style="unicode-bidi:isolate">#FFFFFF</code>: <span dir="ltr" style="unicode-bidi:isolate">4.92:1</span> <span class="badge badge-aa" dir="ltr" style="unicode-bidi:isolate">AA</span></p></div></li><li class="swatch"><div class="swatch-chip" style="background:#FFFFFF" aria-hidden="true"></div><div class="swatch-meta"><p class="swatch-role">On Accent/CTA</p><p><code dir="ltr" style="unicode-bidi:isolate">#FFFFFF</code> <code dir="ltr" style="unicode-bidi:isolate">--color-on-accent</code></p><p class="swatch-contrast">vs Accent/CTA <code dir="ltr" style="unicode-bidi:isolate">#A16207</code>: <span dir="ltr" style="unicode-bidi:isolate">4.92:1</span> <span class="badge badge-aa" dir="ltr" style="unicode-bidi:isolate">AA</span></p></div></li><li class="swatch"><div class="swatch-chip" style="background:#FEF2F2" aria-hidden="true"></div><div class="swatch-meta"><p class="swatch-role">Background</p><p><code dir="ltr" style="unicode-bidi:isolate">#FEF2F2</code> <code dir="ltr" style="unicode-bidi:isolate">--color-background</code></p><p class="swatch-contrast">vs Foreground <code dir="ltr" style="unicode-bidi:isolate">#450A0A</code>: <span dir="ltr" style="unicode-bidi:isolate">14.76:1</span> <span class="badge badge-aaa" dir="ltr" style="unicode-bidi:isolate">AAA</span></p></div></li><li class="swatch"><div class="swatch-chip" style="background:#450A0A" aria-hidden="true"></div><div class="swatch-meta"><p class="swatch-role">Foreground</p><p><code dir="ltr" style="unicode-bidi:isolate">#450A0A</code> <code dir="ltr" style="unicode-bidi:isolate">--color-foreground</code></p><p class="swatch-contrast">vs Background <code dir="ltr" style="unicode-bidi:isolate">#FEF2F2</code>: <span dir="ltr" style="unicode-bidi:isolate">14.76:1</span> <span class="badge badge-aaa" dir="ltr" style="unicode-bidi:isolate">AAA</span></p></div></li><li class="swatch"><div class="swatch-chip" style="background:#FFFFFF" aria-hidden="true"></div><div class="swatch-meta"><p class="swatch-role">Card</p><p><code dir="ltr" style="unicode-bidi:isolate">#FFFFFF</code> <code dir="ltr" style="unicode-bidi:isolate">--color-card</code></p><p class="swatch-contrast">vs Card Foreground <code dir="ltr" style="unicode-bidi:isolate">#450A0A</code>: <span dir="ltr" style="unicode-bidi:isolate">16.14:1</span> <span class="badge badge-aaa" dir="ltr" style="unicode-bidi:isolate">AAA</span></p></div></li><li class="swatch"><div class="swatch-chip" style="background:#450A0A" aria-hidden="true"></div><div class="swatch-meta"><p class="swatch-role">Card Foreground</p><p><code dir="ltr" style="unicode-bidi:isolate">#450A0A</code> <code dir="ltr" style="unicode-bidi:isolate">--color-card-foreground</code></p><p class="swatch-contrast">vs Card <code dir="ltr" style="unicode-bidi:isolate">#FFFFFF</code>: <span dir="ltr" style="unicode-bidi:isolate">16.14:1</span> <span class="badge badge-aaa" dir="ltr" style="unicode-bidi:isolate">AAA</span></p></div></li><li class="swatch"><div class="swatch-chip" style="background:#F0EDF1" aria-hidden="true"></div><div class="swatch-meta"><p class="swatch-role">Muted</p><p><code dir="ltr" style="unicode-bidi:isolate">#F0EDF1</code> <code dir="ltr" style="unicode-bidi:isolate">--color-muted</code></p><p class="swatch-contrast">vs Muted Foreground <code dir="ltr" style="unicode-bidi:isolate">#475569</code>: <span dir="ltr" style="unicode-bidi:isolate">6.53:1</span> <span class="badge badge-aa" dir="ltr" style="unicode-bidi:isolate">AA</span></p></div></li><li class="swatch"><div class="swatch-chip" style="background:#475569" aria-hidden="true"></div><div class="swatch-meta"><p class="swatch-role">Muted Foreground</p><p><code dir="ltr" style="unicode-bidi:isolate">#475569</code> <code dir="ltr" style="unicode-bidi:isolate">--color-muted-foreground</code></p><p class="swatch-contrast">vs Muted <code dir="ltr" style="unicode-bidi:isolate">#F0EDF1</code>: <span dir="ltr" style="unicode-bidi:isolate">6.53:1</span> <span class="badge badge-aa" dir="ltr" style="unicode-bidi:isolate">AA</span></p></div></li><li class="swatch"><div class="swatch-chip" style="background:#FECACA" aria-hidden="true"></div><div class="swatch-meta"><p class="swatch-role">Border</p><p><code dir="ltr" style="unicode-bidi:isolate">#FECACA</code> <code dir="ltr" style="unicode-bidi:isolate">--color-border</code></p></div></li><li class="swatch"><div class="swatch-chip" style="background:#DC2626" aria-hidden="true"></div><div class="swatch-meta"><p class="swatch-role">Destructive</p><p><code dir="ltr" style="unicode-bidi:isolate">#DC2626</code> <code dir="ltr" style="unicode-bidi:isolate">--color-destructive</code></p><p class="swatch-contrast">vs On Destructive <code dir="ltr" style="unicode-bidi:isolate">#FFFFFF</code>: <span dir="ltr" style="unicode-bidi:isolate">4.83:1</span> <span class="badge badge-aa" dir="ltr" style="unicode-bidi:isolate">AA</span></p></div></li><li class="swatch"><div class="swatch-chip" style="background:#FFFFFF" aria-hidden="true"></div><div class="swatch-meta"><p class="swatch-role">On Destructive</p><p><code dir="ltr" style="unicode-bidi:isolate">#FFFFFF</code> <code dir="ltr" style="unicode-bidi:isolate">--color-on-destructive</code></p><p class="swatch-contrast">vs Destructive <code dir="ltr" style="unicode-bidi:isolate">#DC2626</code>: <span dir="ltr" style="unicode-bidi:isolate">4.83:1</span> <span class="badge badge-aa" dir="ltr" style="unicode-bidi:isolate">AA</span></p></div></li><li class="swatch"><div class="swatch-chip" style="background:#DC2626" aria-hidden="true"></div><div class="swatch-meta"><p class="swatch-role">Ring</p><p><code dir="ltr" style="unicode-bidi:isolate">#DC2626</code> <code dir="ltr" style="unicode-bidi:isolate">--color-ring</code></p></div></li>
+      </ul>
+    </section>
+    <section aria-labelledby="type-heading">
+      <h2 id="type-heading">Typography</h2>
+      <p class="help">Heading: Playfair Display SC · Body: Karla</p>
+      <div class="type-scale">
+        <p class="specimen-heading" style="font-size:2.5rem">Display · Playfair Display SC</p>
+        <h3>Heading 2 · Playfair Display SC</h3>
+        <p>Body copy in Karla. The generated pairing is shown at a readable scale so you can judge hierarchy, weight, and line length before building components. Pack my box with five dozen liquor jugs.</p>
+      </div>
+    </section>
+    <section aria-labelledby="buttons-heading">
+      <h2 id="buttons-heading">Buttons</h2>
+      <p class="state-label">Default</p>
+      <div class="btn-row">
+        <button class="btn btn-primary" type="button">Primary</button>
+        <button class="btn btn-secondary" type="button">Secondary</button>
+        <button class="btn btn-accent" type="button">Accent</button>
+        <button class="btn btn-destructive" type="button">Destructive</button>
+      </div>
+      <p class="state-label">Hover</p>
+      <div class="btn-row">
+        <button class="btn btn-primary is-hover" type="button">Primary</button>
+        <button class="btn btn-secondary is-hover" type="button">Secondary</button>
+        <button class="btn btn-accent is-hover" type="button">Accent</button>
+        <button class="btn btn-destructive is-hover" type="button">Destructive</button>
+      </div>
+      <p class="state-label">Focus-visible</p>
+      <div class="btn-row">
+        <button class="btn btn-primary is-focus" type="button">Primary</button>
+        <button class="btn btn-secondary is-focus" type="button">Secondary</button>
+        <button class="btn btn-accent is-focus" type="button">Accent</button>
+        <button class="btn btn-destructive is-focus" type="button">Destructive</button>
+      </div>
+      <p class="state-label">Disabled</p>
+      <div class="btn-row">
+        <button class="btn btn-primary" type="button" disabled>Primary</button>
+        <button class="btn btn-secondary" type="button" disabled>Secondary</button>
+        <button class="btn btn-accent" type="button" disabled>Accent</button>
+        <button class="btn btn-destructive" type="button" disabled>Destructive</button>
+      </div>
+    </section>
+    <section aria-labelledby="card-heading">
+      <h2 id="card-heading">Card</h2>
+      <article class="preview-card">
+        <h3>NAAR</h3>
+        <p>A sample card using the generated card surface, border, and type pairing.</p>
+        <button class="btn btn-primary" type="button">Continue</button>
+      </article>
+    </section>
+    <section aria-labelledby="form-heading">
+      <h2 id="form-heading">Form</h2>
+      <form>
+        <div class="field">
+          <label for="preview-email">Email</label>
+          <input id="preview-email" name="email" type="email" autocomplete="email" aria-describedby="preview-email-help">
+          <p id="preview-email-help" class="help">Use your work address.</p>
+        </div>
+        <div class="field">
+          <label for="preview-name">Display name</label>
+          <input id="preview-name" name="name" type="text" value="Not a valid value" aria-invalid="true" aria-describedby="preview-name-error">
+          <p id="preview-name-error" class="error">Enter a display name of at least two characters.</p>
+        </div>
+      </form>
+    </section>
+    <section aria-labelledby="style-heading">
+      <h2 id="style-heading">Style, effects, anti-patterns</h2>
+      <p><strong>Style:</strong> Vibrant &amp; Block-based</p>
+      <p><strong>Key effects:</strong> Large sections (48px+ gaps), animated patterns, bold hover (color shift), scroll-snap, large type (32px+), 200-300ms</p>
+      <h3>Anti-patterns</h3>
+      <ul>
+        <li>Low-quality imagery</li><li>Outdated hours</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

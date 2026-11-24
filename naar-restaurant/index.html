@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="ar" dir="rtl" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>نار | بيتزا، سندويشات وسناكات</title>
+<meta name="description" content="بيتزا من الفرن الحجري، سندويشات محشية وسناكات مقرمشة. اطلب أونلاين وخلّيها توصلك ساخنة.">
+<meta name="theme-color" content="#170A06">
+<meta property="og:type" content="website">
+<meta property="og:title" content="نار | NAAR · Pizza, Sandwiches & Snacks">
+<meta property="og:description" content="بيتزا من الفرن الحجري، سندويشات محشية وسناكات مقرمشة.">
+<meta property="og:image" content="assets/img/pizza-dark.webp">
+<link rel="icon" href="assets/img/brand-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;700;800;900&family=Badeen+Display&family=Dela+Gothic+One&family=Readex+Pro:wght@400;500;600&display=swap">
+<link rel="preload" as="image" href="assets/img/hero-pizza.webp">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/refresh.css">
+<script>
+  (function () {
+    var d = document.documentElement, l = null, seen = null;
+    d.classList.remove('no-js'); d.classList.add('js');
+    try { l = localStorage.getItem('naar.lang'); seen = localStorage.getItem('naar.seen'); } catch (e) {}
+    var m = /[?&]lang=(ar|en)\b/.exec(location.search); if (m) l = m[1];
+    d.lang = l === 'en' ? 'en' : 'ar'; d.dir = l === 'en' ? 'ltr' : 'rtl';
+    d.classList.add(seen ? 'intro-short' : 'intro-full');
+    setTimeout(function () { if (!window.__naarReady) d.classList.add('intro-failsafe'); }, 6000);
+  })();
+</script>
+</head>
+<body>
+
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g-flame-out" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FF4B3E"/>
+      <stop offset=".55" stop-color="#FF6A13"/>
+      <stop offset="1" stop-color="#FF8A1F"/>
+    </linearGradient>
+    <linearGradient id="g-flame-in" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFC21A"/>
+      <stop offset="1" stop-color="#FFE7A0"/>
+    </linearGradient>
+  </defs>
+  <symbol id="logo-flame" viewBox="0 0 64 64"><path fill="#ff652d" d="M32 3c11 11 18 23 16 34-1 8-8 15-14 21C14 56 6 44 12 32c3-6 8-9 12-15l-2 13C32 22 36 15 32 3Z"/><path fill="#ffbd59" d="M48 19c12 16 13 30-9 41-5-9-2-17 4-24 5-6 6-10 5-17Z"/><path fill="#120e0c" d="m24 34 17-4-9 20Z"/><g fill="#ffbd59"><circle cx="28" cy="37" r="1.6"/><circle cx="35" cy="35" r="1.6"/></g></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 8Z"/><path d="M9 8V7a3 3 0 0 1 6 0v1"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11.5a7 7 0 0 1 14 0C19 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.5 3h3l1.5 4.5-2 1.5a12 12 0 0 0 6 6l1.5-2 4.5 1.5v3a2 2 0 0 1-2 2A17 17 0 0 1 4.5 5a2 2 0 0 1 2-2Z"/></symbol>
+  <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M4 20.5 5.3 16.4A8.4 8.4 0 1 1 8.6 19.4L4 20.5Z"/><path fill="currentColor" stroke="none" d="M9.3 8.1c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .5.4l.7 1.5c.1.2 0 .4-.1.6l-.5.6c-.1.1-.1.3 0 .5.6 1 1.5 1.9 2.5 2.4.2.1.4.1.5 0l.6-.7c.2-.2.4-.2.6-.1l1.4.7c.3.1.3.3.3.5 0 .4-.2 1-.6 1.3-.5.4-1.2.5-1.9.3-2.3-.7-4.2-2.5-5.1-4.8-.3-.7-.2-1.5.3-2.4Z"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h8"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 10 5.5 4h13L20 10M4 10h16v10H4zM9.5 20v-5h5v5"/></symbol>
+  <symbol id="i-cash" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6.5 9.5v5M17.5 9.5v5"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h3"/></symbol>
+  <symbol id="i-pizza" viewBox="0 0 24 24"><path d="M12 3 3.5 18.5C9 21.2 15 21.2 20.5 18.5L12 3Z"/><path d="M5.6 15c4.1 2 8.7 2 12.8 0"/><circle cx="12" cy="11" r="1.2"/><circle cx="9.5" cy="14.4" r="1"/><circle cx="14.4" cy="14.5" r="1"/></symbol>
+  <symbol id="i-sandwich" viewBox="0 0 24 24"><path d="M3.5 11C3.5 7 7.3 4.5 12 4.5S20.5 7 20.5 11H3.5Z"/><path d="M3 14.5c1.5-1 3-1 4.5 0s3 1 4.5 0 3-1 4.5 0 3 1 4.5 0"/><path d="M4 17.5h16v.5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-.5Z"/></symbol>
+  <symbol id="i-fries" viewBox="0 0 24 24"><path d="M6 10h12l-1.6 10H7.6L6 10Z"/><path d="M8 10V4.5M10.7 10V3.5M13.3 10V3.5M16 10V4.5"/></symbol>
+  <symbol id="i-cup" viewBox="0 0 24 24"><path d="M6 8h12l-1.4 12H7.4L6 8Z"/><path d="M5 8h14M12 8V4l3.5-1"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12.5 2c.9 3.7 4.9 6 5.8 10 .9 4.4-1.7 9-6.3 9.5-4.6.5-7.6-3-7.5-6.8.1-2.6 1.6-4.4 3.3-5.8-.1 1.9.6 3.5 2 4.3-.8-3.8.2-7.6 2.7-11.2Z"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 2c.6 4.9 2.5 7.4 10 10-7.5 2.6-9.4 5.1-10 10-.6-4.9-2.5-7.4-10-10 7.5-2.6 9.4-5.1 10-10Z"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8.5 5.5-14 15-14 0 9.5-5.5 15-14 15"/><path d="M5 19l7.5-7.5"/></symbol>
+  <symbol id="i-chili" viewBox="0 0 24 24"><path d="M17 6.5c-1.6-.4-2.8.6-3 2C12.6 14 8.5 17.5 4 18.5c3.4 2.6 9.4 2.5 12.8-2.3 2-2.8 2.5-5.9 2-8.5-.3-.7-.9-1.1-1.8-1.2Z"/><path d="M17 6.5c.2-1.5 1-2.5 2.5-3"/></symbol>
+  <symbol id="i-scooter" viewBox="0 0 24 24"><circle cx="6" cy="17" r="2.5"/><circle cx="18" cy="17" r="2.5"/><path d="M8.5 17h6.5l2-6h-4M15 7h3l1 4M4 13h6"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></symbol>
+  <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5M14 3c.4 2.6 2.2 4.4 5 4.6"/></symbol>
+  <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8Z"/></symbol>
+</svg>
+
+<a class="skip-link" href="#main" data-i18n="a11y.skip">تخطَّ إلى المحتوى</a>
+
+<!-- ============ WELCOME ============ -->
+<div class="intro" id="intro" role="dialog" aria-modal="true" aria-labelledby="intro-title">
+  <div class="embers" data-embers="26" aria-hidden="true"></div>
+  <div class="intro__sun" aria-hidden="true">
+    <div class="intro__sun-glow"></div>
+    <img class="intro__sun-img" src="assets/img/hero-pizza.webp" width="1000" height="1000" alt="">
+  </div>
+  <div class="intro__content">
+    <div class="intro__flame-wrap"><svg class="intro__flame" viewBox="0 0 64 64" aria-hidden="true"><use href="#logo-flame"/></svg></div>
+    <p class="intro__title" id="intro-title">
+      <span class="intro__word" lang="ar"><img class="intro-logo" src="assets/img/logo-naar.svg" width="260" height="220" alt="نار · NAAR"></span>
+      <span class="intro__latin" lang="en">NAAR</span>
+    </p>
+    <p class="intro__welcome">
+      <span lang="ar">أهلاً وسهلاً</span>
+      <span class="intro__dot" aria-hidden="true"></span>
+      <span lang="en">Welcome</span>
+    </p>
+    <p class="intro__tag"><span lang="ar">بيتزا · سندويش · سناك</span><span lang="en">Pizza · Sandwiches · Snacks</span></p>
+    <div class="intro__langs" role="group" aria-label="اختر لغتك · Choose your language">
+      <button class="intro__btn" type="button" data-lang="ar" lang="ar"><span>ادخل بالعربي</span></button>
+      <button class="intro__btn" type="button" data-lang="en" lang="en"><span>Enter in English</span></button>
+    </div>
+    <p class="intro__back"><span lang="ar">أهلاً بعودتك</span><span class="intro__dot" aria-hidden="true"></span><span lang="en">Welcome back</span></p>
+  </div>
+  <button class="intro__skip" type="button" id="intro-skip"><span lang="ar">تخطَّ</span> · <span lang="en">Skip</span></button>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="#top" data-i18n-attr="aria-label:a11y.home" aria-label="نار، الصفحة الرئيسية"><img class="brand-logo" src="assets/img/logo-naar.svg" width="112" height="64" alt="نار · NAAR">
+      <svg class="brand__flame" viewBox="0 0 64 64" aria-hidden="true"><use href="#logo-flame"/></svg>
+      <span class="brand__word" aria-hidden="true" data-i18n="brand.word">نار</span>
+      <span class="brand__latin" aria-hidden="true" data-i18n="brand.alt">NAAR</span>
+    </a>
+    <nav class="primary-nav" data-i18n-attr="aria-label:a11y.primaryNav" aria-label="التنقل الرئيسي">
+      <a href="#menu" data-i18n="nav.menu">المنيو</a>
+      <a href="#offers" data-i18n="nav.offers">العروض</a>
+      <a href="#story" data-i18n="nav.story">قصتنا</a>
+      <a href="#visit" data-i18n="nav.visit">زورونا</a>
+    </nav>
+    <div class="site-header__actions">
+      <button class="lang-btn" type="button" id="lang-btn" data-i18n-attr="aria-label:lang.switchLabel" aria-label="التبديل إلى الإنجليزية">
+        <svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg><span data-i18n="lang.switch">EN</span>
+      </button>
+      <button class="cart-btn" type="button" id="cart-btn" aria-label="السلة فاضية">
+        <svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg>
+        <span class="cart-btn__count" id="cart-count" aria-hidden="true">0</span>
+      </button>
+      <button class="burger" type="button" id="burger" aria-expanded="false" aria-controls="mobile-nav" data-i18n-attr="aria-label:a11y.openMenu" aria-label="افتح القائمة">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" hidden>
+  <nav class="mobile-nav__links" data-i18n-attr="aria-label:a11y.primaryNav" aria-label="التنقل الرئيسي">
+    <a href="#menu" data-i18n="nav.menu">المنيو</a>
+    <a href="#offers" data-i18n="nav.offers">العروض</a>
+    <a href="#story" data-i18n="nav.story">قصتنا</a>
+    <a href="#visit" data-i18n="nav.visit">زورونا</a>
+  </nav>
+  <a class="btn btn--cheese btn--lg" href="#menu"><span data-i18n="nav.order">اطلب الآن</span><svg class="icon icon--dir" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+</div>
+
+<main id="main" tabindex="-1">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="hero__ground" aria-hidden="true">
+      <div class="embers" data-embers="18"></div>
+      <span class="hero__ghost" data-i18n="brand.word">نار</span>
+    </div>
+    <div class="wrap hero__grid">
+      <div class="hero__copy">
+        <p class="hero-kicker" data-i18n="hero.kicker">من الفرن… إلى مزاجك</p>
+        <p class="status-pill" id="hero-status">
+          <span class="status-pill__dot"></span>
+          <span class="status-pill__text">مفتوح الآن</span>
+          <span class="status-pill__meta">توصيل خلال 30 دقيقة</span>
+        </p>
+        <h1 class="hero__title" id="hero-title">
+          <span class="hero__line"><span class="hero__word" data-i18n="hero.l1">طعم.</span></span>
+          <span class="hero__line"><span class="hero__word hero__word--fire" data-i18n="hero.l2">يشعل.</span></span>
+          <span class="hero__line"><span class="hero__word hero__word--sticker" data-i18n="hero.l3">حواسك.</span></span>
+        </h1>
+        <p class="hero__lead" data-i18n="hero.lead">بيتزا من الفرن الحجري، سندويشات محشية على أصولها، وسناكات مقرمشة. توصلك لباب البيت وهي ساخنة.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--cheese btn--lg" href="#menu"><span data-i18n="hero.cta">اطلب الآن</span><svg class="icon icon--dir" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--ghost btn--lg" href="#offers" data-i18n="hero.cta2">عروض اليوم</a>
+        </div>
+        <ul class="hero__facts">
+          <li><strong id="fact-items">27</strong><span data-i18n="hero.factItems">صنف بالمنيو</span></li>
+          <li><strong id="fact-minutes">30</strong><span data-i18n="hero.factMinutes">دقيقة للتوصيل</span></li>
+          <li><strong>100%</strong><span data-i18n="hero.factDough">عجينة طازجة يومياً</span></li>
+        </ul>
+      </div>
+
+      <div class="hero__visual">
+        <div class="hero__glow" aria-hidden="true"></div>
+        <div class="hero__rim" aria-hidden="true"></div>
+        <div class="hero__scroll-spin">
+          <div class="hero__pizza-wrap">
+            <img class="hero__pizza" src="assets/img/hero-pizza.webp" width="1000" height="1000" alt="بيتزا بيبروني ساخنة من فوق" data-i18n-attr="alt:hero.pizzaAlt">
+          </div>
+        </div>
+        <div class="steam" aria-hidden="true">
+          <svg viewBox="0 0 40 120"><path d="M20 118c-12-14 10-26 0-42s10-26 0-42S22 10 20 2"/></svg>
+          <svg viewBox="0 0 40 120"><path d="M20 118c-12-14 10-26 0-42s10-26 0-42S22 10 20 2"/></svg>
+          <svg viewBox="0 0 40 120"><path d="M20 118c-12-14 10-26 0-42s10-26 0-42S22 10 20 2"/></svg>
+        </div>
+        <div class="hero__badge" aria-hidden="true">
+          <svg class="hero__badge-svg" viewBox="0 0 200 200">
+            <defs><path id="badge-path" d="M100 100m-72 0a72 72 0 1 1 144 0a72 72 0 1 1-144 0"/></defs>
+            <circle cx="100" cy="100" r="99" class="hero__badge-bg"/>
+            <text class="hero__badge-text"><textPath href="#badge-path" textLength="448" lengthAdjust="spacing">HOT · FRESH · STONE BAKED · </textPath></text>
+            <use href="#logo-flame" x="74" y="70" width="52" height="60"/>
+          </svg>
+        </div>
+        <div class="hero__sticker-wrap">
+          <button class="hero__sticker" type="button" data-add="pz-pepperoni" data-i18n-attr="aria-label:hero.stickerAdd" aria-label="أضف بيتزا بيبروني وسط للسلة">
+            <span class="hero__sticker-label" data-i18n="hero.sticker">الأكثر طلباً</span>
+            <span class="hero__sticker-price" id="hero-price">12,000</span>
+            <span class="hero__sticker-cur" id="hero-cur">د.ع</span>
+          </button>
+        </div>
+        <div class="float float--chili" aria-hidden="true"><svg class="float__svg" viewBox="0 0 64 64"><path d="M46 16c-5-1-8.5 2-9 6.5C33 39 21.5 48 8 51c10 8 28 7.5 38.5-7 6-8.5 7.5-17.5 6-25.5-1-2-2.8-2.4-6.5-2.5Z" fill="#E3261C"/><path d="M44 22c-1 9-6 18-15 23" stroke="#FF8A7A" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/><path d="M46 16c.5-4 3-7 7-8" stroke="#2FA84F" stroke-width="5" fill="none" stroke-linecap="round"/></svg></div>
+        <div class="float float--leaf" aria-hidden="true"><svg class="float__svg" viewBox="0 0 64 64"><path d="M8 56C8 30 24 10 58 8c0 30-20 48-46 48" fill="#2FA84F"/><path d="M10 54 44 22" stroke="#9BE7A9" stroke-width="3" stroke-linecap="round"/></svg></div>
+        <div class="float float--spark" aria-hidden="true"><svg class="float__svg" viewBox="0 0 24 24"><use href="#i-spark"/></svg></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BANDS ============ -->
+  <div class="bands" aria-hidden="true">
+    <div class="band band--cheese"><div class="band__skew"><div class="band__track" data-band="a"></div></div></div>
+    <div class="band band--tomato"><div class="band__skew"><div class="band__track" data-band="b"></div></div></div>
+  </div>
+
+  <!-- ============ BEST SELLERS ============ -->
+  <section class="best" id="best" aria-labelledby="best-title">
+    <div class="wrap best__head">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="best.eyebrow">الأكثر طلباً</p>
+        <h2 class="section-title" id="best-title" data-i18n-rich="best.title">اللي <span class="hl">الكل</span> يطلبه</h2>
+      </div>
+      <p class="best__hint"><svg class="icon icon--dir" aria-hidden="true"><use href="#i-arrow"/></svg><span data-i18n="best.hint">اسحب لتشوف أكثر</span></p>
+    </div>
+    <div class="best__viewport" id="best-viewport">
+      <ul class="best__track" id="best-track"></ul>
+    </div>
+  </section>
+
+  <!-- ============ MENU ============ -->
+  <section class="menu" id="menu" aria-labelledby="menu-title">
+    <div class="wrap">
+      <div class="menu__head">
+        <div class="section-head">
+          <p class="eyebrow" data-i18n="menu.eyebrow">المنيو</p>
+          <h2 class="section-title" id="menu-title" data-i18n-rich="menu.title">كل شي يطلع <span class="hl">ساخن</span></h2>
+        </div>
+        <div class="search">
+          <label class="sr-only" for="menu-search" data-i18n="menu.searchLabel">ابحث في المنيو</label>
+          <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+          <input id="menu-search" type="search" autocomplete="off" enterkeyhint="search" placeholder="دوّر على أكلتك…" data-i18n-attr="placeholder:menu.search">
+        </div>
+      </div>
+      <div class="filters-scroll">
+        <div class="filters" id="menu-filters" role="group" data-i18n-attr="aria-label:menu.filterLabel" aria-label="صنّف المنيو">
+          <span class="filters__ink" aria-hidden="true"></span>
+        </div>
+      </div>
+      <p class="menu__count" id="menu-count" aria-live="polite"></p>
+      <div class="menu__grid" id="menu-grid"></div>
+      <p class="menu__empty" id="menu-empty" hidden data-i18n="menu.empty">ما لقينا شي بهالاسم. جرّب كلمة ثانية.</p>
+      <noscript><p class="menu__empty">المنيو والطلب يحتاجون تفعيل JavaScript.</p></noscript>
+    </div>
+  </section>
+
+  <!-- ============ OFFERS ============ -->
+  <section class="offers block-tomato" id="offers" aria-labelledby="offers-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="offers.eyebrow">عروض اليوم</p>
+        <h2 class="section-title" id="offers-title" data-i18n-rich="offers.title">عروض <span class="hl">تولّع</span></h2>
+      </div>
+      <div class="offers__grid" id="offers-grid"></div>
+    </div>
+  </section>
+
+  <section class="fire-stage" aria-labelledby="fire-title">
+    <p class="fire-stage__eyebrow" data-i18n="fire.eyebrow">نار بالاسم. نار بالطعم.</p>
+    <div class="fire-stage__art" aria-hidden="true">
+      <span class="fire-stage__orbit"></span><span class="fire-stage__orbit fire-stage__orbit--inner"></span>
+      <svg class="fire-stage__trace" viewBox="0 0 420 420"><path d="M210 12A198 198 0 1 1 209.9 12"/></svg>
+      <img class="fire-stage__logo" src="assets/img/logo-naar.svg" width="320" height="280" loading="lazy" decoding="async" alt="">
+      <svg class="fire-stage__spark fire-stage__spark--one" viewBox="0 0 24 24"><use href="#i-spark"/></svg>
+      <svg class="fire-stage__spark fire-stage__spark--two" viewBox="0 0 24 24"><use href="#i-spark"/></svg>
+    </div>
+    <h2 class="fire-stage__title" id="fire-title" data-i18n-rich="fire.title">أول لقمة… <em>تولّعها</em></h2>
+    <a class="btn btn--cheese btn--lg" href="#menu" data-i18n="fire.cta">اكتشف طعم نار</a>
+    <div><button class="motion-toggle" type="button" aria-pressed="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 2h3v12H3zm7 0h3v12h-3z"/></svg><span>إيقاف الحركة</span></button></div>
+  </section>
+
+  <!-- ============ HOW ============ -->
+  <section class="how block-cheese" id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="section-head section-head--center">
+        <p class="eyebrow" data-i18n="how.eyebrow">سهلة وسريعة</p>
+        <h2 class="section-title" id="how-title" data-i18n-rich="how.title">اطلب بـ<span class="hl">ثلاث خطوات</span></h2>
+      </div>
+      <div class="how__body">
+        <svg class="how__path" viewBox="0 0 1200 140" preserveAspectRatio="none" aria-hidden="true"><path d="M140 70C330 -10 420 150 600 70S880 -10 1060 70"/></svg>
+        <ol class="how__steps">
+          <li class="how__step">
+            <span class="how__num" aria-hidden="true">1</span>
+            <svg class="icon how__icon" aria-hidden="true"><use href="#i-pizza"/></svg>
+            <h3 class="how__title" data-i18n="how.s1t">اختر</h3>
+            <p data-i18n="how.s1d">تصفّح المنيو واختر اللي تشتهيه.</p>
+          </li>
+          <li class="how__step">
+            <span class="how__num" aria-hidden="true">2</span>
+            <svg class="icon how__icon" aria-hidden="true"><use href="#i-chili"/></svg>
+            <h3 class="how__title" data-i18n="how.s2t">خصّص</h3>
+            <p data-i18n="how.s2d">الحجم والإضافات ودرجة الحرارة، كلها على ذوقك.</p>
+          </li>
+          <li class="how__step">
+            <span class="how__num" aria-hidden="true">3</span>
+            <svg class="icon how__icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+            <h3 class="how__title" data-i18n="how.s3t">أكّد على واتساب</h3>
+            <p data-i18n="how.s3d">طلبك يوصل للمطبخ برسالة وحدة، ونبدأ نجهّزه فوراً.</p>
+          </li>
+        </ol>
+      </div>
+      <div class="how__cta">
+        <a class="btn btn--ink btn--lg" href="#menu"><span data-i18n="how.cta">يلّا نطلب</span><svg class="icon icon--dir" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STORY ============ -->
+  <section class="story" id="story" aria-labelledby="story-title">
+    <div class="wrap story__grid">
+      <figure class="story__media">
+        <img src="assets/img/oven-fire.webp" width="1400" height="875" loading="lazy" decoding="async" alt="بيتزا قدّام فرن الحطب والنار مشتعلة وراها" data-i18n-attr="alt:story.alt">
+        <figcaption class="story__temp">
+          <span class="story__temp-num"><span id="oven-temp">400</span>°C</span>
+          <span class="story__temp-label" data-i18n="story.oven">حرارة الفرن</span>
+        </figcaption>
+      </figure>
+      <div class="story__copy">
+        <div class="section-head">
+          <p class="eyebrow" data-i18n="story.eyebrow">قصتنا</p>
+          <h2 class="section-title" id="story-title" data-i18n-rich="story.title">النار <span class="hl">سرّ</span> الطعم</h2>
+        </div>
+        <p class="story__text" data-i18n="story.text">بدأنا بفرن حجري وفكرة بسيطة: أكل سريع ما يتنازل عن الطعم. عجينتنا تتخمّر كل يوم، وصلصتنا تنطبخ على نار هادية، وكل طلب يطلع من الفرن لإيدك وهو ساخن.</p>
+        <ul class="promises">
+          <li><span class="promises__icon"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span><span data-i18n="story.p1">عجينة تتخمّر كل يوم</span></li>
+          <li><span class="promises__icon"><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg></span><span data-i18n="story.p2">مكوّنات طازجة كل صباح</span></li>
+          <li><span class="promises__icon"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg></span><span data-i18n="story.p3">تغليف يحافظ على السخونة</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VISIT ============ -->
+  <section class="visit block-cream" id="visit" aria-labelledby="visit-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="visit.eyebrow">زورونا</p>
+        <h2 class="section-title" id="visit-title" data-i18n-rich="visit.title">تعال <span class="hl">جوعان</span></h2>
+      </div>
+      <div class="visit__grid">
+        <article class="visit-card visit-card--hours">
+          <h3 class="visit-card__title"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><span data-i18n="visit.hours">أوقات الدوام</span></h3>
+          <p class="status-pill status-pill--light" id="visit-status"><span class="status-pill__dot"></span><span class="status-pill__text"></span><span class="status-pill__meta"></span></p>
+          <ul class="hours" id="hours-list"></ul>
+        </article>
+        <article class="visit-card">
+          <h3 class="visit-card__title"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span data-i18n="visit.location">الموقع</span></h3>
+          <p class="visit-card__big" id="visit-address">الشارع الرئيسي، وسط المدينة</p>
+          <a class="btn btn--ink" id="maps-link" href="#" target="_blank" rel="noopener" hidden><span data-i18n="visit.maps">افتح بالخرائط</span><svg class="icon icon--dir" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <h3 class="visit-card__title visit-card__title--sub"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg><span data-i18n="visit.delivery">التوصيل</span></h3>
+          <ul class="visit-card__list" id="delivery-info"></ul>
+        </article>
+        <article class="visit-card">
+          <h3 class="visit-card__title"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span data-i18n="visit.contact">تواصل معنا</span></h3>
+          <p class="visit-card__big visit-card__phone"><bdi id="phone-text">+964 7XX XXX XXXX</bdi></p>
+          <div class="visit-card__actions">
+            <button class="btn btn--outline-ink" type="button" id="copy-phone"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg><span data-i18n="visit.copyPhone">انسخ الرقم</span></button>
+            <a class="btn btn--wa" id="wa-link" href="https://wa.me/" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg><span data-i18n="visit.whatsapp">راسلنا على واتساب</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer__word" aria-hidden="true" data-i18n="brand.word">نار</p>
+    <div class="footer__row">
+      <a class="brand brand--footer" href="#top" data-i18n-attr="aria-label:a11y.home" aria-label="نار، الصفحة الرئيسية"><img class="brand-logo" src="assets/img/logo-naar.svg" width="112" height="64" alt="نار · NAAR">
+        <svg class="brand__flame" viewBox="0 0 64 64" aria-hidden="true"><use href="#logo-flame"/></svg>
+        <span class="brand__word" aria-hidden="true" data-i18n="brand.word">نار</span>
+        <span class="brand__latin" aria-hidden="true" data-i18n="brand.alt">NAAR</span>
+      </a>
+      <nav class="footer__nav" data-i18n-attr="aria-label:a11y.footerNav" aria-label="روابط الصفحة">
+        <a href="#menu" data-i18n="nav.menu">المنيو</a>
+        <a href="#offers" data-i18n="nav.offers">العروض</a>
+        <a href="#story" data-i18n="nav.story">قصتنا</a>
+        <a href="#visit" data-i18n="nav.visit">زورونا</a>
+      </nav>
+      <div class="footer__social" id="footer-social"></div>
+      <a class="to-top" href="#top"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg><span data-i18n="footer.top">للأعلى</span></a>
+    </div>
+    <p class="footer__small"><span id="footer-rights">© 2026 نار. كل الحقوق محفوظة.</span> <span aria-hidden="true">·</span> <span data-i18n="footer.photos">صور توضيحية مولّدة بالذكاء الاصطناعي</span></p>
+  </div>
+</footer>
+
+<!-- ============ MOBILE CART BAR ============ -->
+<div class="cart-bar" id="cart-bar" hidden>
+  <button class="cart-bar__btn" type="button" id="cart-bar-btn">
+    <span class="cart-bar__count" id="cart-bar-count">0</span>
+    <span class="cart-bar__label" data-i18n="bar.view">عرض السلة</span>
+    <span class="cart-bar__total" id="cart-bar-total"></span>
+  </button>
+</div>
+
+<!-- ============ DISH SHEET ============ -->
+<dialog class="dialog dialog--dish" id="dish-dialog" aria-labelledby="dish-title">
+  <form class="dish-sheet panel-anim" id="dish-form" novalidate>
+    <button class="icon-btn dish-sheet__close" type="button" data-close data-i18n-attr="aria-label:dish.close" aria-label="سكّر"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button>
+    <div class="dish-sheet__media"><img id="dish-img" src="assets/img/pz-pepperoni.webp" width="800" height="600" alt=""></div>
+    <div class="dish-sheet__content">
+      <div class="dish-sheet__tags" id="dish-tags"></div>
+      <h2 class="dish-sheet__title" id="dish-title"></h2>
+      <p class="dish-sheet__desc" id="dish-desc"></p>
+      <div class="dish-sheet__options" id="dish-options"></div>
+      <div class="field">
+        <label class="field__label" for="dish-note" data-i18n="dish.note">ملاحظة للمطبخ</label>
+        <textarea class="field__input" id="dish-note" rows="2" maxlength="140" placeholder="مثلاً: صوص زيادة، بدون طماطم" data-i18n-attr="placeholder:dish.notePh"></textarea>
+      </div>
+    </div>
+    <div class="dish-sheet__foot">
+      <div class="qty" role="group" data-i18n-attr="aria-label:dish.qty" aria-label="الكمية">
+        <button class="qty__btn" type="button" data-qty="-1" data-i18n-attr="aria-label:dish.dec" aria-label="تقليل الكمية"><svg class="icon" aria-hidden="true"><use href="#i-minus"/></svg></button>
+        <output class="qty__value" id="dish-qty" aria-live="polite">1</output>
+        <button class="qty__btn" type="button" data-qty="1" data-i18n-attr="aria-label:dish.inc" aria-label="زيادة الكمية"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+      </div>
+      <button class="btn btn--cheese btn--lg dish-sheet__add" type="submit">
+        <span id="dish-add-label" data-i18n="dish.add">أضف للسلة</span>
+        <span class="dish-sheet__price" id="dish-price"></span>
+      </button>
+    </div>
+  </form>
+</dialog>
+
+<!-- ============ CART DRAWER ============ -->
+<dialog class="dialog dialog--cart" id="cart-dialog" aria-labelledby="cart-title">
+  <div class="drawer panel-anim" id="drawer">
+    <header class="drawer__head">
+      <h2 class="drawer__title" id="cart-title" data-i18n="cart.title">سلتك</h2>
+      <button class="icon-btn" type="button" data-close data-i18n-attr="aria-label:common.close" aria-label="سكّر"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button>
+    </header>
+    <ol class="stepper" id="stepper" data-i18n-attr="aria-label:steps.label" aria-label="مراحل الطلب">
+      <li class="stepper__item" data-step="1"><span class="stepper__dot">1</span><span data-i18n="steps.cart">السلة</span></li>
+      <li class="stepper__item" data-step="2"><span class="stepper__dot">2</span><span data-i18n="steps.details">التفاصيل</span></li>
+      <li class="stepper__item" data-step="3"><span class="stepper__dot">3</span><span data-i18n="steps.confirm">التأكيد</span></li>
+    </ol>
+
+    <p class="sr-only" id="drawer-live" role="status"></p>
+    <div class="drawer__body" id="drawer-body">
+      <!-- Step 1: cart -->
+      <section class="step-panel" data-panel="1" tabindex="-1" aria-labelledby="cart-title">
+        <div class="cart-empty" id="cart-empty" hidden>
+          <div class="cart-empty__art" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></div>
+          <h3 class="cart-empty__title" data-i18n="cart.emptyTitle">سلتك فاضية</h3>
+          <p data-i18n="cart.emptyText">الجوع ما ينتظر. اختر شي طيب من المنيو.</p>
+          <button class="btn btn--cheese" type="button" id="cart-browse"><span data-i18n="cart.browse">تصفّح المنيو</span><svg class="icon icon--dir" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        </div>
+        <div class="free-bar" id="free-bar">
+          <p class="free-bar__text" id="free-text"></p>
+          <div class="free-bar__track"><span class="free-bar__fill" id="free-fill"><svg class="icon free-bar__rider" aria-hidden="true"><use href="#i-scooter"/></svg></span></div>
+        </div>
+        <ul class="cart-lines" id="cart-lines"></ul>
+        <div class="cart-clear" id="cart-clear">
+          <button class="link-btn" type="button" id="clear-ask" data-i18n="cart.clear">فضّي السلة</button>
+          <div class="cart-clear__confirm" id="clear-confirm" hidden>
+            <span data-i18n="cart.clearAsk">نفضّي السلة؟</span>
+            <button class="link-btn link-btn--danger" type="button" id="clear-yes" data-i18n="cart.clearYes">إي، فضّيها</button>
+            <button class="link-btn" type="button" id="clear-no" data-i18n="cart.clearNo">لا</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Step 2: details -->
+      <section class="step-panel" data-panel="2" tabindex="-1" hidden>
+        <form class="checkout" id="checkout-form" novalidate>
+          <div class="error-summary" id="error-summary" role="alert" tabindex="-1" aria-labelledby="error-title" hidden>
+            <h3 class="error-summary__title" id="error-title" data-i18n="form.errorTitle">في معلومات ناقصة</h3>
+            <ul class="error-summary__list" id="error-list"></ul>
+          </div>
+          <div class="field">
+            <label class="field__label" for="f-name"><span data-i18n="form.name">الاسم</span> <span class="field__req" aria-hidden="true">*</span></label>
+            <input class="field__input" id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-err">
+            <p class="field__error" id="f-name-err" hidden></p>
+          </div>
+          <div class="field">
+            <label class="field__label" for="f-phone"><span data-i18n="form.phone">رقم الهاتف</span> <span class="field__req" aria-hidden="true">*</span></label>
+            <input class="field__input field__input--ltr" id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" required aria-describedby="f-phone-hint f-phone-err">
+            <p class="field__hint" id="f-phone-hint" data-i18n="form.phoneHint">نتصل فيك بس إذا احتجنا نتأكد من الطلب</p>
+            <p class="field__error" id="f-phone-err" hidden></p>
+          </div>
+          <fieldset class="field segmented">
+            <legend class="field__label" data-i18n="form.type">كيف تحب تستلم طلبك؟</legend>
+            <div class="segmented__row">
+              <input class="segmented__input" type="radio" id="f-type-delivery" name="type" value="delivery" checked>
+              <label class="segmented__option" for="f-type-delivery"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg><span data-i18n="form.delivery">توصيل</span></label>
+              <input class="segmented__input" type="radio" id="f-type-pickup" name="type" value="pickup">
+              <label class="segmented__option" for="f-type-pickup"><svg class="icon" aria-hidden="true"><use href="#i-store"/></svg><span data-i18n="form.pickup">استلام من المطعم</span></label>
+            </div>
+          </fieldset>
+          <div class="field" id="address-field">
+            <label class="field__label" for="f-address"><span data-i18n="form.address">العنوان بالتفصيل</span> <span class="field__req" aria-hidden="true">*</span></label>
+            <textarea class="field__input" id="f-address" name="address" rows="2" autocomplete="street-address" placeholder="المنطقة، الشارع، أقرب نقطة دالّة" data-i18n-attr="placeholder:form.addressPh" aria-describedby="f-address-err"></textarea>
+            <p class="field__error" id="f-address-err" hidden></p>
+          </div>
+          <fieldset class="field segmented">
+            <legend class="field__label" data-i18n="form.payment">طريقة الدفع</legend>
+            <div class="segmented__row">
+              <input class="segmented__input" type="radio" id="f-pay-cash" name="payment" value="cash" checked>
+              <label class="segmented__option" for="f-pay-cash"><svg class="icon" aria-hidden="true"><use href="#i-cash"/></svg><span data-i18n="form.cash">كاش عند الاستلام</span></label>
+              <input class="segmented__input" type="radio" id="f-pay-card" name="payment" value="card">
+              <label class="segmented__option" for="f-pay-card"><svg class="icon" aria-hidden="true"><use href="#i-card"/></svg><span data-i18n="form.card">بطاقة عند الاستلام</span></label>
+            </div>
+          </fieldset>
+          <div class="field">
+            <label class="field__label" for="f-notes" data-i18n="form.notes">ملاحظات على الطلب</label>
+            <textarea class="field__input" id="f-notes" name="notes" rows="2" maxlength="300" placeholder="أي شي لازم نعرفه؟" data-i18n-attr="placeholder:form.notesPh"></textarea>
+          </div>
+        </form>
+      </section>
+
+      <!-- Step 3: confirm -->
+      <section class="step-panel" data-panel="3" tabindex="-1" hidden>
+        <div class="confirm">
+          <h3 class="confirm__title" id="confirm-title" tabindex="-1" data-i18n="confirm.title">طلبك جاهز للإرسال</h3>
+          <div class="ticket" id="ticket"></div>
+          <p class="confirm__note" id="confirm-note" data-i18n="confirm.note"></p>
+          <p class="confirm__after" id="confirm-after" hidden></p>
+          <p class="confirm__status" id="confirm-status" role="status" hidden></p>
+          <label class="sr-only" for="order-text" data-i18n="confirm.copy">انسخ نص الطلب</label>
+          <textarea class="confirm__text" id="order-text" rows="8" readonly hidden></textarea>
+        </div>
+      </section>
+    </div>
+
+    <footer class="drawer__foot" id="drawer-foot">
+      <dl class="totals" id="totals">
+        <div class="totals__row"><dt data-i18n="cart.subtotal">المجموع</dt><dd id="t-sub"></dd></div>
+        <div class="totals__row"><dt data-i18n="cart.delivery">التوصيل</dt><dd id="t-del"></dd></div>
+        <div class="totals__row totals__row--grand"><dt data-i18n="cart.total">الإجمالي</dt><dd id="t-total"></dd></div>
+      </dl>
+      <p class="drawer__min" id="min-note" hidden></p>
+      <div class="drawer__actions">
+        <button class="btn btn--ghost" type="button" id="btn-back" hidden><svg class="icon icon--dir icon--back" aria-hidden="true"><use href="#i-arrow"/></svg><span data-i18n="form.back">رجوع</span></button>
+        <button class="btn btn--cheese btn--grow" type="button" id="btn-next"><span id="btn-next-label" data-i18n="cart.continue">تابع الطلب</span><svg class="icon icon--dir" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        <a class="btn btn--wa btn--grow" id="btn-wa" href="https://wa.me/" target="_blank" rel="noopener" hidden><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg><span data-i18n="confirm.send">أرسل الطلب على واتساب</span></a>
+        <button class="btn btn--cheese btn--grow" type="button" id="btn-place" hidden><span id="btn-place-label" data-i18n="confirm.place">أكّد الطلب</span></button>
+      </div>
+      <div class="drawer__sub-actions" id="sub-actions" hidden>
+        <button class="link-btn" type="button" id="btn-copy"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg><span id="btn-copy-label" data-i18n="confirm.copy">انسخ نص الطلب</span></button>
+        <button class="link-btn" type="button" id="btn-new" data-i18n="confirm.new">ابدأ طلب جديد</button>
+      </div>
+    </footer>
+  </div>
+</dialog>
+
+<div class="toasts" id="toasts" aria-live="polite" aria-atomic="false"></div>
+
+<script src="assets/vendor/gsap.min.js" defer></script>
+<script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="assets/vendor/Flip.min.js" defer></script>
+<script src="assets/js/config.js" defer></script>
+<script src="assets/js/i18n.js" defer></script>
+<script src="assets/js/menu.js" defer></script>
+<script src="assets/js/app.js" defer></script>
+<script src="assets/js/refresh.js" defer></script>
+</body>
+</html>

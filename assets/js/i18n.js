@@ -5,6 +5,7 @@
    ============================================================ */
 window.NAAR_I18N = {
   ar: {
+    'app.nav': 'التنقل السريع',
     'hero.kicker': 'من الفرن… إلى مزاجك',
     'fire.eyebrow': 'نار بالاسم. نار بالطعم.',
     'fire.title': 'أول لقمة… [تولّعها]',
@@ -37,11 +38,11 @@ window.NAAR_I18N = {
     'hero.delivery': 'توصيل خلال {m} دقيقة',
     'hero.opensToday': 'يفتح اليوم {time}',
     'hero.opensOn': 'يفتح {day} {time}',
-    'hero.l1': 'طعم.',
-    'hero.l2': 'يشعل.',
+    'hero.l1': 'جوعان؟',
+    'hero.l2': 'خلّها نار.',
     'hero.l3': 'حواسك.',
-    'hero.lead': 'بيتزا من الفرن الحجري، سندويشات محشية على أصولها، وسناكات مقرمشة. توصلك لباب البيت وهي ساخنة.',
-    'hero.cta': 'اطلب الآن',
+    'hero.lead': 'بيتزا من الفرن، قرمشة تحبّها، وطعم يرجّعك.',
+    'hero.cta': 'شوف المنيو',
     'hero.cta2': 'عروض اليوم',
     'hero.factItems': 'صنف بالمنيو',
     'hero.factMinutes': 'دقيقة للتوصيل',
@@ -55,7 +56,7 @@ window.NAAR_I18N = {
     'best.hint': 'اسحب لتشوف أكثر',
 
     'menu.eyebrow': 'المنيو',
-    'menu.title': 'كل شي يطلع [ساخن]',
+    'menu.title': 'شنو [مشتهي] اليوم؟',
     'menu.search': 'دوّر على أكلتك…',
     'menu.searchLabel': 'ابحث في المنيو',
     'menu.filterLabel': 'صنّف المنيو',
@@ -214,6 +215,7 @@ window.NAAR_I18N = {
   },
 
   en: {
+    'app.nav': 'Quick navigation',
     'hero.kicker': 'From the oven. To your cravings.',
     'fire.eyebrow': 'Fire by name. Fire by flavor.',
     'fire.title': 'One bite. [All fire.]',
@@ -246,11 +248,11 @@ window.NAAR_I18N = {
     'hero.delivery': 'Delivery in {m} min',
     'hero.opensToday': 'Opens today at {time}',
     'hero.opensOn': 'Opens {day} at {time}',
-    'hero.l1': 'Taste.',
-    'hero.l2': 'The.',
+    'hero.l1': 'Hungry?',
+    'hero.l2': 'Make it NAAR.',
     'hero.l3': 'Fire.',
-    'hero.lead': 'Stone-oven pizza, loaded sandwiches and crunchy snacks, delivered to your door while they are still hot.',
-    'hero.cta': 'Order now',
+    'hero.lead': 'Oven-fresh pizza. Golden crunch. Your next craving.',
+    'hero.cta': 'Explore the menu',
     'hero.cta2': "Today's deals",
     'hero.factItems': 'items on the menu',
     'hero.factMinutes': 'minute delivery',
@@ -264,7 +266,7 @@ window.NAAR_I18N = {
     'best.hint': 'Swipe for more',
 
     'menu.eyebrow': 'The menu',
-    'menu.title': 'Everything comes out [hot]',
+    'menu.title': 'What are you [craving]?',
     'menu.search': 'Search the menu…',
     'menu.searchLabel': 'Search the menu',
     'menu.filterLabel': 'Filter the menu',

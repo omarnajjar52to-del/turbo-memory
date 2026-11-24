@@ -18,7 +18,7 @@
   var mqReduce = matchMedia('(prefers-reduced-motion: reduce)');
   var mqFine = matchMedia('(hover: hover) and (pointer: fine)');
   var mqDesktop = matchMedia('(min-width: 1024px)');
-  var motionOK = function () { return !mqReduce.matches && !root.classList.contains('motion-paused'); };
+  var motionOK = function () { return false; };
   var hasGSAP = function () { return typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined'; };
 
   /* ------------------------------------------------------------ storage */
@@ -1122,27 +1122,10 @@
 
   /* -------------------------------------------------------- page chrome */
   function initHeader() {
-    var header = $('#site-header');
-    var bar = $('.scroll-progress span');
-    var lastY = window.scrollY, ticking = false;
-    var update = function () {
-      var y = window.scrollY;
-      header.classList.toggle('is-scrolled', y > 24);
-      var navOpen = !$('#mobile-nav').hidden;
-      // Only phones/tablets hide the header on scroll: they have the bottom cart bar instead.
-      if (!mqDesktop.matches && y > 560 && y > lastY + 6 && !navOpen && !header.contains(document.activeElement)) header.classList.add('is-hidden');
-      else if (y < lastY - 6 || y < 560) header.classList.remove('is-hidden');
-      lastY = y;
-      var max = document.documentElement.scrollHeight - innerHeight;
-      bar.style.setProperty('--p', max > 0 ? Math.min(1, y / max).toFixed(4) : '0');
-      ticking = false;
-    };
-    addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
-    header.addEventListener('focusin', function () { header.classList.remove('is-hidden'); });
-    update();
+    $('#site-header').classList.remove('is-hidden');
   }
   function setOutsideInert(on, except) {
-    [$('#main'), $('.site-footer'), $('#cart-bar'), $('.skip-link')].forEach(function (el) {
+    [$('#main'), $('.site-footer'), $('#cart-bar'), $('.skip-link'), $('.app-nav')].forEach(function (el) {
       if (el && el !== except) el.inert = on;
     });
   }
@@ -1438,7 +1421,7 @@
   function initIntro(onDone) {
     var intro = $('#intro');
     var hashTarget = location.hash.length > 1 && /^#[\w-]+$/.test(location.hash) ? document.querySelector(location.hash) : null;
-    if (root.classList.contains('intro-failsafe') || hashTarget) {
+    if (root.classList.contains('app-mode') || root.classList.contains('intro-failsafe') || hashTarget) {
       intro.classList.add('is-gone');
       onDone();
       return;
@@ -1499,7 +1482,6 @@
     loadDraft();
     translateDOM();
     renderAll();
-    initEmbers();
     initHeader();
     initMobileNav();
     initDialogs();
@@ -1507,9 +1489,6 @@
     initCheckout();
     initMenuEvents();
     initInView();
-    initTilt();
-    initCounter();
-    initNavSpy();
     setInterval(function () { tickCountdown(false); }, 1000);
     setInterval(renderStatus, 60000);
     mqDesktop.addEventListener('change', function () { motion.rebuild(); });

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ar" dir="rtl" class="no-js">
+<html lang="ar" dir="rtl" class="no-js app-mode">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;700;800;900&family=Badeen+Display&family=Dela+Gothic+One&family=Readex+Pro:wght@400;500;600&display=swap">
 <link rel="preload" as="image" href="assets/img/hero-pizza.webp">
 <link rel="stylesheet" href="assets/css/styles.css">
-<link rel="stylesheet" href="assets/css/refresh.css">
+<link rel="stylesheet" href="assets/css/app-ui.css">
 <script>
   (function () {
     var d = document.documentElement, l = null, seen = null;
@@ -24,12 +24,13 @@
     try { l = localStorage.getItem('naar.lang'); seen = localStorage.getItem('naar.seen'); } catch (e) {}
     var m = /[?&]lang=(ar|en)\b/.exec(location.search); if (m) l = m[1];
     d.lang = l === 'en' ? 'en' : 'ar'; d.dir = l === 'en' ? 'ltr' : 'rtl';
-    d.classList.add(seen ? 'intro-short' : 'intro-full');
+    var theme = null; try { theme = localStorage.getItem('naar.theme'); } catch (e) {}
+    d.dataset.theme = theme === 'light' || theme === 'dark' ? theme : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     setTimeout(function () { if (!window.__naarReady) d.classList.add('intro-failsafe'); }, 6000);
   })();
 </script>
 </head>
-<body>
+<body data-view="home">
 
 <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -44,6 +45,10 @@
     </linearGradient>
   </defs>
   <symbol id="logo-flame" viewBox="0 0 64 64"><path fill="#ff652d" d="M32 3c11 11 18 23 16 34-1 8-8 15-14 21C14 56 6 44 12 32c3-6 8-9 12-15l-2 13C32 22 36 15 32 3Z"/><path fill="#ffbd59" d="M48 19c12 16 13 30-9 41-5-9-2-17 4-24 5-6 6-10 5-17Z"/><path fill="#120e0c" d="m24 34 17-4-9 20Z"/><g fill="#ffbd59"><circle cx="28" cy="37" r="1.6"/><circle cx="35" cy="35" r="1.6"/></g></symbol>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.8 13.2A9 9 0 0 1 10.8 3a9 9 0 1 0 10 10.2Z"/></symbol>
   <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
   <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
   <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
@@ -121,6 +126,7 @@
       <a href="#visit" data-i18n="nav.visit">زورونا</a>
     </nav>
     <div class="site-header__actions">
+      <button class="theme-btn" id="theme-btn" type="button" aria-label="تفعيل الوضع النهاري" aria-pressed="false"><svg class="icon theme-btn__sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="icon theme-btn__moon" aria-hidden="true"><use href="#i-moon"/></svg></button>
       <button class="lang-btn" type="button" id="lang-btn" data-i18n-attr="aria-label:lang.switchLabel" aria-label="التبديل إلى الإنجليزية">
         <svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg><span data-i18n="lang.switch">EN</span>
       </button>
@@ -561,15 +567,19 @@
   </div>
 </dialog>
 
+<nav class="app-nav" aria-label="التنقل السريع" data-i18n-attr="aria-label:app.nav">
+<a class="app-nav__item" href="#top" data-app-tab="home" aria-current="page"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg><span data-app-label data-ar="الرئيسية" data-en="Home">الرئيسية</span></a>
+<a class="app-nav__item" href="#menu" data-app-tab="menu"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg><span data-app-label data-ar="المنيو" data-en="Menu">المنيو</span></a>
+<a class="app-nav__item" href="#offers" data-app-tab="offers"><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg><span data-app-label data-ar="العروض" data-en="Deals">العروض</span></a>
+<button class="app-nav__item" id="app-cart-btn" type="button"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg><span data-app-label data-ar="السلة" data-en="Cart">السلة</span><span class="app-nav__count" id="app-cart-count" aria-hidden="true" hidden>0</span></button>
+</nav>
+
 <div class="toasts" id="toasts" aria-live="polite" aria-atomic="false"></div>
 
-<script src="assets/vendor/gsap.min.js" defer></script>
-<script src="assets/vendor/ScrollTrigger.min.js" defer></script>
-<script src="assets/vendor/Flip.min.js" defer></script>
 <script src="assets/js/config.js" defer></script>
 <script src="assets/js/i18n.js" defer></script>
 <script src="assets/js/menu.js" defer></script>
 <script src="assets/js/app.js" defer></script>
-<script src="assets/js/refresh.js" defer></script>
+<script src="assets/js/app-ui.js" defer></script>
 </body>
 </html>
